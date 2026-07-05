@@ -17,6 +17,7 @@ oracle; the human runs it.
 2. **Write the file.** Envelope is always `nika: v1` +
    `workflow: <kebab-id>` + `tasks:`.
 3. **Check it**: `nika check <file>`. Exit 0 = clean · 2 = findings.
+   `nika inspect <file>` shows the anatomy (tasks · waves · cost floor).
 4. **Repair from the diagnostics** — they name the exact task, reference
    and fix. Unknown code? `nika explain NIKA-XXXX`.
 5. Repeat 3–4 until clean. **Never hand a file to the human that does
