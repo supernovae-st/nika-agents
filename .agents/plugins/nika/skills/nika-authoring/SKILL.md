@@ -22,7 +22,13 @@ oracle; the human runs it.
 5. Repeat 3–4 until clean. **Never hand a file to the human that does
    not pass `nika check`.**
 6. The human (or CI) runs it: `nika run <file>`. Preview offline with
-   `--model mock/echo`; run locally with `--model ollama/<model>`.
+   `--model mock/echo` (the mock synthesizes schema-conformant output,
+   so schema workflows preview offline too); run locally with
+   `--model ollama/<model>`.
+7. **Pin the contract**: `nika test <file> --update` writes
+   `<file>.golden.json` (the typed outputs under the deterministic
+   mock) — commit it; from then on `nika test <file>` is the offline CI
+   gate (a red test = the output contract changed).
 
 ## The four verbs (exactly one per task)
 
@@ -46,3 +52,15 @@ oracle; the human runs it.
   the tightest `permits:` block — paste it in (default-deny from then on).
 - Structured output: give `infer:` a `schema:`; add
   `additionalProperties: false` for a deterministic shape.
+- Vars at launch: declare `vars:` with `default:` for the zero-arg run;
+  the human overrides with `nika run <file> --var key=value`
+  (repeatable · unknown keys are refused before anything runs).
+- Timeouts are quoted Go-durations (`timeout: "7m"`, never a bare
+  number). Local models get a ≥300s provider deadline by default —
+  thinking models legitimately exceed 30s.
+- Long runs are resumable: `nika run <file> --resume <trace>` skips
+  journaled successes (visible cache hits). A blocking `nika:prompt`
+  pauses durably (exit 4) — re-arm with `--resume … --answer <task>=…`
+  (confirm prompts take booleans: `approve=true`).
+- Debugging a run: `nika trace show <.nika/traces/…ndjson>` renders the
+  storyboard + waterfall; `nika explain NIKA-XXXX` teaches any code.
