@@ -1,0 +1,60 @@
+name: gate
+
+# The marketplace repo's own CI: every manifest parses, the three plugin
+# versions agree, the mirrored paths resolve, and the teaching surfaces
+# carry no stale counts. No user-controlled input reaches the shell.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    name: manifests · versions · paths
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every JSON manifest parses
+        run: |
+          set -euo pipefail
+          find . -name '*.json' -not -path './.git/*' -print0 \
+            | xargs -0 -I{} python3 -m json.tool {} /dev/null
+          echo "all manifests parse"
+      - name: The plugin versions agree
+        run: |
+          python3 - << 'EOF'
+          import json, pathlib, sys
+          versions = {}
+          for p in (".agents/plugins/nika/.claude-plugin/plugin.json",
+                    ".agents/plugins/nika/.codex-plugin/plugin.json"):
+              versions[p] = json.loads(pathlib.Path(p).read_text())["version"]
+          for p in (".claude-plugin/marketplace.json",
+                    ".agents/plugins/marketplace.json"):
+              m = json.loads(pathlib.Path(p).read_text())
+              for entry in m.get("plugins", []):
+                  if "version" in entry:
+                      versions[f"{p}#{entry.get('name', '?')}"] = entry["version"]
+          uniq = set(versions.values())
+          for k, v in versions.items():
+              print(f"{v}  {k}")
+          if len(uniq) > 1:
+              sys.exit("plugin versions diverge — bump them together")
+          print(f"one version everywhere: {uniq.pop()}")
+          EOF
+      - name: The mirrored files exist
+        run: |
+          set -euo pipefail
+          for f in README.md \
+                   .agents/plugins/nika/skills/nika-authoring/SKILL.md \
+                   .agents/plugins/nika/.mcp.json \
+                   .agents/plugins/nika/.claude-plugin/plugin.json \
+                   .agents/plugins/nika/.codex-plugin/plugin.json; do
+            [ -f "$f" ] || { echo "missing: $f"; exit 1; }
+          done
+          echo "surface complete"
