@@ -2,8 +2,9 @@
 
 The lean install surface for the [Nika](https://github.com/supernovae-st/nika)
 agent plugin — the `nika-authoring` skill (author → check → repair loop) and
-the read-only MCP oracle (`nika_check` + `nika_explain`), for both plugin
-ecosystems:
+the read-only MCP oracle (8 tools: `nika_check` · `nika_explain` ·
+`nika_schema` · `nika_examples` · `nika_template` · `nika_canon` ·
+`nika_catalog` · `nika_tools`), for both plugin ecosystems:
 
 ```sh
 # Codex

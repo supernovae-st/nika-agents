@@ -57,7 +57,7 @@ oracle; the human runs it.
   the human overrides with `nika run <file> --var key=value`
   (repeatable · unknown keys are refused before anything runs).
 - Timeouts are quoted Go-durations (`timeout: "7m"`, never a bare
-  number). Local models get a ≥300s provider deadline by default —
+  number). Local models get a 300s provider deadline by default —
   thinking models legitimately exceed 30s.
 - Long runs are resumable: `nika run <file> --resume <trace>` skips
   journaled successes (visible cache hits). A blocking `nika:prompt`
