@@ -58,3 +58,18 @@ jobs:
             [ -f "$f" ] || { echo "missing: $f"; exit 1; }
           done
           echo "surface complete"
+      # The README advertises the MCP oracle's tools by name; that list is
+      # hand-written and drifts the day the engine adds or drops one. Fetch the
+      # LATEST engine (not a pin) so a new tool turns this red and forces the
+      # marketplace to follow — a live docs<->binary coherence gate.
+      - name: The advertised MCP tools match the shipped engine
+        run: |
+          set -euo pipefail
+          # Resolve the latest tag via the web redirect (github.com, not the
+          # rate-limited api.github.com) → /releases/tag/vX.Y.Z.
+          tag=$(curl -fsSL -o /dev/null -w '%{url_effective}' \
+            https://github.com/supernovae-st/nika/releases/latest | sed 's|.*/tag/||')
+          ver=${tag#v}
+          echo "checking marketplace docs against nika ${tag}"
+          curl -fsSL "https://github.com/supernovae-st/nika/releases/download/${tag}/nika-linux-x64-${ver}.tar.gz" | tar xz
+          NIKA_BIN=./nika python3 scripts/check-mcp-tools.py
