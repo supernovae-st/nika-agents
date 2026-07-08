@@ -58,6 +58,23 @@ jobs:
             [ -f "$f" ] || { echo "missing: $f"; exit 1; }
           done
           echo "surface complete"
+      # « Mirrored verbatim from the engine » was a README claim with no
+      # gate — and it drifted BOTH directions (the 2026-07-08 audit: the
+      # skill here lagged engine steps 6-7; the engine's plugin.json
+      # lagged this repo's 8-tool truth). Byte-diff the mirrored files
+      # against engine main so the claim is structural. Reads raw repo
+      # files only — no user-controlled input reaches the shell.
+      - name: The mirror is byte-identical to the engine (main)
+        run: |
+          set -euo pipefail
+          base="https://raw.githubusercontent.com/supernovae-st/nika/main"
+          for f in .agents/plugins/nika/skills/nika-authoring/SKILL.md \
+                   .agents/plugins/nika/.claude-plugin/plugin.json \
+                   .agents/plugins/nika/.codex-plugin/plugin.json; do
+            curl -fsSL "${base}/${f}" -o /tmp/upstream
+            diff -u /tmp/upstream "$f" || { echo "::error::${f} drifted from the engine mirror"; exit 1; }
+          done
+          echo "mirror byte-identical"
       # The README advertises the MCP oracle's tools by name; that list is
       # hand-written and drifts the day the engine adds or drops one. Fetch the
       # LATEST engine (not a pin) so a new tool turns this red and forces the
