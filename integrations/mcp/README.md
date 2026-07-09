@@ -27,6 +27,13 @@ builds the oracle from the release artifacts (SHA256SUMS-verified, multi-arch
 amd64/arm64) — `docker build -t nika-mcp . && docker run -i --rm nika-mcp`
 speaks stdio JSON-RPC, introspection-probed in-container.
 
+MCPB hosts (one-click bundle installers, Smithery-class): every engine
+release ships `.mcpb` bundles — `nika-mcp-<platform>-<version>.mcpb` next
+to the tarballs, checksums in `MCPB.sha256`. `manifest_version 0.2`,
+`server.type binary`, entry point `server/nika` with `args: [mcp]` — the
+same oracle, zero runtime dependencies, probed from the unpacked bundle
+before publish.
+
 ## The read-only posture (why there is no run tool)
 
 Inspection is safe to hand an agent; execution is not. The oracle answers

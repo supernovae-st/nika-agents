@@ -81,3 +81,9 @@ queued_operator:
   - surface: hermesatlas.com
     blocker: web form (« suggest a repo ») — human submission
     payload_ready: description-bank hermes/agent-catalogs lead
+  - surface: smithery.ai
+    blocker: account + `smithery mcp publish ./nika.mcpb` — interactive auth
+    payload_ready: release .mcpb bundles (v0.98.0 assets · nika-mcp-macos-arm64
+      + nika-mcp-linux-x64 · MCPB.sha256 companion · manifest 0.2 binary ·
+      probed from the unpacked bundle) — the same artifacts serve the MCP
+      Registry mcpb package lane (fileSha256 from MCPB.sha256)
