@@ -1,5 +1,5 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.supernovae-st/nika",
   "description": "Intent-as-code for AI workflows: author a reviewable DAG in YAML, audit cost and permits before running, keep tamper-evident traces after.",
   "repository": {
@@ -8,6 +8,24 @@
   },
   "version": "0.98.0",
   "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/supernovae-st/nika/releases/download/v0.98.0/nika-mcp-macos-arm64-0.98.0.mcpb",
+      "version": "0.98.0",
+      "fileSha256": "71465faae4353fa437e4911490a46f5168fb73c4900089513d7f1c059ca4248f",
+      "transport": {
+        "type": "stdio"
+      }
+    },
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/supernovae-st/nika/releases/download/v0.98.0/nika-mcp-linux-x64-0.98.0.mcpb",
+      "version": "0.98.0",
+      "fileSha256": "54f085a82aca2b9a3b0056715588ad01b157b94de282587be6b5b3cfdfa79f6b",
+      "transport": {
+        "type": "stdio"
+      }
+    },
     {
       "registryType": "npm",
       "identifier": "@supernovae-st/nika",

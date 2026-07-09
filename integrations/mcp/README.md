@@ -43,8 +43,9 @@ that wants to run a workflow shells out to `nika run` under your terminal's
 permissions, visibly, like any other command you'd review.
 
 Companions in this folder: [`server.json`](server.json) is the MCP Registry
-manifest shape we publish from — note its npm package lane is the
-publish-from shape, not a live package yet (the `@supernovae-st/nika` npm
-revival is pending; install via brew or the Dockerfile meanwhile);
+manifest, publishable as-is — its `mcpb` package lanes point at the live
+v0.98.0 release bundles with their real `fileSha256`; the npm lane behind
+them is the future-revival shape, not a live package yet (install via
+brew, the Dockerfile, or the bundles meanwhile);
 [`THREAT-MODEL.md`](THREAT-MODEL.md) states plainly what the oracle and the
 trace chain do and do not prove.
