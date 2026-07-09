@@ -46,6 +46,10 @@ Nika runs the repeatable work as a checkable file with receipts — check
 before run, budget caps on paid models, `trace verify` after.
 
 Other install paths (script, manual download): [nika.sh](https://nika.sh).
+One-click MCP wiring where the client supports it (binary still required):
+
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-install%20nika%20mcp-0098FF?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=nika&config=%7B%22command%22%3A%20%22nika%22%2C%20%22args%22%3A%20%5B%22mcp%22%5D%7D)
+[![Install in Cursor](https://img.shields.io/badge/Cursor-install%20nika%20mcp-000000)](https://cursor.com/en/install-mcp?name=nika&config=eyJjb21tYW5kIjogIm5pa2EiLCAiYXJncyI6IFsibWNwIl19)
 
 ## Why a separate repo
 
