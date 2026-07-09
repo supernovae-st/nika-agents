@@ -22,6 +22,40 @@ permissions:
   contents: read
 
 jobs:
+  # The Glama payload must stay live: build the oracle image from the release
+  # artifacts and prove it answers MCP introspection in-container — the exact
+  # check directory listers run. A release that breaks the Dockerfile (new
+  # glibc floor, renamed asset) goes RED here, not at submission time.
+  docker-oracle:
+    name: dockerfile builds · oracle answers in-container
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the oracle image
+        run: docker build -t nika-mcp-gate integrations/mcp/
+      - name: The bundled server answers initialize + tools/list
+        run: |
+          set -euo pipefail
+          printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"gate","version":"1"}}}' \
+            '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' \
+            | docker run -i --rm nika-mcp-gate > /tmp/mcp.out
+          python3 - << 'EOF'
+          import json
+          tools = None
+          for line in open("/tmp/mcp.out"):
+              line = line.strip()
+              if not line:
+                  continue
+              msg = json.loads(line)
+              if msg.get("id") == 2 and "result" in msg:
+                  tools = [t["name"] for t in msg["result"]["tools"]]
+          assert tools, "no tools/list reply from the containerized oracle"
+          print(f"in-container oracle serves {len(tools)} tools: {' '.join(sorted(tools))}")
+          EOF
+
   gate:
     name: manifests · versions · mirror · binary-truth
     runs-on: ubuntu-latest
