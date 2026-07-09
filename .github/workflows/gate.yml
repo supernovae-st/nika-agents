@@ -9,6 +9,11 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    # The mirror drifts BETWEEN pushes (the engine side moves without this
+    # repo knowing) — a daily tick makes byte-parity drift visible within
+    # 24h instead of at the next unrelated PR. 06:23 UTC · off-peak.
+    - cron: '23 6 * * *'
 
 permissions:
   contents: read
