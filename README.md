@@ -15,14 +15,17 @@
      it pulls from GitHub directly). Restore once the page resolves:
      [![skills.sh](https://skills.sh/b/supernovae-st/nika-agents)](https://skills.sh/supernovae-st/nika-agents) -->
 
-
-The lean install surface for the [Nika](https://github.com/supernovae-st/nika)
-agent plugin — the `nika-authoring` skill (author → check → repair loop) and
-the read-only MCP oracle (8 tools: `nika_check` · `nika_explain` ·
-`nika_schema` · `nika_examples` · `nika_template` · `nika_canon` ·
-`nika_catalog` · `nika_tools`), for the plugin ecosystems:
+**Teach your agent to hand repeatable work to [Nika](https://github.com/supernovae-st/nika)
+— a plain-text workflow it can check before a token is spent and verify
+after.** This repo is the install surface: the `nika-authoring` skill
+(author → check → repair loop) and the read-only MCP oracle (8 tools:
+`nika_check` · `nika_explain` · `nika_schema` · `nika_examples` ·
+`nika_template` · `nika_canon` · `nika_catalog` · `nika_tools`), for the
+plugin ecosystems:
 
 ```sh
+brew install supernovae-st/tap/nika   # the binary first — plugins invoke it
+
 # Codex
 codex plugin marketplace add supernovae-st/nika-agents
 codex plugin add nika@nika
@@ -42,11 +45,7 @@ agentskills.io shape) teaches the delegation idiom: Hermes orchestrates,
 Nika runs the repeatable work as a checkable file with receipts — check
 before run, budget caps on paid models, `trace verify` after.
 
-The plugin expects the `nika` binary on your PATH:
-
-```sh
-brew install supernovae-st/tap/nika    # or: curl -LsSf https://nika.sh/install.sh | sh
-```
+Other install paths (script, manual download): [nika.sh](https://nika.sh).
 
 ## Why a separate repo
 
