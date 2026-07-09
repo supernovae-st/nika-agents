@@ -63,10 +63,11 @@ is instant. The files are mirrored verbatim from the engine's
 
 ```
 .agents/plugins/marketplace.json      Codex marketplace manifest
-.agents/plugins/nika/                 the plugin (skill + MCP bundle)
+.agents/plugins/nika/                 the plugin (skill + commands + MCP bundle)
   .codex-plugin/plugin.json           Codex manifest
   .claude-plugin/plugin.json          Claude Code manifest
   skills/nika-authoring/SKILL.md      the authoring skill (agentskills.io shape)
+  commands/{check,explain,new}.md     the /nika:* slash commands
   .mcp.json                           the read-only oracle wiring
 .claude-plugin/marketplace.json       Claude Code marketplace manifest
 skills/autonomous-ai-agents/nika/     the Hermes delegation skill (kit-native)
