@@ -109,6 +109,13 @@ def main() -> int:
                   file=sys.stderr)
         else:
             print(f"✓ {path} · {len(names)} advertised tool names all served")
+    # the README's written count ("8 tools:") is hand-typed — derive-check it
+    for m in re.finditer(r"(\d+)\s+tools?:", (ROOT / "README.md").read_text()):
+        if int(m.group(1)) != len(served):
+            failed = True
+            print(f"✗ README says '{m.group(0)}' but the wire serves "
+                  f"{len(served)} — update the count with the names",
+                  file=sys.stderr)
     return 1 if failed else 0
 
 
