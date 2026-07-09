@@ -1,13 +1,13 @@
 {
   "mirror_version": 1,
-  "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
+  "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against \u2014 a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "99a74500ec65f138f43552aa72b380182197bd67",
+  "synced_at_engine_sha": "9cc37770d9ddbfb325db5713ab7f38571b34af7e",
   "entries": [
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/skills/nika-authoring/SKILL.md",
-      "sha256": "f9a0c2af7fc2d93fbe7c6ef3c2531d26c6f7401b8bc701d90d2c6969bc69b417"
+      "sha256": "9dbe724de444d78d4b4168643a64257221afc72fa393c97beab1acff28ad543b"
     },
     {
       "class": "engine-mirror",
@@ -32,27 +32,32 @@
     {
       "class": "kit-native",
       "path": "integrations/opencode/README.md",
-      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · wiring live-verified: opencode 1.17.5 mcp list connected + tools/call completed against nika 0.98.0"
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) \u00b7 wiring live-verified: opencode 1.17.5 mcp list connected + tools/call completed against nika 0.98.0"
     },
     {
       "class": "kit-native",
       "path": "integrations/opencode/opencode.json",
-      "proof": "parses in CI · same stanza live-verified opencode 1.17.5"
+      "proof": "parses in CI \u00b7 same stanza live-verified opencode 1.17.5"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/README.md",
-      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · stanza matches the engine wire writers"
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) \u00b7 stanza matches the engine wire writers"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/THREAT-MODEL.md",
-      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · claims scoped to shipped machinery only"
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) \u00b7 claims scoped to shipped machinery only"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/server.json",
-      "proof": "parses in CI · MCP Registry manifest shape — submission itself is a later, announced step"
+      "proof": "parses in CI \u00b7 MCP Registry manifest shape \u2014 submission itself is a later, announced step"
+    },
+    {
+      "class": "kit-native",
+      "path": "integrations/mcp/Dockerfile",
+      "proof": "built + introspection-probed in-container 2026-07-09 (ubuntu-24.04 glibc-2.39 \u00b7 SHA256SUMS-verified fetch \u00b7 initialize + tools/list answered over stdio)"
     }
   ]
 }

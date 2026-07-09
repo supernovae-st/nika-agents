@@ -4,12 +4,14 @@
 # check-mcp-tools.py — the documented MCP tool set MUST equal what the binary
 # serves. The marketplace README advertises "8 tools: nika_check · nika_explain
 # · …"; those names are hand-written, so a future engine that adds or drops a
-# tool would leave the marketplace lying. This asserts the README's `nika_*`
-# names are exactly the tools `nika mcp` exposes over the wire — no drift, no
-# stale count. Runs in CI after the pinned nika is installed; also runnable
-# locally: NIKA_BIN=/path/to/nika python3 scripts/check-mcp-tools.py
+# tool would leave the marketplace lying. This asserts (a) the README's
+# `nika_*` names are exactly the tools `nika mcp` exposes over the wire, and
+# (b) every kit-native .md registered in mirror.json only advertises tool
+# names the wire serves (subset — a pack may list fewer, never a phantom).
+# Runs in CI after the pinned nika is installed; also runnable locally:
+# NIKA_BIN=/path/to/nika python3 scripts/check-mcp-tools.py
 #
-# Exit 0 = README ⟺ binary agree. Exit 1 = drift (names printed).
+# Exit 0 = surfaces ⟺ binary agree. Exit 1 = drift (names printed).
 
 import json
 import os
@@ -22,10 +24,39 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 
+NAME_RE = re.compile(r"(?:mcp__nika__)?nika_[a-z_]+")
+
+
+def wire_name(name: str) -> str:
+    """Normalize a documented name to the wire form. Packs legitimately show
+    client-namespaced spellings: hermes prefixes `mcp__<server>__<tool>`,
+    opencode prefixes `<server>_<tool>` (the oracle appears as nika_nika_*).
+    """
+    if name.startswith("mcp__nika__"):
+        name = name[len("mcp__nika__"):]
+    if name.startswith("nika_nika_"):
+        name = name[len("nika_"):]
+    return name
+
+
 def documented_tools() -> set:
     """The `nika_*` tool names the marketplace README advertises."""
     readme = (ROOT / "README.md").read_text()
-    return set(re.findall(r"nika_[a-z]+", readme))
+    return {wire_name(n) for n in NAME_RE.findall(readme)}
+
+
+def kit_native_md_tools() -> dict:
+    """Per kit-native .md (mirror.json), the wire-form names it advertises."""
+    manifest = json.loads((ROOT / "mirror.json").read_text())
+    out = {}
+    for e in manifest["entries"]:
+        if e["class"] != "kit-native" or not e["path"].endswith(".md"):
+            continue
+        names = {wire_name(n)
+                 for n in NAME_RE.findall((ROOT / e["path"]).read_text())}
+        if names:
+            out[e["path"]] = names
+    return out
 
 
 def served_tools(nika: str) -> set:
@@ -60,16 +91,25 @@ def main() -> int:
         return 1
     documented = documented_tools()
     served = served_tools(nika)
+    failed = False
     if documented == served:
         print(f"✓ README ⟺ nika mcp agree · {len(served)} tools: "
               f"{' · '.join(sorted(served))}")
-        return 0
-    print("✗ MCP tool drift — the README and `nika mcp` disagree", file=sys.stderr)
-    if missing := documented - served:
-        print(f"  README claims, binary does NOT serve: {sorted(missing)}", file=sys.stderr)
-    if extra := served - documented:
-        print(f"  binary serves, README does NOT list: {sorted(extra)}", file=sys.stderr)
-    return 1
+    else:
+        failed = True
+        print("✗ MCP tool drift — the README and `nika mcp` disagree", file=sys.stderr)
+        if missing := documented - served:
+            print(f"  README claims, binary does NOT serve: {sorted(missing)}", file=sys.stderr)
+        if extra := served - documented:
+            print(f"  binary serves, README does NOT list: {sorted(extra)}", file=sys.stderr)
+    for path, names in kit_native_md_tools().items():
+        if phantom := names - served:
+            failed = True
+            print(f"✗ {path} advertises unserved tools: {sorted(phantom)}",
+                  file=sys.stderr)
+        else:
+            print(f"✓ {path} · {len(names)} advertised tool names all served")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
