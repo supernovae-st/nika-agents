@@ -28,8 +28,9 @@ claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
 
 # Hermes — or any skills.sh-compatible client
-hermes skills tap add supernovae-st/nika-agents
-hermes skills install nika          # or: npx skills add supernovae-st/nika-agents
+hermes skills tap add supernovae-st/nika-agents      # then: hermes skills list
+hermes skills install https://raw.githubusercontent.com/supernovae-st/nika-agents/main/skills/autonomous-ai-agents/nika/SKILL.md
+# or: npx skills add supernovae-st/nika-agents
 ```
 
 The Hermes-facing skill (`skills/autonomous-ai-agents/nika/SKILL.md` ·
@@ -73,6 +74,8 @@ cron). **kit-native** files are owned here and proven against the latest
 released binary instead: the gate asserts every taught `nika <subcommand>`
 and every advertised `nika_*` tool actually ships.
 
-Docs · https://docs.nika.sh/getting-started/agents · License · AGPL-3.0-or-later
+Docs · https://docs.nika.sh/getting-started/agents · License ·
+AGPL-3.0-or-later (mirrored engine content) — per-file declarations win
+where present (the Hermes delegation skill is MIT, the Hermes catalog norm).
 
 🦋 SuperNovae Studio · Paris
