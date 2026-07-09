@@ -49,5 +49,6 @@ bank · cadence class · kill criterion >60d), and this file.
 ```sh
 python3 scripts/check-mcp-tools.py        # NIKA_BIN=… locally
 python3 scripts/check-skill-commands.py   # kit-native skills vs the binary
+python3 scripts/check-vocab.py            # the description-bank vocabulary law
 # pins + upstream + manifest gates run in CI (.github/workflows/gate.yml)
 ```
