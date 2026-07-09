@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://nika.sh">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://nika.sh/brand/nika-logo-dark.svg">
+      <img src="https://nika.sh/brand/nika-logo-light.svg" alt="Nika" width="220">
+    </picture>
+  </a>
+</p>
+
 # nika-agents · the Nika plugin marketplace
 
 The lean install surface for the [Nika](https://github.com/supernovae-st/nika)
