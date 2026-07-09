@@ -1,0 +1,64 @@
+# listings.yaml — every external listing/submission of Nika registers HERE.
+# Law (AGENTS.md): descriptions are never improvised in a submission form —
+# they are pinned from integrations/description-bank.md. Each entry carries
+# its cadence class and the kill criterion. SPDX-License-Identifier: Apache-2.0
+
+listings_version: 1
+
+policy:
+  description_source: integrations/description-bank.md
+  cadence_classes:
+    auto-indexed: quarterly verify (URL 200 · listing text matches the bank)
+    submitted-pr: weekly watch until merged/closed · then becomes directory-entry
+    directory-entry: monthly verify (URL 200 · description matches the bank)
+    per-release-watch: re-verify at every engine release (fast-moving host)
+  kill_criterion: >
+    60 days without maintainer signal on a submitted PR → close it ourselves
+    with a courteous note, record the outcome here, and stay on the day-1
+    paths (tap/URL/npx) — no listing is load-bearing.
+  ritual: >
+    Monthly (scriptable later): for each entry, check url is live and the
+    shown description still matches the pinned block. Quarterly: prune dead
+    surfaces. Every submission and close is announced (L8).
+
+entries:
+  - surface: skills.sh
+    class: auto-indexed
+    status: live
+    url: https://skills.sh/supernovae-st/nika-agents
+    installed_via: npx skills add supernovae-st/nika-agents
+    description_block: skills-registries lead (description-bank §per-surface)
+    submitted: null  # auto-indexed from the public repo · badge in README since #9
+    notes: badge wired in README · install path taught in docs integrations/hermes
+
+  - surface: hermes official catalog (NousResearch/hermes-agent)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/NousResearch/hermes-agent/pull/61632
+    submitted: 2026-07-09
+    description_block: hermes/agent catalogs lead (description-bank §per-surface)
+    payload: optional-skills/autonomous-ai-agents/nika/SKILL.md (byte-identical
+      mirror of skills/autonomous-ai-agents/nika/SKILL.md v1.0.2 · git blob
+      c774ffe238976335995ee99c0c293896a567d186)
+    kill_check: 2026-09-07
+    notes: upside-not-gate (day-1 = tap/URL already live) · measured external
+      merge latency ≥14d · fallback category software-development offered
+
+  - surface: punkpeye/awesome-mcp-servers
+    class: submitted-pr
+    status: pending
+    url: https://github.com/punkpeye/awesome-mcp-servers/pull/9743
+    submitted: 2026-07-09
+    description_block: one-line + read-only-oracle clause (description-bank §per-surface)
+    payload: README Developer Tools · one line · legend 🎖️🦀🏠🍎🐧
+    kill_check: 2026-09-07
+    notes: agent fast-track opted in (🤖🤖🤖 title convention per their CONTRIBUTING)
+
+queued_operator:
+  - surface: MCP Registry (registry.modelcontextprotocol.io)
+    blocker: npm owner login (revive @supernovae-st/nika wrapper) + mcp-publisher
+      login github (org grant io.github.supernovae-st/*) — interactive auth
+    payload_ready: integrations/mcp/server.json
+  - surface: hermesatlas.com
+    blocker: web form (« suggest a repo ») — human submission
+    payload_ready: description-bank hermes/agent-catalogs lead
