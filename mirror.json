@@ -1,0 +1,33 @@
+{
+  "mirror_version": 1,
+  "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
+  "engine_repo": "supernovae-st/nika",
+  "synced_at_engine_sha": "99a74500ec65f138f43552aa72b380182197bd67",
+  "entries": [
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/skills/nika-authoring/SKILL.md",
+      "sha256": "f9a0c2af7fc2d93fbe7c6ef3c2531d26c6f7401b8bc701d90d2c6969bc69b417"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/.claude-plugin/plugin.json",
+      "sha256": "27f42c4aa6d6ca9dc76077f5195926517e325c058def675306ca2616f4dd3885"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
+      "sha256": "b84454ef2b49f73926b636f83ed3da92f498112ccf816cb4646a0ac5be40b871"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/.mcp.json",
+      "sha256": "4f5cacd212cbee9f6b6bd57a705776c988ad3f407aa71f8084389f2f831dafd3"
+    },
+    {
+      "class": "kit-native",
+      "path": "skills/autonomous-ai-agents/nika/SKILL.md",
+      "proof": "mcp-tool-names + advertised commands exist in the latest released binary (scripts/check-mcp-tools.py + scripts/check-skill-commands.py)"
+    }
+  ]
+}
