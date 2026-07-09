@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.supernovae-st/nika",
+  "description": "Intent-as-code for AI workflows: author a reviewable DAG in YAML, audit cost and permits before running, keep tamper-evident traces after.",
+  "repository": {
+    "url": "https://github.com/supernovae-st/nika",
+    "source": "github"
+  },
+  "version": "0.98.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@supernovae-st/nika",
+      "version": "0.98.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}

@@ -28,6 +28,31 @@
       "class": "kit-native",
       "path": "skills/autonomous-ai-agents/nika/SKILL.md",
       "proof": "mcp-tool-names + advertised commands exist in the latest released binary (scripts/check-mcp-tools.py + scripts/check-skill-commands.py)"
+    },
+    {
+      "class": "kit-native",
+      "path": "integrations/opencode/README.md",
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · wiring live-verified: opencode 1.17.5 mcp list connected + tools/call completed against nika 0.98.0"
+    },
+    {
+      "class": "kit-native",
+      "path": "integrations/opencode/opencode.json",
+      "proof": "parses in CI · same stanza live-verified opencode 1.17.5"
+    },
+    {
+      "class": "kit-native",
+      "path": "integrations/mcp/README.md",
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · stanza matches the engine wire writers"
+    },
+    {
+      "class": "kit-native",
+      "path": "integrations/mcp/THREAT-MODEL.md",
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · claims scoped to shipped machinery only"
+    },
+    {
+      "class": "kit-native",
+      "path": "integrations/mcp/server.json",
+      "proof": "parses in CI · MCP Registry manifest shape — submission itself is a later, announced step"
     }
   ]
 }
