@@ -30,15 +30,27 @@ def kit_native_paths() -> list:
 
 
 def taught_subcommands(md: pathlib.Path) -> set:
-    """`nika <sub>` invocations inside the skill's fenced code blocks."""
+    """`nika <sub>` invocations in fenced code blocks AND inline code spans.
+
+    Inline spans matter: a Quick Reference table teaches `nika doctor` in
+    backticks outside any fence — a renamed subcommand there would slip a
+    blocks-only gate green (found by the 2026-07-09 review pass).
+    """
     text = md.read_text()
-    blocks = re.findall(r"```.*?\n(.*?)```", text, flags=re.S)
     subs = set()
-    for block in blocks:
+    for block in re.findall(r"```.*?\n(.*?)```", text, flags=re.S):
         # matches `nika check …`, terminal(command="nika trace verify …") —
         # same-line whitespace only, else YAML like `command: nika\n args:`
         # reads as a phantom `nika args` subcommand
         for m in re.finditer(r"\bnika[ \t]+([a-z][a-z0-9-]*)", block):
+            subs.add(m.group(1))
+    # inline spans: an INVOCATION leads the span (`nika doctor`, `$ nika X`);
+    # anchored so output snippets like `✓ nika connected` don't read as a
+    # phantom subcommand (the extension's own first false positive)
+    for span in re.findall(r"`([^`\n]+)`",
+                           re.sub(r"```.*?```", "", text, flags=re.S)):
+        m = re.match(r"\s*(?:\$\s*)?nika[ \t]+([a-z][a-z0-9-]*)", span)
+        if m:
             subs.add(m.group(1))
     return subs
 
