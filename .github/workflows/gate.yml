@@ -34,6 +34,16 @@ jobs:
           find . -name '*.json' -not -path './.git/*' -print0 \
             | xargs -0 -I{} python3 -m json.tool {} /dev/null
           echo "all manifests parse"
+      - name: The listings registry parses
+        run: |
+          python3 - << 'EOF'
+          import yaml
+          d = yaml.safe_load(open("listings.yaml"))
+          assert d.get("listings_version") == 1 and d.get("entries"), \
+              "listings.yaml: expected listings_version 1 + non-empty entries"
+          print(f"listings.yaml parses · {len(d['entries'])} entries · "
+                f"{len(d.get('queued_operator', []))} queued")
+          EOF
       - name: The plugin versions agree
         run: |
           python3 - << 'EOF'

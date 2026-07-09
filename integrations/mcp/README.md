@@ -20,7 +20,12 @@ mcp_servers:
 
 `nika wire <client>` writes the stanza for you where supported (cursor ·
 vscode · windsurf · claude · codex — `wire all` does the row); per-client
-pages with exact file paths: https://docs.nika.sh/reference/mcp-clients
+pages with exact file paths: https://docs.nika.sh/integrations/mcp-clients
+
+Docker hosts (directory checkers, sandboxed runners): [`Dockerfile`](Dockerfile)
+builds the oracle from the release artifacts (SHA256SUMS-verified, multi-arch
+amd64/arm64) — `docker build -t nika-mcp . && docker run -i --rm nika-mcp`
+speaks stdio JSON-RPC, introspection-probed in-container.
 
 ## The read-only posture (why there is no run tool)
 
@@ -31,5 +36,8 @@ that wants to run a workflow shells out to `nika run` under your terminal's
 permissions, visibly, like any other command you'd review.
 
 Companions in this folder: [`server.json`](server.json) is the MCP Registry
-manifest shape we publish from; [`THREAT-MODEL.md`](THREAT-MODEL.md) states
-plainly what the oracle and the trace chain do and do not prove.
+manifest shape we publish from — note its npm package lane is the
+publish-from shape, not a live package yet (the `@supernovae-st/nika` npm
+revival is pending; install via brew or the Dockerfile meanwhile);
+[`THREAT-MODEL.md`](THREAT-MODEL.md) states plainly what the oracle and the
+trace chain do and do not prove.

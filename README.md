@@ -10,7 +10,11 @@
 # nika-agents · the Nika plugin marketplace
 
 [![gate](https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml/badge.svg)](https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml)
-[![skills.sh](https://skills.sh/b/supernovae-st/nika-agents)](https://skills.sh/supernovae-st/nika-agents)
+<!-- skills.sh badge returns "resource not found" until the repo is indexed
+     there (page 404 as of 2026-07-09 · the `npx skills add` path works —
+     it pulls from GitHub directly). Restore once the page resolves:
+     [![skills.sh](https://skills.sh/b/supernovae-st/nika-agents)](https://skills.sh/supernovae-st/nika-agents) -->
+
 
 The lean install surface for the [Nika](https://github.com/supernovae-st/nika)
 agent plugin — the `nika-authoring` skill (author → check → repair loop) and

@@ -24,12 +24,16 @@ policy:
 entries:
   - surface: skills.sh
     class: auto-indexed
-    status: live
+    status: pending-index  # was `live` — page 404s + badge renders "resource
+      # not found" (verified 2026-07-09 late); the npx install path works
+      # regardless (pulls GitHub directly). Badge commented in README until
+      # the page resolves 200 — the registry obeys its own URL-200 ritual.
     url: https://skills.sh/supernovae-st/nika-agents
     installed_via: npx skills add supernovae-st/nika-agents
     description_block: skills-registries lead (description-bank §per-surface)
-    submitted: null  # auto-indexed from the public repo · badge in README since #9
-    notes: badge wired in README · install path taught in docs integrations/hermes
+    submitted: null
+    notes: install path taught in docs integrations/hermes · re-check at the
+      monthly ritual · operator may need to claim the repo on skills.sh
 
   - surface: hermes official catalog (NousResearch/hermes-agent)
     class: submitted-pr
@@ -52,13 +56,26 @@ entries:
     description_block: one-line + read-only-oracle clause (description-bank §per-surface)
     payload: README Developer Tools · one line · legend 🎖️🦀🏠🍎🐧
     kill_check: 2026-09-07
-    notes: agent fast-track opted in (🤖🤖🤖 title convention per their CONTRIBUTING)
+    notes: agent fast-track opted in (🤖🤖🤖 title convention per their
+      CONTRIBUTING) · GATED missing-glama by their bot (all 60 PRs merged
+      since 06-25 carry has-glama) — unblocks via the Glama listing below,
+      then add the score badge to the PR line
 
 queued_operator:
+  - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
+    blocker: web « Add Server » flow (account) + paste the Dockerfile on
+      Glama's side — their checks only need the server to start and answer
+      introspection
+    payload_ready: integrations/mcp/Dockerfile (proven in-container 2026-07-09 ·
+      ubuntu-24.04 glibc-2.39 · initialize + tools/list answered) — unblocks
+      awesome-mcp-servers PR 9743 (missing-glama gate) in the same move
   - surface: MCP Registry (registry.modelcontextprotocol.io)
-    blocker: npm owner login (revive @supernovae-st/nika wrapper) + mcp-publisher
-      login github (org grant io.github.supernovae-st/*) — interactive auth
-    payload_ready: integrations/mcp/server.json
+    blocker: a REAL package lane — either cargo (crates.io `nika` is owned,
+      stale 0.47.1 → publish 0.98.x from the engine release train;
+      registryType cargo is first-class per the current schema) or the npm
+      revival; plus mcp-publisher login github (org grant) — interactive auth
+    payload_ready: integrations/mcp/server.json (bump $schema to the current
+      2025-12-11 rev at publish — migration is no-changes per their changelog)
   - surface: hermesatlas.com
     blocker: web form (« suggest a repo ») — human submission
     payload_ready: description-bank hermes/agent-catalogs lead
