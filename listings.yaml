@@ -72,12 +72,12 @@ queued_operator:
       ubuntu-24.04 glibc-2.39 · initialize + tools/list answered) — unblocks
       awesome-mcp-servers PR 9743 (missing-glama gate) in the same move
   - surface: MCP Registry (registry.modelcontextprotocol.io)
-    blocker: a REAL package lane — either cargo (crates.io `nika` is owned,
-      stale 0.47.1 → publish 0.98.x from the engine release train;
-      registryType cargo is first-class per the current schema) or the npm
-      revival; plus mcp-publisher login github (org grant) — interactive auth
-    payload_ready: integrations/mcp/server.json (bump $schema to the current
-      2025-12-11 rev at publish — migration is no-changes per their changelog)
+    blocker: mcp-publisher login github (org grant io.github.supernovae-st/*)
+      — interactive auth ONLY; the payload needs no further work
+    payload_ready: integrations/mcp/server.json is publishable AS-IS —
+      $schema 2025-12-11 · two mcpb lanes pointing at the live v0.98.0
+      release bundles with real fileSha256 · the npm lane behind them stays
+      the future-revival shape (cargo 0.98.x publish upgrades it further)
   - surface: hermesatlas.com
     blocker: web form (« suggest a repo ») — human submission
     payload_ready: description-bank hermes/agent-catalogs lead
