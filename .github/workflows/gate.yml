@@ -1,8 +1,11 @@
 name: gate
 
 # The marketplace repo's own CI: every manifest parses, the three plugin
-# versions agree, the mirrored paths resolve, and the teaching surfaces
-# carry no stale counts. No user-controlled input reaches the shell.
+# versions agree, the mirror contract holds (mirror.json is the SSOT — pins
+# fail hard, upstream movement warns), kit-native skills only teach shipped
+# commands, and the teaching surfaces carry no stale counts. No
+# user-controlled input reaches the shell (the only expression used is
+# github.event_name, a GitHub-controlled enum).
 
 on:
   push:
@@ -11,8 +14,8 @@ on:
   workflow_dispatch:
   schedule:
     # The mirror drifts BETWEEN pushes (the engine side moves without this
-    # repo knowing) — a daily tick makes byte-parity drift visible within
-    # 24h instead of at the next unrelated PR. 06:23 UTC · off-peak.
+    # repo knowing) — a daily tick makes upstream drift visible within 24h
+    # instead of at the next unrelated PR. 06:23 UTC · off-peak.
     - cron: '23 6 * * *'
 
 permissions:
@@ -20,7 +23,7 @@ permissions:
 
 jobs:
   gate:
-    name: manifests · versions · paths
+    name: manifests · versions · mirror · binary-truth
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -52,46 +55,78 @@ jobs:
               sys.exit("plugin versions diverge — bump them together")
           print(f"one version everywhere: {uniq.pop()}")
           EOF
-      - name: The mirrored files exist
+      # mirror.json is the drift CONTRACT (two classes):
+      #   engine-mirror — byte-identical projection of supernovae-st/nika,
+      #     pinned by sha256 at the engine SHA it was proven against.
+      #     A pin mismatch = the KIT is corrupted → fail HARD everywhere.
+      #   kit-native — owned here, proven against the released binary below.
+      # This replaces the old hardcoded 3-file list (which was blind to
+      # .mcp.json and to every future pack).
+      - name: Every mirrored file matches its pin (mirror.json)
         run: |
-          set -euo pipefail
-          for f in README.md \
-                   .agents/plugins/nika/skills/nika-authoring/SKILL.md \
-                   .agents/plugins/nika/.mcp.json \
-                   .agents/plugins/nika/.claude-plugin/plugin.json \
-                   .agents/plugins/nika/.codex-plugin/plugin.json; do
-            [ -f "$f" ] || { echo "missing: $f"; exit 1; }
-          done
-          echo "surface complete"
-      # « Mirrored verbatim from the engine » was a README claim with no
-      # gate — and it drifted BOTH directions (the 2026-07-08 audit: the
-      # skill here lagged engine steps 6-7; the engine's plugin.json
-      # lagged this repo's 8-tool truth). Byte-diff the mirrored files
-      # against engine main so the claim is structural. Reads raw repo
-      # files only — no user-controlled input reaches the shell.
-      - name: The mirror is byte-identical to the engine (main)
+          python3 - << 'EOF'
+          import hashlib, json, pathlib, sys
+          manifest = json.loads(pathlib.Path("mirror.json").read_text())
+          bad = []
+          for e in manifest["entries"]:
+              p = pathlib.Path(e["path"])
+              if not p.is_file():
+                  bad.append(f"missing: {e['path']}")
+                  continue
+              if e["class"] != "engine-mirror":
+                  continue
+              got = hashlib.sha256(p.read_bytes()).hexdigest()
+              if got != e["sha256"]:
+                  bad.append(f"pin mismatch: {e['path']}\n"
+                             f"  pinned {e['sha256']}\n  got    {got}")
+          if bad:
+              print("::error::mirror corrupted vs mirror.json pins")
+              print("\n".join(bad))
+              sys.exit(1)
+          n = sum(1 for e in manifest["entries"] if e["class"] == "engine-mirror")
+          print(f"✓ {n} engine-mirror pins hold "
+                f"(synced at engine {manifest['synced_at_engine_sha'][:9]})")
+          EOF
+      # Upstream MOVING is a different signal from the kit being corrupted:
+      # on the daily cron it fails loud (re-sync is due — bump the pins from
+      # engine main); on push/PR it only warns, so an author's unrelated PR
+      # never inherits a red gate from engine motion.
+      - name: Upstream drift (engine main moved past the pins?)
         run: |
           set -euo pipefail
           base="https://raw.githubusercontent.com/supernovae-st/nika/main"
-          for f in .agents/plugins/nika/skills/nika-authoring/SKILL.md \
-                   .agents/plugins/nika/.claude-plugin/plugin.json \
-                   .agents/plugins/nika/.codex-plugin/plugin.json; do
+          drifted=0
+          for f in $(python3 -c "import json;print('\n'.join(e['path'] for e in json.load(open('mirror.json'))['entries'] if e['class']=='engine-mirror'))"); do
             curl -fsSL "${base}/${f}" -o /tmp/upstream
-            diff -u /tmp/upstream "$f" || { echo "::error::${f} drifted from the engine mirror"; exit 1; }
+            if ! diff -q /tmp/upstream "$f" > /dev/null; then
+              drifted=1
+              echo "::warning::${f} differs from engine main — upstream moved, re-sync + re-pin due"
+              diff -u "$f" /tmp/upstream | head -40 || true
+            fi
           done
-          echo "mirror byte-identical"
-      # The README advertises the MCP oracle's tools by name; that list is
-      # hand-written and drifts the day the engine adds or drops one. Fetch the
-      # LATEST engine (not a pin) so a new tool turns this red and forces the
-      # marketplace to follow — a live docs<->binary coherence gate.
-      - name: The advertised MCP tools match the shipped engine
+          if [ "$drifted" = "1" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "::error::engine main moved past the mirror pins — run the re-sync"
+            exit 1
+          fi
+          [ "$drifted" = "0" ] && echo "mirror current with engine main" || true
+      # Binary truth: fetch the LATEST release (checksum-verified against the
+      # published SHA256SUMS — an unverified curl|tar into CI is the exact
+      # supply-chain hole the kit exists to close), then assert the teaching
+      # surfaces against the wire, not against memory:
+      #   · README's advertised nika_* tools == `nika mcp` tools/list
+      #   · kit-native skills only teach subcommands the release ships
+      - name: The teaching surfaces match the shipped engine
         run: |
           set -euo pipefail
-          # Resolve the latest tag via the web redirect (github.com, not the
-          # rate-limited api.github.com) → /releases/tag/vX.Y.Z.
           tag=$(curl -fsSL -o /dev/null -w '%{url_effective}' \
             https://github.com/supernovae-st/nika/releases/latest | sed 's|.*/tag/||')
           ver=${tag#v}
           echo "checking marketplace docs against nika ${tag}"
-          curl -fsSL "https://github.com/supernovae-st/nika/releases/download/${tag}/nika-linux-x64-${ver}.tar.gz" | tar xz
+          dl="https://github.com/supernovae-st/nika/releases/download/${tag}"
+          asset="nika-linux-x64-${ver}.tar.gz"
+          curl -fsSL "${dl}/${asset}" -o "${asset}"
+          curl -fsSL "${dl}/SHA256SUMS" -o SHA256SUMS
+          grep " ${asset}\$" SHA256SUMS | sha256sum -c -
+          tar xzf "${asset}"
           NIKA_BIN=./nika python3 scripts/check-mcp-tools.py
+          NIKA_BIN=./nika python3 scripts/check-skill-commands.py

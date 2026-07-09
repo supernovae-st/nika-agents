@@ -9,19 +9,27 @@ Codex marketplaces both point here. It carries three things: the plugin
 manifests (`.claude-plugin/` · the `.agents/` plugin tree), the
 `nika-authoring` skill, and the MCP wiring for the read-only oracle.
 
-## The ONE law — the mirror is never hand-edited
+## The ONE law — mirror.json is the drift contract
 
-The plugin content under `.agents/plugins/nika/` is a **byte-identical
-mirror of the engine repo** (`supernovae-st/nika`, same paths, `main`).
-CI diffs every mirrored file against engine main on push, PR, and a
-daily cron; the nightly engine coherence bot watches it too.
+Every content file belongs to one of two classes, declared in
+`mirror.json` (the SSOT the gate loops over — never a hardcoded list):
 
-- Found a wording bug in `SKILL.md` here? **Fix it in the engine repo**
-  (`.agents/plugins/nika/skills/nika-authoring/SKILL.md`), merge there,
-  then copy the merged bytes here. A hand-edit on this side goes RED
-  within 24 hours and reads as drift, not as a fix.
-- Only the marketplace-specific files are owned here: the manifests,
-  `README.md`, `scripts/`, the gate workflow, and this file.
+- **engine-mirror** (`.agents/plugins/nika/**`) — a **byte-identical
+  mirror of the engine repo** (`supernovae-st/nika`, same paths, `main`),
+  pinned by sha256 at the engine SHA it was proven against. Found a
+  wording bug in the authoring `SKILL.md`? **Fix it in the engine repo**,
+  merge there, then re-sync the bytes AND the pins here. A hand-edit on
+  this side is a pin mismatch → hard RED (corruption signal). Engine main
+  moving past the pins is a WARNING on PRs and a loud failure on the
+  daily cron (re-sync signal) — two different signals, never conflated.
+- **kit-native** (`skills/**` — the Hermes delegation skill) — owned
+  HERE, not mirrored. Its proof is the released binary: the gate asserts
+  every `nika <subcommand>` it teaches ships in the latest release
+  (`scripts/check-skill-commands.py`) and every advertised `nika_*` tool
+  is served over the wire (`scripts/check-mcp-tools.py`).
+
+Marketplace-specific files owned here: the manifests, `README.md`,
+`scripts/`, the gate workflow, `mirror.json`, and this file.
 
 ## Load-bearing facts (verify in-repo · never from memory)
 
@@ -36,6 +44,7 @@ daily cron; the nightly engine coherence bot watches it too.
 ## Verify before any PR
 
 ```sh
-python3 scripts/check-mcp-tools.py   # NIKA_BIN=… locally
-# the byte-parity + manifest gates run in CI (.github/workflows/gate.yml)
+python3 scripts/check-mcp-tools.py        # NIKA_BIN=… locally
+python3 scripts/check-skill-commands.py   # kit-native skills vs the binary
+# pins + upstream + manifest gates run in CI (.github/workflows/gate.yml)
 ```
