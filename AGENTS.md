@@ -30,7 +30,9 @@ Every content file belongs to one of two classes, declared in
   is served over the wire (`scripts/check-mcp-tools.py`).
 
 Marketplace-specific files owned here: the manifests, `README.md`,
-`scripts/`, the gate workflow, `mirror.json`, and this file.
+`scripts/`, the gate workflow, `mirror.json`, `listings.yaml` (every
+external listing/submission registers there — pinned description from the
+bank · cadence class · kill criterion >60d), and this file.
 
 ## Load-bearing facts (verify in-repo · never from memory)
 
