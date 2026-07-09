@@ -22,9 +22,10 @@ Every content file belongs to one of two classes, declared in
   this side is a pin mismatch → hard RED (corruption signal). Engine main
   moving past the pins is a WARNING on PRs and a loud failure on the
   daily cron (re-sync signal) — two different signals, never conflated.
-- **kit-native** (`skills/**` — the Hermes delegation skill) — owned
-  HERE, not mirrored. Its proof is the released binary: the gate asserts
-  every `nika <subcommand>` it teaches ships in the latest release
+- **kit-native** (`skills/**` — the Hermes delegation skill ·
+  `integrations/**` — the per-client wiring packs) — owned HERE, not
+  mirrored. Its proof is the released binary: the gate asserts every
+  `nika <subcommand>` it teaches ships in the latest release
   (`scripts/check-skill-commands.py`) and every advertised `nika_*` tool
   is served over the wire (`scripts/check-mcp-tools.py`).
 

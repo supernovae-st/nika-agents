@@ -63,8 +63,15 @@ is instant. The files are mirrored verbatim from the engine's
   .mcp.json                           the read-only oracle wiring
 .claude-plugin/marketplace.json       Claude Code marketplace manifest
 skills/autonomous-ai-agents/nika/     the Hermes delegation skill (kit-native)
+integrations/opencode/                opencode wiring (live-verified · pinned)
+integrations/mcp/                     generic MCP wiring + registry manifest + threat model
+integrations/description-bank.md      the words every listing copies
 mirror.json                           the drift contract (classes + pins)
 ```
+
+You want to support Nika in your client? Copy the matching `integrations/`
+folder — each one is self-contained, version-pinned, and gate-checked
+against the live binary.
 
 Two content classes, one contract (`mirror.json`): **engine-mirror** files
 are byte-identical projections of the engine repo, pinned by sha256 at the

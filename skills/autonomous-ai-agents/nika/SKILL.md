@@ -1,7 +1,7 @@
 ---
 name: nika
 description: "Delegate repeatable work to Nika — a deterministic workflow runner with pre-flight checks, cost caps, and verifiable receipts."
-version: 1.0.0
+version: 1.0.1
 author: SuperNovae Studio (github.com/supernovae-st)
 license: MIT
 platforms: [linux, macos]
@@ -49,8 +49,9 @@ work should be *repeatable, budgeted, and auditable*.
 
 ## Prerequisites
 
-- Nika installed: `brew install supernovae-st/tap/nika` — or without Homebrew:
-  `curl -LsSf https://nika.sh/install.sh | sh` (installs to `~/.nika/bin`)
+- Nika installed: `brew install supernovae-st/tap/nika` — other install
+  paths (script, manual download) are documented at https://nika.sh: installing
+  is a human step, not something this skill runs
 - Verify: `terminal(command="nika --version")`
 - Zero keys needed for local/offline work: `--model mock/echo` (offline) and
   `--model ollama/...` (local) run without any API key
@@ -145,21 +146,15 @@ broken · 3 pre-chain. Also useful: `nika trace outputs` · `nika trace flow` ·
 
 ## Optional: MCP Oracle Tools
 
-For schema/validation answers without shell round-trips, wire Nika's
-read-only MCP server into `~/.hermes/config.yaml`, then `/reload-mcp`:
-
-```yaml
-mcp_servers:
-  nika:
-    command: nika
-    args: [mcp]
-    timeout: 120
-```
-
-This exposes read-only tools (`nika_check`, `nika_explain`, `nika_schema`,
-`nika_examples`, `nika_template`, `nika_canon`, `nika_catalog`, `nika_tools`).
-Validation and learning only — running workflows stays on the terminal, where
-the budget flags and traces live.
+Nika also ships a read-only MCP oracle (`nika mcp`) exposing validation and
+learning tools (`nika_check`, `nika_explain`, `nika_schema`, `nika_examples`,
+`nika_template`, `nika_canon`, `nika_catalog`, `nika_tools`). If the user
+wants those wired into their agent client, point them at the wiring guide —
+https://github.com/supernovae-st/nika-agents/tree/main/integrations/mcp —
+editing the client's own configuration is the user's step, never this
+skill's. Without the oracle, everything above still works over the terminal;
+running workflows stays there regardless, where the budget flags and traces
+live.
 
 ## Quick Reference
 
