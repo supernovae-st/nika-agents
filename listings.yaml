@@ -22,6 +22,43 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: Awesome-LLMOps (InftyAI · Orchestration→Workflow)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/InftyAI/Awesome-LLMOps/pull/490
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line)
+    notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
+      triple-badge format · external merge 06-23 · first-party disclosed
+
+  - surface: awesome-yaml (json-next · Tools & Services)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/json-next/awesome-yaml/pull/8
+    submitted: 2026-07-10
+    description_block: one-line (YAML-DSL angle · schema published)
+    notes: small list (35 stars) but external merge 07-08 · the DSL angle
+      nobody else covers · first-party disclosed
+
+  - surface: awesome-production-machine-learning (EthicalML · Data Pipeline)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/EthicalML/awesome-production-machine-learning/pull/800
+    submitted: 2026-07-10
+    description_block: one-line (pipeline variant · house star-badge format)
+    notes: 20.7k stars · Airflow/Argo/Dagster section · borderline-fit flagged
+      honestly in the PR body (AI-native step model) · external merge 06-16 ·
+      first-party disclosed
+
+  - surface: awesome-local-llms (vince-lam · issue-based intake)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/vince-lam/awesome-local-llms/issues/54
+    submitted: 2026-07-10
+    description_block: one-line (local-first variant)
+    notes: tracked-source list (owner merges from issues · last addition
+      06-20 via this flow) · first-party disclosed
+
   - surface: awesome-generative-ai (steven2358 · Coding→Developer tools)
     class: submitted-pr
     status: pending
