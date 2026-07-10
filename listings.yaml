@@ -159,6 +159,16 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: awesome-claude-dxt (milisp · Development Tools)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/milisp/awesome-claude-dxt/pull/38
+    submitted: 2026-07-11
+    description_block: one-line (DXT angle · .mcpb bundles + oracle read-only)
+    notes: the .mcpb release bundles ARE the fit (macOS arm64 + Linux x64 ·
+      MCPB.sha256 · v0.99.0 assets linked) · external merges 05-29→06-27 ·
+      loop iteration 1 shot · first-party disclosed
+
   - surface: awesome-agents (Scottcjn/Elyan Labs · Frameworks)
     class: submitted-pr
     status: pending
