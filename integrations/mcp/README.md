@@ -19,8 +19,9 @@ mcp_servers:
 ```
 
 `nika wire <client>` writes the stanza for you where supported (cursor ·
-vscode · windsurf · claude · codex — `wire all` does the row); per-client
-pages with exact file paths: https://docs.nika.sh/integrations/mcp-clients
+vscode · windsurf · claude · codex · opencode · hermes — `wire all` does
+the row); per-client pages with exact file paths:
+https://docs.nika.sh/integrations/mcp-clients
 
 Docker hosts (directory checkers, sandboxed runners): [`Dockerfile`](Dockerfile)
 builds the oracle from the release artifacts (SHA256SUMS-verified, multi-arch
