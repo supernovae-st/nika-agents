@@ -22,6 +22,18 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: awesome-deepseek-agent (deepseek-ai · README table + docs/nika.md guide)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/deepseek-ai/awesome-deepseek-agent/pull/292
+    submitted: 2026-07-10
+    description_block: dedicated guide (house format · install→provider→author→run)
+    notes: the ONLY entry requiring real content — the guide workflow was
+      PROVEN against the shipped binary pre-submission (nika check clean ·
+      deepseek/deepseek-chat form verified) · commands-only + docs pointer
+      (rot-proof) · zh-CN twin offered · external merges 05-28→06-17 ·
+      first-party disclosed
+
   - surface: awesome-rust (awesome-rust-com · the living sibling · Applications)
     class: submitted-pr
     status: pending
