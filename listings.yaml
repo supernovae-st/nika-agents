@@ -22,6 +22,24 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: awesome-llm-skills (Prat011 · Development & Code Tools)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/Prat011/awesome-llm-skills/pull/174
+    submitted: 2026-07-10
+    description_block: skills-registries lead (description-bank §per-surface)
+    notes: alphabetical entry with their By-credit format · master branch ·
+      slow cadence (last merge 06-23) · first-party disclosed
+
+  - surface: awesome-ai-agents-2026 (ARUNAGIRINATHAN-K · Data Pipeline and Workflow)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ARUNAGIRINATHAN-K/awesome-ai-agents-2026/pull/147
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line · agents variant)
+    notes: house tag format (emerging · Rust · Workflow) · small list but
+      external merges daily this week · first-party disclosed
+
   - surface: agentic-awesome-skills (sickn33 · 42.8k stars skill catalog)
     class: submitted-pr
     status: pending
