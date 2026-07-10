@@ -6,22 +6,22 @@
     "url": "https://github.com/supernovae-st/nika",
     "source": "github"
   },
-  "version": "0.98.0",
+  "version": "0.99.0",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/supernovae-st/nika/releases/download/v0.98.0/nika-mcp-macos-arm64-0.98.0.mcpb",
-      "version": "0.98.0",
-      "fileSha256": "71465faae4353fa437e4911490a46f5168fb73c4900089513d7f1c059ca4248f",
+      "identifier": "https://github.com/supernovae-st/nika/releases/download/v0.99.0/nika-mcp-macos-arm64-0.99.0.mcpb",
+      "version": "0.99.0",
+      "fileSha256": "db68f6630964d98646a70fc77d67693e01dbe97fa90bcaf95ac1870a6c65cad8",
       "transport": {
         "type": "stdio"
       }
     },
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/supernovae-st/nika/releases/download/v0.98.0/nika-mcp-linux-x64-0.98.0.mcpb",
-      "version": "0.98.0",
-      "fileSha256": "54f085a82aca2b9a3b0056715588ad01b157b94de282587be6b5b3cfdfa79f6b",
+      "identifier": "https://github.com/supernovae-st/nika/releases/download/v0.99.0/nika-mcp-linux-x64-0.99.0.mcpb",
+      "version": "0.99.0",
+      "fileSha256": "bbea64f36eb38a178dbf7a73217eed2898b506a3b47f978422f650f5f4753665",
       "transport": {
         "type": "stdio"
       }
@@ -29,7 +29,7 @@
     {
       "registryType": "npm",
       "identifier": "@supernovae-st/nika",
-      "version": "0.98.0",
+      "version": "0.99.0",
       "transport": {
         "type": "stdio"
       },
