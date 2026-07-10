@@ -24,14 +24,19 @@ policy:
 entries:
   - surface: tldr-pages (pages/common/nika.md)
     class: submitted-pr
-    status: pending
+    status: closed
     url: https://github.com/tldr-pages/tldr/pull/23132
     submitted: 2026-07-10
+    closed: 2026-07-10
     description_block: the page IS the content (8 examples · style-guide form)
     notes: fit 5 — the page ships in every terminal with a tldr client ·
       EVERY command/flag verified against the 0.99.0 binary pre-submit
       (7/7 subcommands + --var + --from + trace verify) · strict style guide ·
-      external merges daily · first-party disclosed
+      CLOSED same-day by maintainer (Managor) on their project-age bar —
+      « maintained for at least a year » (repo born 2026-01) · notable = their
+      discretion · DO NOT reopen · re-submit gate = 2027-01 OR notability ·
+      their genAI-suspicion policy also warrants a hand-written re-do then ·
+      first-party disclosed
 
   - surface: awesome-ai-security (ottosulin · Agent Runtime Security & Sandboxing)
     class: submitted-pr
@@ -99,7 +104,7 @@ entries:
 
   - surface: awesome-gemini-cli (Piebald-AI · MCP Servers)
     class: submitted-pr
-    status: pending
+    status: merged   # 🎉 MERGED 2026-07-10 — the first listing merge of the wave (reviewer approved · gemini-cli reach live)
     url: https://github.com/Piebald-AI/awesome-gemini-cli/pull/74
     submitted: 2026-07-10
     description_block: MCP directories lead (oracle wiring inline)
