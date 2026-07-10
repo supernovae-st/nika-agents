@@ -28,9 +28,10 @@ entries:
     url: https://github.com/TensorBlock/awesome-mcp-servers/issues/1139
     submitted: 2026-07-10
     description_block: MCP directories lead (description-bank §per-surface)
-    notes: add-mcp-server issue-form fields mirrored (Developer Tools · stdio ·
-      binary install) · hosted profile + badge + claim follow their pipeline ·
-      first-party disclosed
+    notes: add-mcp-server issue-form fields mirrored (stdio · binary install) ·
+      their automation asked for category routing → issue edited same-day to
+      'Developer Productivity & Utilities' (their taxonomy) · hosted profile +
+      badge + claim follow their pipeline · first-party disclosed
 
   - surface: hermes-ecosystem atlas (ksimback/hermes-ecosystem)
     class: submitted-pr
@@ -71,12 +72,15 @@ entries:
 
   - surface: awesome-rust (rust-unofficial · Applications)
     class: submitted-pr
-    status: pending
+    status: closed
     url: https://github.com/rust-unofficial/awesome-rust/pull/2630
     submitted: 2026-07-10
+    closed: 2026-07-10
     description_block: one-line (description-bank §one-line)
-    notes: alphabetical Applications entry · no crates.io badge (publish pending
-      §6bis-②) · first-party disclosed
+    notes: CLOSED by maintainer same-day — notability bar (>=50 GitHub stars OR
+      2000 crates downloads · their CONTRIBUTING) · repo ~28 stars at submit ·
+      DO NOT reopen without the metric · re-submit gate = 50 stars or the
+      crates.io publish crossing 2k downloads · courteous outcome, process fair
 
   - surface: awesome-cli-apps (agarrharr · Development)
     class: submitted-pr
