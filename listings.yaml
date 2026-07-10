@@ -22,6 +22,39 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: tldr-pages (pages/common/nika.md)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/tldr-pages/tldr/pull/23132
+    submitted: 2026-07-10
+    description_block: the page IS the content (8 examples · style-guide form)
+    notes: fit 5 — the page ships in every terminal with a tldr client ·
+      EVERY command/flag verified against the 0.99.0 binary pre-submit
+      (7/7 subcommands + --var + --from + trace verify) · strict style guide ·
+      external merges daily · first-party disclosed
+
+  - surface: awesome-ai-security (ottosulin · Agent Runtime Security & Sandboxing)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ottosulin/awesome-ai-security/pull/326
+    submitted: 2026-07-10
+    description_block: security-angle copy (permit-gated · sandboxed exec ·
+      budgets · verifiable traces)
+    notes: requalified GO (external merges found deeper — 07-03 · 06-12 — the
+      top-4 were owner squashes) · NAME-COLLISION trap — gh fork returned the
+      TalEliyahu fork of the same name → explicit --fork-name required ·
+      first-party disclosed
+
+  - surface: LocalAI docs (mudler · Community Integrations→Agentic)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/mudler/LocalAI/pull/10777
+    submitted: 2026-07-10
+    description_block: provider-angle copy (localai first-class · model form)
+    notes: claim BINARY-PROVEN pre-submit (nika doctor lists localai · a
+      localai/... workflow passes check) · their docs invite PRs explicitly ·
+      external merge 07-09 · first-party disclosed
+
   - surface: Awesome-AI-Security (TalEliyahu · Agent Tooling and MCP Security)
     class: submitted-pr
     status: pending
