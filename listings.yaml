@@ -22,6 +22,17 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: Awesome-MCP-ZH (yzfly · 开发与代码执行)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/yzfly/Awesome-MCP-ZH/pull/383
+    submitted: 2026-07-10
+    description_block: dedicated zh-CN copy (read-only oracle · house table
+      format with 官方实现/Rust/本地 tags · threat-model linked)
+    notes: 7.4k stars · batch-merges ~2x/month (06-15 wave of 4 externals) ·
+      the sinophone MCP reach · maintainers invited to polish the copy ·
+      first-party disclosed
+
   - surface: Awesome-LLMOps (InftyAI · Orchestration→Workflow)
     class: submitted-pr
     status: pending
