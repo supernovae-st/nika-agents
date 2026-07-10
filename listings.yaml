@@ -22,6 +22,47 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: SchemaStore catalog (*.nika.yaml editor association)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/SchemaStore/schemastore/pull/5918
+    submitted: 2026-07-10
+    description_block: catalog entry (name/description/fileMatch/url · remote schema)
+    notes: THE 80/20 IDE lever (announce runbook §1.7) — was falsely believed
+      gated on a 404 · the REAL modeline URL nika.sh/spec/v1/workflow.schema.json
+      is LIVE (200 · JSON Schema 2020-12) · merges daily · every yaml-language-server
+      editor gets *.nika.yaml validation WITHOUT the modeline once merged ·
+      first-party disclosed
+
+  - surface: claude-code-templates / aitmpl.com (davila7 · 28.7k stars)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/davila7/claude-code-templates/pull/693
+    submitted: 2026-07-10
+    description_block: MCP directories lead (description-bank §per-surface)
+    notes: single JSON component (mcps/devtools/nika.json · format mirrors
+      elevenlabs.json) · owner-dominated flow, external merges exist ·
+      first-party disclosed
+
+  - surface: awesome-ai-devtools (jamesmurdza · Automated Workflows)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/jamesmurdza/awesome-ai-devtools/pull/805
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line · devtools variant)
+    notes: external merges 06-29 x2 (11d intake) · covers the VS-Code-curated
+      axis too (their IDE extensions section) · first-party disclosed
+
+  - surface: ClaudePluginHub (claudepluginhub.com · auto-discovery indexer)
+    class: auto-indexed
+    status: live
+    url: https://claudepluginhub.com
+    submitted: null
+    description_block: n/a (indexes the kit plugin manifest as-published)
+    notes: VERIFIED indexed 2026-07-10 via their search API (slug
+      supernovae-st-nika-agents-plugins-nika-2 · description = ours verbatim) ·
+      zero action needed · quarterly verify per cadence class
+
   - surface: awesome-cursorrules (PatrickJS · rules/)
     class: submitted-pr
     status: pending
