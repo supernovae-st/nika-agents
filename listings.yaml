@@ -22,6 +22,17 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: Awesome-AI-Security (TalEliyahu · Agent Tooling and MCP Security)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/TalEliyahu/Awesome-AI-Security/pull/110
+    submitted: 2026-07-10
+    description_block: security-angle copy (permits default-deny · declared
+      secret flows · budgets · hash-chained traces · read-only oracle)
+    notes: THE security shelf — first listing to lead with the trust posture
+      instead of the workflow story · house format (bold + stars badge) ·
+      external merges 06-21→07-05 · threat-model linked · first-party disclosed
+
   - surface: awesome-deepseek-agent (deepseek-ai · README table + docs/nika.md guide)
     class: submitted-pr
     status: pending
