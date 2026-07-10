@@ -159,6 +159,29 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: awesome-agents (Scottcjn/Elyan Labs · Frameworks)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/Scottcjn/awesome-agents/pull/35
+    submitted: 2026-07-11
+    description_block: one-line (receipts angle · no framework self-label)
+    notes: born 2026-06 (94 stars) but REAL external intake (3 external
+      merges 07-01/04/10 by distinct authors) · CONTRIBUTING format exact
+      (no leading A/An · title Add Name) · placed after Bernstein (the
+      receipts-minded sibling) · first-party disclosed
+
+  - surface: awesome-hermes-usecases (aliaihub · Orchestration & Multi-Agent)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/aliaihub/awesome-hermes-usecases/pull/11
+    submitted: 2026-07-11
+    description_block: usecase FILE (their bar · runnable demo + primary sources)
+    notes: content contribution (usecases/deterministic-workflow-delegation.md
+      64 lines · every command binary-verified · offline demo zero keys ·
+      skill-guard + Nous#61632 cited as primary sources) · honest tradeoff
+      in-file (OpenCode owns coding) · slow cadence repo (quiet 15d ·
+      1 external merge 05-21) — patience class · first-party disclosed
+
   - surface: mise registry (jdx/mise · registry/nika.toml)
     class: submitted-pr
     status: pending
