@@ -10,10 +10,7 @@
 # nika-agents · the Nika plugin marketplace
 
 [![gate](https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml/badge.svg)](https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml)
-<!-- skills.sh badge returns "resource not found" until the repo is indexed
-     there (page 404 as of 2026-07-09 · the `npx skills add` path works —
-     it pulls from GitHub directly). Restore once the page resolves:
-     [![skills.sh](https://skills.sh/b/supernovae-st/nika-agents)](https://skills.sh/supernovae-st/nika-agents) -->
+[![skills.sh](https://skills.sh/b/supernovae-st/nika-agents)](https://skills.sh/supernovae-st/nika-agents)
 
 **Teach your agent to hand repeatable work to [Nika](https://github.com/supernovae-st/nika)
 — a plain-text workflow it can check before a token is spent and verify
