@@ -315,7 +315,9 @@ entries:
     notes: add-mcp-server issue-form fields mirrored (stdio · binary install) ·
       their automation asked for category routing → issue edited same-day to
       'Developer Productivity & Utilities' (their taxonomy) · hosted profile +
-      badge + claim follow their pipeline · first-party disclosed
+      badge + claim follow their pipeline · first-party disclosed ·
+      2026-07-10 their automation drafted the docs PR (#1140) — maintainer
+      review is the remaining step, nothing on our side
 
   - surface: hermes-ecosystem atlas (ksimback/hermes-ecosystem)
     class: submitted-pr
@@ -343,7 +345,11 @@ entries:
     description_block: MCP directories lead (description-bank §per-surface)
     notes: JSON entry (id nika · command "nika mcp" · no env vars) ·
       binary install taught in installation_notes (brew + tarball SHA256SUMS) ·
-      first-party disclosed
+      first-party disclosed · 2026-07-10 Codex P2 (desktop deeplink allowlist
+      rejects arbitrary binaries → Install button would error) fixed same-day
+      on the PR branch — show_install_link false per the cognee-mcp/mbot-mcp
+      precedent + manual-add path in the notes · reply offers the one-line
+      allowlist addition (i-ching precedent) if maintainers prefer
 
   - surface: mcphub.nvim registry (ravitemer/mcp-registry)
     class: submitted-pr
@@ -368,11 +374,15 @@ entries:
 
   - surface: awesome-cli-apps (agarrharr · Development)
     class: submitted-pr
-    status: pending
+    status: closed
     url: https://github.com/agarrharr/awesome-cli-apps/pull/1230
     submitted: 2026-07-10
     description_block: one-line (description-bank §one-line · shortened)
-    notes: top-level Development bullet (alphabetical) · first-party disclosed
+    notes: top-level Development bullet (alphabetical) · first-party disclosed ·
+      closed silently 2026-07-10 by maintainer (jneidel · zero comment) —
+      their contributing bars are >20★ (we sit ~24 · borderline) and >3 months
+      old · verdict accepted, no re-ask · re-submit alongside the awesome-rust
+      50★ staircase gate
 
   - surface: awesome-pipeline (pditommaso · Pipeline frameworks & libraries)
     class: submitted-pr
