@@ -24,16 +24,14 @@ policy:
 entries:
   - surface: skills.sh
     class: auto-indexed
-    status: pending-index  # was `live` — page 404s + badge renders "resource
-      # not found" (verified 2026-07-09 late); the npx install path works
-      # regardless (pulls GitHub directly). Badge commented in README until
-      # the page resolves 200 — the registry obeys its own URL-200 ritual.
+    status: live  # page resolves 200 (re-verified 2026-07-10 ~08h — indexed
+      # ~a day after the repo went public; was pending-index while it 404'd)
     url: https://skills.sh/supernovae-st/nika-agents
     installed_via: npx skills add supernovae-st/nika-agents
     description_block: skills-registries lead (description-bank §per-surface)
     submitted: null
-    notes: install path taught in docs integrations/hermes · re-check at the
-      monthly ritual · operator may need to claim the repo on skills.sh
+    notes: badge restored in README · install path taught in docs
+      integrations/hermes · e2e-proven (2 skills · 17 clients)
 
   - surface: hermes official catalog (NousResearch/hermes-agent)
     class: submitted-pr
