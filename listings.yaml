@@ -159,6 +159,30 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: mise registry (jdx/mise · registry/nika.toml)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/jdx/mise/pull/10932
+    submitted: 2026-07-11
+    description_block: one-line (registry variant · statically-checked angle)
+    notes: github backend (release tarballs · SHA256SUMS) · asset-matching
+      PROVEN locally before the PR (ubi resolves latest 0.99.0 · mise install
+      github:supernovae-st/nika runs nika --version green) · nono/apm
+      precedent format (3-line toml + test template) · cargo:nika backend
+      deliberately withheld until the crates.io 0.99 publish (parked crate
+      would break installs) · first-party disclosed
+
+  - surface: OSS Insight Workflow Scheduler collection (pingcap/ossinsight 10057)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/pingcap/ossinsight/pull/3098
+    submitted: 2026-07-11
+    description_block: one-line (complement frame vs Airflow/Temporal/Prefect)
+    notes: config-scope PR per their CONTRIBUTING (collection adds welcomed ·
+      merged precedents 2026-05) · the one collection matching our frame
+      (workflow-scheduler · NOT ai-agent-frameworks per the L7 vocab line) ·
+      first-party disclosed
+
   - surface: awesome-yaml (json-next · Tools & Services)
     class: submitted-pr
     status: pending
