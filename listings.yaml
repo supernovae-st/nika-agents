@@ -22,6 +22,17 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: awesome-cursorrules (PatrickJS · rules/)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/PatrickJS/awesome-cursorrules/pull/332
+    submitted: 2026-07-10
+    description_block: the rule IS the content (engine-generated · nika init)
+    notes: rules/nika-workflow-language.mdc = byte-what nika init writes at
+      engine 0.99.0 (provenance pinned in the PR body · refresh on language
+      surface change — envelope/verbs frozen) · precedent ankra-cli.mdc ·
+      merges externes 05-13/20/30 · first-party disclosed
+
   - surface: awesome-llm-skills (Prat011 · Development & Code Tools)
     class: submitted-pr
     status: pending
