@@ -22,6 +22,68 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: hermes-ecosystem atlas (ksimback/hermes-ecosystem)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ksimback/hermes-ecosystem/issues/505
+    submitted: 2026-07-10
+    description_block: hermes/agent catalogs lead (description-bank §per-surface)
+    notes: suggest-repo issue (their template mirrored — CLI cannot fill forms) ·
+      category Skills & Skill Registries · first-party disclosed
+
+  - surface: ollama README (Community Integrations · Terminal & CLI)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ollama/ollama/pull/17120
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line · local-first variant)
+    notes: single line appended to Terminal & CLI · big queue expected ·
+      first-party disclosed
+
+  - surface: goose extensions directory (aaif-goose/goose servers.json)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/aaif-goose/goose/pull/10369
+    submitted: 2026-07-10
+    description_block: MCP directories lead (description-bank §per-surface)
+    notes: JSON entry (id nika · command "nika mcp" · no env vars) ·
+      binary install taught in installation_notes (brew + tarball SHA256SUMS) ·
+      first-party disclosed
+
+  - surface: mcphub.nvim registry (ravitemer/mcp-registry)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ravitemer/mcp-registry/pull/39
+    submitted: 2026-07-10
+    description_block: MCP directories lead (description-bank §per-surface)
+    notes: servers/nika.yaml (category development) · covers avante.nvim +
+      codecompanion.nvim + CopilotChat consumers · first-party disclosed
+
+  - surface: awesome-rust (rust-unofficial · Applications)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/rust-unofficial/awesome-rust/pull/2630
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line)
+    notes: alphabetical Applications entry · no crates.io badge (publish pending
+      §6bis-②) · first-party disclosed
+
+  - surface: awesome-cli-apps (agarrharr · Development)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/agarrharr/awesome-cli-apps/pull/1230
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line · shortened)
+    notes: top-level Development bullet (alphabetical) · first-party disclosed
+
+  - surface: awesome-pipeline (pditommaso · Pipeline frameworks & libraries)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/pditommaso/awesome-pipeline/pull/241
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line · pipeline variant)
+    notes: alphabetical entry · first-party disclosed
+
   - surface: skills.sh
     class: auto-indexed
     status: live  # page resolves 200 (re-verified 2026-07-10 ~08h — indexed
