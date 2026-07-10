@@ -75,9 +75,9 @@
       "proof": "built + introspection-probed in-container 2026-07-09 (ubuntu-24.04 glibc-2.39 \u00b7 SHA256SUMS-verified fetch \u00b7 initialize + tools/list answered over stdio)"
     },
     {
-      "class": null,
+      "class": "kit-native",
       "path": "rules/nika-workflow-language.mdc",
-      "sha256": "25d35635cd5c894a572a4968c57f3ef5a89059995faf5aaf8002bc35250d44c9"
+      "proof": "byte-what `nika init` writes at engine 0.99.0 (regenerate: nika init in a tmp dir, diff .cursor/rules/nika.mdc) \u2014 refresh when the language surface changes (envelope/verbs frozen)"
     }
   ]
 }
