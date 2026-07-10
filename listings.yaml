@@ -22,6 +22,16 @@ policy:
     surfaces. Every submission and close is announced (L8).
 
 entries:
+  - surface: awesome-workflow-engines (meirwah · Full fledged product)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/meirwah/awesome-workflow-engines/pull/228
+    submitted: 2026-07-10
+    description_block: one-line (description-bank §one-line · pipeline variant)
+    notes: alphabetical entry with their stars-badge house format · THE
+      category-exact list (7.9k stars) · slow cadence (last merge 06-16) ·
+      first-party disclosed
+
   - surface: TensorBlock MCP index (awesome-mcp-servers → tensorblock.co/mcp)
     class: submitted-pr
     status: pending
@@ -111,7 +121,7 @@ entries:
 
   - surface: hermes official catalog (NousResearch/hermes-agent)
     class: submitted-pr
-    status: pending
+    status: pending   # sweeper review (teknium1 · keep_open · salvageability high) 07-10 → all 4 fixes applied same-day (SKILL v1.1.0 SSOT + fork sync + required pytest 11/11) · awaiting re-review
     url: https://github.com/NousResearch/hermes-agent/pull/61632
     submitted: 2026-07-09
     description_block: hermes/agent catalogs lead (description-bank §per-surface)
