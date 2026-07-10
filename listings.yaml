@@ -159,6 +159,16 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: LobeHub MCP marketplace (lobehub/lobehub · manual review)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/lobehub/lobehub/issues/17007
+    submitted: 2026-07-11
+    description_block: request-issue (their 15667 pattern cloned · oracle 8 tools)
+    notes: labels mcp:submission + manual-review auto-applied on the
+      precedent · .mcpb bundles + brew install path in the body ·
+      loop iteration 2 shot · first-party disclosed
+
   - surface: awesome-claude-dxt (milisp · Development Tools)
     class: submitted-pr
     status: pending
