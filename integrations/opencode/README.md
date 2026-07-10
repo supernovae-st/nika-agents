@@ -18,8 +18,9 @@ with receipts.
 ## The MCP oracle (optional)
 
 For schema/validation answers without shell round-trips, add the read-only
-oracle to `opencode.json` at the project root — [`opencode.json`](opencode.json)
-in this folder is copy-pasteable:
+oracle to `opencode.json` at the project root — `nika wire opencode` writes
+it for you (0.99+), or copy [`opencode.json`](opencode.json) from this
+folder:
 
 ```json
 {
