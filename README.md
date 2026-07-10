@@ -18,7 +18,8 @@
 **Teach your agent to hand repeatable work to [Nika](https://github.com/supernovae-st/nika)
 — a plain-text workflow it can check before a token is spent and verify
 after.** This repo is the install surface: the `nika-authoring` skill
-(author → check → repair loop) and the read-only MCP oracle (8 tools:
+(author → check → repair loop), the `/nika:check` · `/nika:explain` ·
+`/nika:new` commands, and the read-only MCP oracle (8 tools:
 `nika_check` · `nika_explain` · `nika_schema` · `nika_examples` ·
 `nika_template` · `nika_canon` · `nika_catalog` · `nika_tools`), for the
 plugin ecosystems:
