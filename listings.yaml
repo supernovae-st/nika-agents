@@ -339,7 +339,7 @@ entries:
 
   - surface: goose extensions directory (aaif-goose/goose servers.json)
     class: submitted-pr
-    status: pending
+    status: pending   # SISTER-PILOTED since 07-10 eve — codex finding 1 (deeplink) fixed by sister commit 5cc348d4 + inline reply · finding 2 (tutorial page /docs/mcp/nika-mcp) likely her next step — do NOT touch her mid-flight (sweep-only here)
     url: https://github.com/aaif-goose/goose/pull/10369
     submitted: 2026-07-10
     description_block: MCP directories lead (description-bank §per-surface)
