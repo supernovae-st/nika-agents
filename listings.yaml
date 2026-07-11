@@ -1298,6 +1298,16 @@ entries:
     notes: 244 stars · external merge 07-10 (danii1 into this exact
       section) · B1 dossier target · first-party disclosed
 
+  - surface: awesome-platform-engineering (shospodarets · Internal Developer Platforms)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/shospodarets/awesome-platform-engineering/pull/55
+    submitted: 2026-07-12
+    description_block: one-line (platform-team contracts angle · Ota neighbor
+      merged 06-27 with the twin pitch — execution governance for agent work)
+    notes: 504 stars · ext merges 06-27+06-09 · recent-merge format
+      name-link-desc followed · first-party disclosed
+
 queued_operator:
   - surface: J-nowcow/awesome-korean-agent-skills (ko auto-tracker · 23 stars · pushed daily)
     blocker: their bar is Korean support (skill in Korean OR Korean README OR
