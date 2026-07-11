@@ -964,6 +964,27 @@ entries:
       moved to the mise-nika-onefetch slot same-minute on the branch) ·
       first-party disclosed
 
+  - surface: awesome-MLSecOps (RiccardoBiosas · Open Source Security Tools)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/RiccardoBiosas/awesome-MLSecOps/pull/48
+    submitted: 2026-07-11
+    description_block: security one-line (verifiable-execution angle · table row)
+    notes: 437 stars · external tool-vendors merged SAME-DAY (Orion Security
+      et al — the shelf expects exactly this class of self-submission) ·
+      no unshipped claim (traces + permits + IFC only · SLSA/sigstore
+      explicitly absent) · first-party disclosed
+
+  - surface: Awesome-LLMSecOps (wearetyomsmnv · Agentic security)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/wearetyomsmnv/Awesome-LLMSecOps/pull/42
+    submitted: 2026-07-11
+    description_block: security rich-desc (runtime-not-wrapper angle · stars badge)
+    notes: 144 stars · 5 distinct externals merged 07-10 · placed next to
+      invariant (the trace-analysis sibling) · security-in-the-runtime
+      framing · first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
