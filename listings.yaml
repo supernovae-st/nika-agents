@@ -831,6 +831,33 @@ entries:
       with 利益相关 self-recommendation disclosure · zh audience rewards
       Gitee support (the mirror is queued operator) · first-party disclosed
 
+  - surface: RUNG-3 engagement — linkml/linkml 3727 (triage-bot proposal)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/linkml/linkml/issues/3727#issuecomment-4946167133
+    submitted: 2026-07-11
+    description_block: the proof IS the content (linkml-triage.nika.yaml ·
+      closed-label ranking against their 3 verbatim rubrics)
+    notes: FIRST engagement of the solutions lane (plan V2 s4 · class R) ·
+      proof repo ThibautMelen/nika-workflow-proofs (check 0-hints · permits
+      declared · trace verified · offline mock + fixtures) · assignee =
+      matentzn the ASKER himself (shepherd not competitor · verified
+      pre-post) · disclosure first line · PR only on explicit yes
+
+  - surface: RUNG-3 engagement — prefix-dev/pixi 6439 (automate release notes)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/prefix-dev/pixi/issues/6439#issuecomment-4946167168
+    submitted: 2026-07-11
+    description_block: the proof IS the content (pixi-release-notes.nika.yaml ·
+      deterministic-first ZERO model calls + optional one-infer variant)
+    notes: co-founder ask (baszalmstra · clanker friendly · no custom
+      syntax) — answered deterministic-FIRST because that is what he asked ·
+      proof repo same as linkml · exec allowlist = git only ·
+      NIKA-SEC-001 finding banked while building (sh -c refused at runtime
+      by design — nika:grep replaced it) · disclosure first line ·
+      anki#5072 proof BUILT and held for next iteration (2-shot law)
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
