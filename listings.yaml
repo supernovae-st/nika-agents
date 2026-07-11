@@ -1290,6 +1290,14 @@ entries:
       standing except J-nowcow ko · first-party disclosed (利益相关)
 
 queued_operator:
+  - surface: J-nowcow/awesome-korean-agent-skills (ko auto-tracker · 23 stars · pushed daily)
+    blocker: their bar is Korean support (skill in Korean OR Korean README OR
+      auto-detection) plus personally-installed-and-used testimony in the PR ·
+      we honestly meet neither today — GATED until a README.ko ships on
+      nika-agents (the localization queue gains ko alongside zh/ja/fr) ·
+      their weekly skill-scout may also discover us organically once ko docs
+      exist
+    payload_ready: the 6-column table row is a template fill once ko docs land
   - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
     blocker: commitment-class — each creates a MAINTAINED build recipe signed
       by us (conda-forge feedstock · nixpkgs derivation · macports portfile) ·
