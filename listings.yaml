@@ -161,6 +161,27 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: goose recipes gallery (aaif-goose · documentation recipes)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/aaif-goose/goose/pull/10391
+    submitted: 2026-07-11
+    description_block: content-class (full recipe YAML · oracle-grounded authoring loop)
+    notes: mega-plan W1.1 · house shape cloned (stdio extension → nika mcp ·
+      read-only stated · manual-install prereq per the 10369 review lesson) ·
+      complements the pending servers.json listing · commit GitHub-signed
+      via createCommitOnBranch · YAML validated · first-party disclosed
+
+  - surface: llms-txt-hub (thedaviddias · the GEO directory)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/thedaviddias/llms-txt-hub/pull/1323
+    submitted: 2026-07-11
+    description_block: mdx card (docs llms.txt + llms-full.txt · verified 200)
+    notes: the GEO-directory class (llms.txt = what AI assistants consume) ·
+      daily external merges verified · format cloned from same-day precedent ·
+      first-party disclosed
+
   - surface: awesome-llm-apps (Shubhamsaboo · 117k stars · starter dir)
     class: submitted-pr
     status: pending
