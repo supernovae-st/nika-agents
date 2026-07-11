@@ -1266,6 +1266,29 @@ entries:
       documented cloud teaching order (the presentation-order doctrine
       made this listing) · external merge 06-30 · first-party disclosed
 
+  - surface: awesome-observability (adriannovegil · LLM & AI Observability)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/adriannovegil/awesome-observability/pull/106
+    submitted: 2026-07-12
+    description_block: one-line (observability-in-the-runtime angle ·
+      typed event stream + trace verify/show + cost floors)
+    notes: 641 stars · R1 dossier target (ext merge 13d into this exact
+      section) · appended per the section's append-style (verified
+      non-alphabetical before anchoring) · fits their section intro
+      verbatim (prompt tracing · cost tracking · agent workflow
+      debugging) · first-party disclosed
+
+  - surface: awesome-ai-agent (skyming · zh 2-line format)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/skyming/awesome-ai-agent/pull/11
+    submitted: 2026-07-12
+    description_block: A1 dossier zh line (emoji-bold + italic 简介 ·
+      agenttrace local-first neighbor)
+    notes: 222 stars · external merge 06-19 · the last zh A1 target
+      standing except J-nowcow ko · first-party disclosed (利益相关)
+
 queued_operator:
   - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
     blocker: commitment-class — each creates a MAINTAINED build recipe signed
