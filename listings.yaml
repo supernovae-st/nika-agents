@@ -858,6 +858,32 @@ entries:
       by design — nika:grep replaced it) · disclosure first line ·
       anki#5072 proof BUILT and held for next iteration (2-shot law)
 
+  - surface: RUNG-3 engagement — ankitects/anki 5072 (LLM-rewrite release notes)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/ankitects/anki/issues/5072#issuecomment-4946202073
+    submitted: 2026-07-11
+    description_block: the proof IS the content (anki-release-notes.nika.yaml ·
+      closed-enum schema-constrained rewrite · local-model angle)
+    notes: third solutions-lane engagement (held one iteration per the 2-shot
+      law) · automates the manual LLM habit the core maintainer described ·
+      local-first framed as the privacy feature · proof repo nika-workflow-
+      proofs · re-verified open + 0 assignees pre-post · disclosure first line
+
+  - surface: awesome-mac (jaywcjlove · AI Tools)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/jaywcjlove/awesome-mac/pull/2293
+    submitted: 2026-07-11
+    description_block: one-line (bank · brew-install angle · OSS+Freeware icons)
+    notes: the BIGGEST live PR-accepting surface found to date (106.9k stars ·
+      external merge same-day) · CLI precedent in-section (Desktop Control) ·
+      alphabetical MiniClaw-nika-OffGrid · ⚠ authoring incident caught by
+      self-review — an unquoted heredoc EXECUTED the backtick brew command and
+      swallowed the text (line pushed with a bare « . . ») · patched same-
+      minute on the branch · lesson — quote heredoc delimiters when the payload
+      carries backticks · first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
