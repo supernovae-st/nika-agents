@@ -1102,6 +1102,13 @@ entries:
       first-party disclosed
 
 queued_operator:
+  - surface: HelloGitHub (521xueweihan/HelloGitHub · 164k stars · monthly OSS digest zh)
+    blocker: self-recommendation is explicitly invited (README line 35 both
+      recommend and self-recommend) but the flow is hellogithub.com/periodical
+      web form behind a GitHub login — human submission only
+    payload_ready: description-bank one-line (zh variant to draft at submit
+      time) · the digest reaches the largest zh dev audience of any single
+      surface in the ledger · pairs with the ruanyf/weekly merge (same bassin)
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
       Glama's side — their checks only need the server to start and answer
