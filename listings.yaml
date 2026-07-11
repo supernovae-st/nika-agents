@@ -999,6 +999,30 @@ entries:
       invariant (the trace-analysis sibling) · security-in-the-runtime
       framing · first-party disclosed
 
+  - surface: awesome-ai-security (muellerberndt · Tools & Frameworks)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/muellerberndt/awesome-ai-security/pull/20
+    submitted: 2026-07-12
+    description_block: security one-line (verifiable-execution · SkilLock sibling slot)
+    notes: 109 stars · externals merged 06-22 batch · placed after SkilLock
+      (behavior-pinning sibling · same class different layer) · section is
+      append-style not alphabetical (verified before anchoring) · 4th
+      fork-name collision today (awesome-ai-security-1 · TalEliyahu fork
+      holds the plain name — gh resolved the head cross-fork correctly,
+      diff verified post-open) · first-party disclosed
+
+  - surface: awesome-generative-ai-guide (aishwaryanr · LLM Code Repositories)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/aishwaryanr/awesome-generative-ai-guide/pull/173
+    submitted: 2026-07-12
+    description_block: learner-angle line (25+ runnable examples · by-author
+      attribution shape)
+    notes: 28.2k stars · the NirDiamant precedent cloned EXACTLY (his
+      self-promo by-author lines merged 06-24 into this same section) ·
+      offline-zero-keys learning angle · first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
