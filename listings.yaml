@@ -1101,6 +1101,32 @@ entries:
       3-column table format · bilingual disclosure with 利益相关 ·
       first-party disclosed
 
+  - surface: doocs/awesome-ai (Agent 平台 · zh + en file pair)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/doocs/awesome-ai/pull/18
+    submitted: 2026-07-12
+    description_block: 5-column table row x2 (zh + en twins · row 21)
+    notes: the doocs ORG network is the reach (ai.doocs.org site + WeChat
+      公众号 redistribution) · PR 17 precedent = exactly this file pair ·
+      bilingual disclosure · first-party disclosed
+
+  - surface: awesome-agentic-ai-zh (WenyuChiou · dev-collab catalog · 3 twins)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/61
+    submitted: 2026-07-12
+    description_block: FULL house block x3 (欄位 table + 教什麼/適合誰/備註 ·
+      zh-Hant base + en + zh-Hans · YIELD INTELLIGENCE precedent)
+    notes: 4.4k stars MkDocs curriculum · the richest listing format fired
+      yet (the block teaches MCP client-vs-server using nika as the
+      both-sides example) · ⚠ heredoc-backtick trap RE-HIT composing it —
+      unquoted heredoc needed for sha interpolation executed backticked
+      commands in the block text and a spawned stdio MCP server HUNG the
+      shell 3min · fix = quoted heredoc + shas via files · 2 stray
+      processes killed · law upgraded — heredocs carrying prose ALWAYS
+      quoted, interpolation via sidecar files · first-party disclosed
+
 queued_operator:
   - surface: HelloGitHub (521xueweihan/HelloGitHub · 164k stars · monthly OSS digest zh)
     blocker: self-recommendation is explicitly invited (README line 35 both
