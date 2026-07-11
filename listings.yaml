@@ -161,6 +161,19 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: awesome-llm-apps (Shubhamsaboo · 117k stars · starter dir)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/Shubhamsaboo/awesome-llm-apps/pull/945
+    submitted: 2026-07-11
+    description_block: content-class (full starter dir · README + workflow file)
+    notes: the sweep-2 number-one conversion candidate · local_ai_news_brief
+      _with_receipts (HN feed → jq top-8 → local ollama brief → save ·
+      4 tasks) · PROVEN before the shot (check green · offline mock 4/4 ·
+      real feed · trace verified) · no-Python angle stated honestly ·
+      recent-merge reality = maintainer-editorial (externals are fixes) —
+      patience class, no ping · TOC line added · first-party disclosed
+
   - surface: aqua-registry (aquaproj · declarative CLI version manager)
     class: submitted-pr
     status: pending
