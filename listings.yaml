@@ -581,6 +581,23 @@ entries:
     notes: upside-not-gate (day-1 = tap/URL already live) · measured external
       merge latency ≥14d · fallback category software-development offered
 
+  - surface: alvinreal/awesome-openclaw (Security and Safety)
+    class: submitted-pr
+    status: pending   # 707 stars · external merge 07-04 (Giri-Aayush) · owner active · awaiting maintainer
+    url: https://github.com/alvinreal/awesome-openclaw/pull/62
+    submitted: 2026-07-11
+    description_block: security-safety lead (check before spend · default-deny permits · hash-chained traces)
+    payload: one README line end of Security and Safety · stars-badge format
+      matched · cross-tool framing next to rampart and dashclaw
+    kill_check: 2026-09-11
+    notes: 1st OpenClaw-orbit surface · the round's sweep verdicts — VoltAgent/
+      awesome-openclaw-skills (51k stars) GATED requires ClawHub publish first
+      plus community-usage bar · wondelai/skills (1.6k) GATED owner-only merges ·
+      xianyu110 tutorial GATED intake cold since 04-13 · agentskills/agentskills
+      clients showcase (22.9k) GATED-honest consumers-only — engine issue 473
+      filed (agent verb consuming SKILL.md) = the re-fire trigger · SamurAIGPT/
+      awesome-openclaw HELD same-owner-pending rule until 84 verdicts
+
   - surface: ZeroPointRepo/awesome-hermes-skills (DevOps and Deployment)
     class: submitted-pr
     status: pending   # 84 stars · 4 distinct external authors merged 07-01 (zoltanszogyenyi · ahmdngi · pramodavansaber · lentil32) · Contributing rules met · awaiting maintainer
@@ -1139,6 +1156,12 @@ entries:
       4th S1-dossier target fired · first-party disclosed
 
 queued_operator:
+  - surface: ClawHub (clawhub.ai · OpenClaw public skills registry)
+    blocker: publish flow needs an OpenClaw toolchain account (human auth) —
+      the nika skill (agentskills.io shape · skill-guard SAFE) is the payload
+    payload_ready: skills/autonomous-ai-agents/nika/SKILL.md v1.0.5 publishes
+      AS-IS · unlocks VoltAgent/awesome-openclaw-skills (51k stars · ClawHub-
+      first rule) and the whole OpenClaw skills orbit in one move
   - surface: HelloGitHub (521xueweihan/HelloGitHub · 164k stars · monthly OSS digest zh)
     blocker: self-recommendation is explicitly invited (README line 35 both
       recommend and self-recommend) but the flow is hellogithub.com/periodical
