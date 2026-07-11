@@ -369,15 +369,17 @@ entries:
 
   - surface: SchemaStore catalog (*.nika.yaml editor association)
     class: submitted-pr
-    status: pending
-    url: https://github.com/SchemaStore/schemastore/pull/5918
+    status: merged   # 🎉 LIVE via PR 5899 (merged 2026-07-06) — the 80/20 IDE lever has been live for 5 days · 5918 was an unaware duplicate, closed 07-11
+    url: https://github.com/SchemaStore/schemastore/pull/5899
     submitted: 2026-07-10
     description_block: catalog entry (name/description/fileMatch/url · remote schema)
-    notes: THE 80/20 IDE lever (announce runbook §1.7) — was falsely believed
-      gated on a 404 · the REAL modeline URL nika.sh/spec/v1/workflow.schema.json
-      is LIVE (200 · JSON Schema 2020-12) · merges daily · every yaml-language-server
-      editor gets *.nika.yaml validation WITHOUT the modeline once merged ·
-      first-party disclosed
+    notes: THE 80/20 IDE lever — MERGED as PR 5899 (2026-07-06 · entry
+      points at the spec-repo raw URL · verified serving valid 2020-12
+      schema) · every yaml-language-server editor now validates *.nika.yaml
+      WITHOUT the modeline · the later 5918 (filed 07-10 unaware of 5899 ·
+      also carried a stray second entry) went conflict-dirty against the
+      daily catalog churn and was CLOSED as duplicate 07-11 · post-merge
+      verify swarm caught the whole thread · first-party disclosed
 
   - surface: claude-code-templates / aitmpl.com (davila7 · 28.7k stars)
     class: submitted-pr
