@@ -581,6 +581,19 @@ entries:
     notes: upside-not-gate (day-1 = tap/URL already live) · measured external
       merge latency ≥14d · fallback category software-development offered
 
+  - surface: SamurAIGPT/awesome-hermes-agent (Skill Registries & Discovery)
+    class: submitted-pr
+    status: pending   # 1815 stars · external merges 07-18/25 (plagtech · fkiene · louis030195) · CI n/a (readme list) · awaiting maintainer
+    url: https://github.com/SamurAIGPT/awesome-hermes-agent/pull/84
+    submitted: 2026-07-11
+    description_block: hermes/agent catalogs lead (description-bank §per-surface)
+    payload: one README line under Skill Registries and Discovery ·
+      status production · format matched to the list's by-author em-dash shape
+    kill_check: 2026-09-11
+    notes: 3rd big hermes list after aliaihub#11 + official catalog#61632 ·
+      0xNyk/awesome-hermes-agent (4640 stars) held GATED — every merge is the
+      owner, zero external author, membrane refuses a low-odds tir
+
   - surface: punkpeye/awesome-mcp-servers
     class: submitted-pr
     status: pending
