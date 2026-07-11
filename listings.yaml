@@ -1156,6 +1156,14 @@ entries:
       4th S1-dossier target fired · first-party disclosed
 
 queued_operator:
+  - surface: docker/mcp-registry (mcp/ namespace Docker Hub + Docker Desktop MCP Toolkit)
+    blocker: the proven integrations/mcp/Dockerfile (in-container 07-09) is not
+      on engine main yet — engine issue 442 carries the datum (their registry
+      BUILDS and HOSTS the image itself once server.yaml points at a repo with
+      a Dockerfile on main · bot-merged self-service intake · pushed daily)
+    payload_ready: server.yaml is a notion-template fill (name nika · category
+      developer-tools · source.project + commit pin) · submission doc is
+      literally written for agents (add_mcp_server.md)
   - surface: ClawHub (clawhub.ai · OpenClaw public skills registry)
     blocker: publish flow needs an OpenClaw toolchain account (human auth) —
       the nika skill (agentskills.io shape · skill-guard SAFE) is the payload
