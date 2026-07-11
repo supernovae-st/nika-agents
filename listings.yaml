@@ -696,6 +696,41 @@ entries:
     notes: 5.2k stars · alphabetical MLRun→Orchest · external merge 04-29
       (patience class ~2 months cadence) · first-party disclosed
 
+  - surface: awesome-devops (wmariuss · Automation & Orchestration)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/wmariuss/awesome-devops/pull/479
+    submitted: 2026-07-11
+    description_block: one-line (bank · automation variant)
+    notes: 4.2k stars · external merge 06-17 · section appends (not
+      alphabetical — CloudRay precedent) · first-party disclosed
+
+  - surface: conda-forge (staged-recipes · recipes/nika/recipe.yaml)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/conda-forge/staged-recipes/pull/34164
+    submitted: 2026-07-11
+    description_block: ten-line condensed (recipe about.description)
+    notes: the conda/pixi/mamba continent — v1 rattler recipe cloned from
+      the rust-analyzer precedent (33106 merged 04-28) · source tag tarball
+      sha256-pinned · THE bin catch mirrored (workspace crate nika-cli →
+      mv to nika at install, same lesson as binstall 400) · THIRDPARTY.yml
+      via cargo-bundle-licenses (their AGPL-fine license law) · skip win
+      honest (upstream unshipped) · their CI is the prover (same trust
+      model as the nix flake 401) · merge starts our repology page ·
+      first-party disclosed
+
+  - surface: LibHunt (rust.libhunt.com + siblings)
+    class: auto-indexed
+    status: live
+    url: https://www.libhunt.com/search?query=nika
+    submitted: null
+    description_block: n/a (indexes from tracked awesome lists)
+    notes: VERIFIED live 2026-07-11 — nika answers in their search since
+      the awesome-rust-com 94 merge cascaded same-day · zero action ·
+      quarterly verify per cadence class · sibling cascades recorded in
+      wave-5 doc (trackawesomelist · Changelog Nightly star-spike)
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
@@ -773,3 +808,23 @@ queued_operator:
     payload_ready: form template recommend-resource.yml · description
       style = factual one-line, no emojis, no reader address (their STYLE
       rule) · bank one-line fits after trimming
+
+  - surface: news ladder (LWN announce · Changelog News · dev.to article · It's FOSS · lobste.rs)
+    blocker: emails/accounts (LWN + Changelog = op-minutes, can fire PRE-HN ·
+      dev.to needs account+API-key, the robot-gatekeepers article is ALREADY
+      drafted · It's FOSS pitch = POST-HN with traction · lobste.rs =
+      invite-only, ask the Rust circles for an inviter)
+    payload_ready: release notes long-form + launches/2026-07-11-robot-
+      gatekeepers-article-draft.md + bank descriptions
+  - surface: Lemmy trio (!rust at programming.dev · !selfhosted · !localllama)
+    blocker: fediverse accounts (op-minutes) — the low-friction sibling of
+      the Reddit plan · same operator-voice drafts from the warmup KIT
+    payload_ready: KIT section 3 drafts adapt as-is
+  - surface: launch-platforms batch (DevHunt · SaaSHub · Uneed · Peerlist · OpenSourceAlternative.to)
+    blocker: one op-batch ~20 min of forms/accounts · fire AFTER the Show HN
+      with social proof in hand · Product Hunt stays post-1.0 (locked)
+    payload_ready: bank one-line + three-line + logo set
+  - surface: Codeberg push-mirror
+    blocker: account + token (op) — the EU/libre sovereignty signal at
+      near-zero cost · mirror script is trivial once the token exists
+    payload_ready: git push --mirror one-liner
