@@ -843,7 +843,7 @@ entries:
 
   - surface: awesome-ChatGPT-repositories (taishi-i · CLIs)
     class: submitted-pr
-    status: pending
+    status: merged   # 🎉 MERGED 2026-07-11 13:39 — the x4 multiplier is LIVE (README + ja/zh/ko twins + HF search app regenerate) · merged 20 minutes after submission
     url: https://github.com/taishi-i/awesome-ChatGPT-repositories/pull/179
     submitted: 2026-07-11
     description_block: one-line (bank · CLIs variant)
@@ -1077,6 +1077,28 @@ entries:
       new contributors (interaction limits · fork+branch+push all fine ·
       only the PR-open refused) → routed as issue with the exact line +
       offer to PR if lifted · would be their first external contribution ·
+      first-party disclosed
+
+  - surface: awesome-ai-agents-security (ProjectRecon · Sandboxing & Isolation)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ProjectRecon/awesome-ai-agents-security/pull/72
+    submitted: 2026-07-12
+    description_block: security one-line (permission-controlled execution ·
+      workflow-layer vs container-layer framing)
+    notes: 54 stars but fresh living map (externals 06-12 x3 distinct
+      authors) · placed after OpenHands · the S1 dossier third GO ·
+      first-party disclosed
+
+  - surface: Awesome-Tools (YSGStudyHards · AI实用效率工具)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/YSGStudyHards/Awesome-Tools/pull/48
+    submitted: 2026-07-12
+    description_block: dedicated zh long-form (their 100-200 char verbose
+      table convention · A1 dossier line)
+    notes: 1.1k stars · weekly merges · WeChat album mirror = the reach ·
+      3-column table format · bilingual disclosure with 利益相关 ·
       first-party disclosed
 
 queued_operator:
