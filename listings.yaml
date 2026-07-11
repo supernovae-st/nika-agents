@@ -742,6 +742,65 @@ entries:
       first fully organic third-party listing · count as a reference,
       maintain nothing
 
+  - surface: awesome-sysadmin (awesome-foss/awesome-sysadmin-data · Automation)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/awesome-foss/awesome-sysadmin-data/pull/45
+    submitted: 2026-07-11
+    description_block: one-line (bank · 155c sentence-case per their 250c rule)
+    notes: the 34.6k-star list rebuilt data-driven 2026-06 (software/nika.yml
+      per their addition template · AGPL-3.0 from licenses.yml · Rust platform
+      · Automation tag) · fit-risk stated honestly IN the PR body (automation
+      CLI vs network-service scope — no hard feelings clause) · first-party
+      disclosed
+
+  - surface: cheat.sh (chubin/cheat.sheets · sheets/nika)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/chubin/cheat.sheets/pull/203
+    submitted: 2026-07-11
+    description_block: the sheet IS the content (20 commands · house format)
+    notes: curl cht.sh/nika payoff once merged · every command verified
+      against the released binary pre-submit · ⚠ HONEST ODDS (two agents
+      diverged same-day — last merges 2025-03 were chubin SELF-merges ·
+      externals pile up unmerged 16 months — lottery class, zero upkeep
+      cost, kill-check applies · first-party disclosed
+
+  - surface: binenv (devops-works · distributions/distributions.yaml)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/devops-works/binenv/pull/278
+    submitted: 2026-07-11
+    description_block: one-line (bank · dash form for their yaml)
+    notes: package-manager class · repo pushed same-day · community tool-adds
+      merged 2026-01 (circleci) + 2025-09 (uv/just) · v-prefix in the fetch
+      template per the circleci precedent · map darwin-to-macos amd64-to-x64
+      matches our asset names · alphabetical naabu-nika-node slot ·
+      first-party disclosed
+
+  - surface: x-cmd (x-cmd/x-cmd · REC issue for pkg + install recipes)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/x-cmd/x-cmd/issues/445
+    submitted: 2026-07-11
+    description_block: three-line + install block (their REC template fields)
+    notes: their pkg data repo is team-curated (no public PR path) — the REC
+      issue IS the intake (template 3-recommendation.yml · assignee
+      edwinjhlee) · shell+AI-agent audience = exact ICP · x-cmd/skill repo =
+      community-powered sibling (a skill PR is a separate build-shot ·
+      GO-queue) · first-party disclosed
+
+  - surface: Software Heritage (archive.softwareheritage.org)
+    class: auto-indexed
+    status: live
+    url: https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/supernovae-st/nika
+    submitted: 2026-07-11
+    description_block: n/a (permanent archive · not a directory listing)
+    notes: save-code-now request ACCEPTED 2026-07-11 via the anonymous API
+      (POST /api/1/origin/save/git/url) · origin live · the zero-cost
+      permanent-archive mention class · README badge = build-lite queued ·
+      re-request after major releases (their crawler also revisits)
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
@@ -839,3 +898,12 @@ queued_operator:
     blocker: account + token (op) — the EU/libre sovereignty signal at
       near-zero cost · mirror script is trivial once the token exists
     payload_ready: git push --mirror one-liner
+
+  - surface: Open Hub (openhub.net project page)
+    blocker: free account (web) → add project → repo URL · auto LOC/license
+      analysis · zero maintenance after
+    payload_ready: repo URL + bank one-line
+  - surface: e2b CLA (unblocks awesome-ai-agents 1232 · 28.7k stars)
+    blocker: web OAuth at e2b.dev/docs/cla then comment '@cla-bot check' on
+      the PR — human-only flow
+    payload_ready: nothing else — the PR is complete and CI-green otherwise
