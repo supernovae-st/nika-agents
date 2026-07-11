@@ -34,6 +34,18 @@ Marketplace-specific files owned here: the manifests, `README.md`,
 external listing/submission registers there — pinned description from the
 bank · cadence class · kill criterion >60d), and this file.
 
+**External copies of the authoring skill (parity watch).** Three live
+fork branches carry a byte-copy of the authoring `SKILL.md` body inside
+open submission PRs: NousResearch/hermes-agent#61632 ·
+sickn33/agentic-awesome-skills#806 · davepoon/buildwithclaude#238 (its
+frontmatter is theirs; the BODY is ours). Every kit-side skill bump
+refreshes ALL of them in the same move — parity is re-verified by
+comparing each fork branch's blob against the kit file, and a stale
+external copy is the same corruption class as a pin mismatch. When one
+of those PRs merges or closes, move it from this watch into its
+`listings.yaml` outcome; new external byte-copies join this list at
+submit time.
+
 ## Load-bearing facts (verify in-repo · never from memory)
 
 - The three plugin manifests MUST agree on one version (gate-checked).
