@@ -1168,6 +1168,31 @@ entries:
       before writing · DCO sign-off in commit · AI-usage disclosed in the
       PR body (their norm) · first-party disclosed
 
+  - surface: awesome-openrouter (OpenRouterTeam · apps/nika)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/OpenRouterTeam/awesome-openrouter/pull/99
+    submitted: 2026-07-12
+    description_block: app.yaml (their octomind-precedent shape · 284c desc ·
+      provider claim binary-verified) + 256x256 logo from icon-512
+    notes: R2 firing-order slot 1 · published at openrouter.ai/awesome =
+      real backlink · README auto-generated NEVER touched · merges land in
+      monthly batches (06-04 · 05-11) — patience class · traction stated
+      openly in-body with a no-hard-feelings clause (their evidence-of-
+      traction bar) · docs field points at concepts/providers (200-verified)
+      · first-party disclosed
+
+  - surface: awesome-testing (TheJambo · AI & LLM Testing)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/TheJambo/awesome-testing/pull/173
+    submitted: 2026-07-12
+    description_block: one-line (golden-testing angle · promptfoo/Tenro
+      neighborhood)
+    notes: 2.3k stars · R1 top vertical · external merge 06-19 · the nika
+      test claim is CI-proven (three dogfooded workflows re-proven every
+      push) · first-party disclosed
+
 queued_operator:
   - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
     blocker: commitment-class — each creates a MAINTAINED build recipe signed
