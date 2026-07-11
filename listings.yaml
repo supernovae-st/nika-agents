@@ -1156,6 +1156,29 @@ entries:
       4th S1-dossier target fired · first-party disclosed
 
 queued_operator:
+  - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
+    blocker: commitment-class — each creates a MAINTAINED build recipe signed
+      by us (conda-forge feedstock · nixpkgs derivation · macports portfile) ·
+      operator decides the maintenance surface · rust-CLI precedents everywhere
+      (ripgrep · fd · bat) · the flake already shipped makes nixpkgs the
+      cheapest of the three · winget+scoop stay GATED-honest (releases ship
+      zero Windows binaries today)
+    payload_ready: linux+macos tarballs + flake + cargo build all proven ·
+      each recipe is a template fill once the operator opts into maintaining it
+  - surface: pre-commit.com featured hooks page
+    blocker: hand-picked fairly-popular bar (their words) — external precedents
+      added ALREADY-BIG tools (markdownlint-cli2 · nbqa) · self-adding a 25-star
+      tool = low odds · re-fire on traction alongside the awesome-rust 50-star
+      staircase
+    payload_ready: .pre-commit-hooks.yaml lives on engine main (issue 407) ·
+      docs page PR nika-docs#80 = the teaching surface their reviewers would
+      want to see
+  - surface: Zed extensions registry (zed-industries/extensions)
+    blocker: needs a thin nika Zed extension repo FIRST (new public surface =
+      operator decision) — the LSP already shipped makes it mostly manifest
+      plus grammar glue · registry intake itself is PR-based and alive
+    payload_ready: nika lsp is the engine binary · the vscode extension is the
+      reference implementation to mirror
   - surface: docker/mcp-registry (mcp/ namespace Docker Hub + Docker Desktop MCP Toolkit)
     blocker: the proven integrations/mcp/Dockerfile (in-container 07-09) is not
       on engine main yet — engine issue 442 carries the datum (their registry
