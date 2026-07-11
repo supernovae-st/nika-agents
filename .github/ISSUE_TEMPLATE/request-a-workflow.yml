@@ -1,0 +1,34 @@
+name: Request a workflow
+description: Describe a repeatable AI task — get a checked, trace-proven .nika.yaml back (from us or the community)
+title: "workflow request: <what should it do>"
+labels: ["workflow-request", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The inverse of a feature request: you name the repeatable task, the
+        workflow gets authored in the open — statically checked before it
+        runs, tamper-evident trace after. Good candidates: a daily digest,
+        a triage loop, release notes, a data reshape with an LLM step.
+  - type: textarea
+    id: task
+    attributes:
+      label: The repeatable task
+      description: What repeats? Inputs → steps → output. Plain words beat YAML here.
+      placeholder: "Every Monday: read our RSS feeds, summarize what changed, write a markdown brief."
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints that matter
+      description: Offline-able (Ollama/mock)? Which providers are allowed? Budget cap? Where does the output land?
+    validations:
+      required: false
+  - type: checkboxes
+    id: publication
+    attributes:
+      label: Publication
+      options:
+        - label: I'm OK with the resulting workflow being published as a public showcase or registry entry
+          required: true
