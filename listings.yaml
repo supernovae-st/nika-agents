@@ -884,6 +884,36 @@ entries:
       minute on the branch · lesson — quote heredoc delimiters when the payload
       carries backticks · first-party disclosed
 
+  - surface: awesome-typescript (semlinker · Tools/Libraries → Utility)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/semlinker/awesome-typescript/pull/168
+    submitted: 2026-07-11
+    description_block: bare-link house style (csv-pipe precedent)
+    notes: FIRST satellite-class listing (nika-client the TS SDK · fires
+      BEFORE the npm publish because entries are bare GitHub links) · 4k
+      stars · 3 external merges 06-25 · first-party disclosed
+
+  - surface: awesome-json (burningtree · Schema Specifications)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/burningtree/awesome-json/pull/246
+    submitted: 2026-07-11
+    description_block: one-line (spec angle · YAML docs validated by published JSON Schema)
+    notes: second satellite-class listing (nika-spec) · 1.5k stars · 3
+      external merges 06-19 · JSON Model DSL precedent in-section ·
+      alphabetical Kwalify-nika-Rx · SchemaStore pending cross-referenced
+      honestly in the PR body · first-party disclosed
+
+  - surface: Software Heritage badge (engine README)
+    class: auto-indexed
+    status: live
+    url: https://github.com/supernovae-st/nika/pull/453
+    submitted: 2026-07-11
+    description_block: n/a (badge links the archived origin)
+    notes: engine PR 453 MERGED — badge endpoint 200-verified · closes the
+      SWH loop (save accepted → origin live → README badge)
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
