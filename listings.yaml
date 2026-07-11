@@ -161,6 +161,19 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: aqua-registry (aquaproj · declarative CLI version manager)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/aquaproj/aqua-registry/pull/56833
+    submitted: 2026-07-11
+    description_block: one-line (registry variant)
+    notes: install PROVEN locally against the exact entry before the PR
+      (aqua i → SHA256SUMS verified → nika --version green darwin/arm64) ·
+      scaffold checksum bug corrected (MCPB.sha256 → SHA256SUMS · the
+      alphabetical-pick trap) · no_asset override for pre-0.80 alphas ·
+      merges effectively daily (3 externes le 07-11) · owner-sorted
+      insertion superbrothers→supernovae-st→superfly · first-party disclosed
+
   - surface: awesome-mcp-clients (punkpeye · 6.5k stars · the CLIENT side)
     class: submitted-pr
     status: pending
