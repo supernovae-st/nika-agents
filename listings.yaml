@@ -174,7 +174,7 @@ entries:
 
   - surface: llms-txt-hub (thedaviddias · the GEO directory)
     class: submitted-pr
-    status: pending
+    status: merged # 🎉 MERGED 2026-07-11 · the GEO-directory class opens
     url: https://github.com/thedaviddias/llms-txt-hub/pull/1323
     submitted: 2026-07-11
     description_block: mdx card (docs llms.txt + llms-full.txt · verified 200)
@@ -197,7 +197,7 @@ entries:
 
   - surface: aqua-registry (aquaproj · declarative CLI version manager)
     class: submitted-pr
-    status: pending
+    status: merged # 🎉 MERGED 2026-07-11 · maintainer suzuki-shunsuke "Thank you!" · installable via the standard registry at their next ref tag
     url: https://github.com/aquaproj/aqua-registry/pull/56833
     submitted: 2026-07-11
     description_block: one-line (registry variant)
