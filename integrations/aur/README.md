@@ -38,3 +38,10 @@ the account exists.
   install them without executing the target-arch binary.
 - The ledger entry lives in `listings.yaml` (`queued_operator` until the
   account ceremony happens).
+
+## Release-train auto-bump (wire after the ceremony)
+
+`KSXGitHub/github-actions-deploy-aur@v4.1.3` (verified maintained) in the
+engine's release workflow, next to the brew bump: regenerates PKGBUILD
+version + sha256s + .SRCINFO and pushes to AUR on every tag — the AUR
+« do not submit and forget » maintainer obligation becomes structural.
