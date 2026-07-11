@@ -1023,6 +1023,24 @@ entries:
       self-promo by-author lines merged 06-24 into this same section) ·
       offline-zero-keys learning angle · first-party disclosed
 
+  - surface: linny006/awesome-agent-skills (organic pickup · NOT submitted)
+    class: organic-listing
+    status: merged
+    url: https://github.com/linny006/awesome-agent-skills
+    submitted: 2026-07-12
+    description_block: n/a (their curation)
+    notes: found by the organic-README sweep (13 stars · pushed 07-11 · nika
+      grep-verified) · 2nd/3rd organic pickup after awesome-rig · count as
+      references, maintain nothing
+
+  - surface: linny006/mcp-servers-live (organic pickup · NOT submitted)
+    class: organic-listing
+    status: merged
+    url: https://github.com/linny006/mcp-servers-live
+    submitted: 2026-07-12
+    description_block: n/a (their curation)
+    notes: same-author companion list · nika grep-verified · organic
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
