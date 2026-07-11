@@ -1362,7 +1362,25 @@ entries:
     notes: OWASP Lab project 454★ · issue #92 asks exactly for agent-framework
       container examples · scope-creep escape hatch offered in the comment
 
+  - surface: LibHunt (libhunt.com/r/nika · Rust index)
+    class: auto-indexed
+    status: live
+    url: https://www.libhunt.com/r/nika
+    submitted: null
+    description_block: pulled from the repo description (auto-index — keep the
+      GitHub description sharp, it IS the listing)
+    notes: organic pickup discovered 2026-07-11 — indexed via awesome-rust
+      inclusion (the living-sibling entry) · page carries 'Intent as Code' +
+      repo link · zero action needed · cadence per-release-watch
+
 queued_operator:
+  - surface: GitHub social preview (engine repo og:image)
+    blocker: web UI only — repo Settings → Social preview upload (60 seconds)
+    payload_ready: media/social/github-social-preview-1280x640.png is in the
+      repo, purpose-built · og:image currently falls back to the GitHub
+      auto-card (verified 2026-07-11 via curl) — every share of the repo URL
+      (HN · X · Slack) renders the generic card instead of ours · same
+      ceremony worth repeating on nika-vscode/nika-action if assets exist
   - surface: J-nowcow/awesome-korean-agent-skills (ko auto-tracker · 23 stars · pushed daily)
     blocker: their bar is Korean support (skill in Korean OR Korean README OR
       auto-detection) plus personally-installed-and-used testimony in the PR ·
