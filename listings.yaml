@@ -1243,6 +1243,29 @@ entries:
       patience class · A1 dossier line used verbatim · first-party
       disclosed (利益相关)
 
+  - surface: awesome-claude-code-and-skills (GetBindu · Orchestration Platforms)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/GetBindu/awesome-claude-code-and-skills/pull/104
+    submitted: 2026-07-12
+    description_block: stars-badge + capability-bullets house block
+    notes: R1 dossier target · merges near-daily (zenlee123 same-day
+      precedent) · gotcha caught pre-fire — the content file is lowercase
+      readme.md, README.md 404s · the Claude Code plugin is the artifact
+      angle · first-party disclosed
+
+  - surface: awesome-mistral (samouraiworld · Agent Frameworks)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/samouraiworld/awesome-mistral/pull/13
+    submitted: 2026-07-12
+    description_block: one-line (globe-emoji en-dash house format ·
+      Mistral-first-class-provider angle)
+    notes: small list (42 stars) but the EU-provider fit is exact —
+      mistral verified in the catalog pre-fire AND Mistral leads our
+      documented cloud teaching order (the presentation-order doctrine
+      made this listing) · external merge 06-30 · first-party disclosed
+
 queued_operator:
   - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
     blocker: commitment-class — each creates a MAINTAINED build recipe signed
