@@ -581,6 +581,19 @@ entries:
     notes: upside-not-gate (day-1 = tap/URL already live) · measured external
       merge latency ≥14d · fallback category software-development offered
 
+  - surface: ZeroPointRepo/awesome-hermes-skills (DevOps and Deployment)
+    class: submitted-pr
+    status: pending   # 84 stars · 4 distinct external authors merged 07-01 (zoltanszogyenyi · ahmdngi · pramodavansaber · lentil32) · Contributing rules met · awaiting maintainer
+    url: https://github.com/ZeroPointRepo/awesome-hermes-skills/pull/18
+    submitted: 2026-07-11
+    description_block: hermes/agent catalogs lead (description-bank §per-surface)
+    payload: one README line under DevOps and Deployment · tag beta (engine 0.99
+      pre-1.0 · honest not production) · placed alphabetically before nix-hermes-agent
+    kill_check: 2026-09-11
+    notes: 4th hermes surface (after aliaihub#11 · official#61632 · SamurAIGPT#84) ·
+      Contributing section explicit (working SKILL.md · maintained · one-line install ·
+      not-listed) all four satisfied · membrane fully honored
+
   - surface: SamurAIGPT/awesome-hermes-agent (Skill Registries & Discovery)
     class: submitted-pr
     status: pending   # 1815 stars · external merges 07-18/25 (plagtech · fkiene · louis030195) · CI n/a (readme list) · awaiting maintainer
