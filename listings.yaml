@@ -1373,6 +1373,20 @@ entries:
       inclusion (the living-sibling entry) · page carries 'Intent as Code' +
       repo link · zero action needed · cadence per-release-watch
 
+  - surface: GitHub CLI extensions (gh extension browse · topic gh-extension)
+    class: auto-indexed
+    status: live
+    url: https://github.com/supernovae-st/gh-nika
+    submitted: 2026-07-12
+    description_block: one-line (bank) in the README hero
+    payload: NEW artifact — gh-nika extension (Apache-2.0 wrapper · pass-through
+      to PATH nika, else one-time latest-release download verified against
+      SHA256SUMS, XDG cache) · proven e2e both lanes 2026-07-12 (pass-through +
+      masked-PATH download, check exit 0) · lists via the gh-extension topic
+    kill_check: 2026-10-12
+    notes: quick-win artifact during wave-2 verify · Actions/Codespaces angle
+      (gh is the tooling spine there) · nika-action stays the rich CI lane
+
 queued_operator:
   - surface: GitHub social preview (engine repo og:image)
     blocker: web UI only — repo Settings → Social preview upload (60 seconds)
