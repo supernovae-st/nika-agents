@@ -44,6 +44,24 @@ tool names against the live binary instead); local-first examples; the words
 | skills registries | `Author → check → repair loop for Nika workflows — teaches agents to write valid .nika.yaml, never invent syntax` |
 | GitHub Action marketplace | `Plan with receipts: check verdict, honest cost floor, permits and the DAG on every PR — static, zero secrets` |
 | Hermes/agent catalogs | `The deterministic workflow worker: Hermes orchestrates, Nika runs repeatable work budget-capped with verifiable receipts` |
+| product directories (AlternativeTo · SaaSHub · LibHunt) | `Declarative AI pipelines as plain files — the audit before the run, the receipt after. Single static binary, local models first-class, no cloud required` |
+| self-hosted directories | `Self-hosted by construction: one binary, your models (Ollama · llama.cpp · vLLM), plain-text workflows and traces on your disk — nothing phones home, telemetry off by default` |
+| newsletters (devtools editorial) | `nika check is CI for AI pipelines: it reads the workflow file and prints the DAG, an honest cost floor, secret flows and permissions — before a single token is spent` |
+| newsletters (AI-engineering) | `Agents write the workflow, the engine keeps it honest: typed outputs, budget caps, did-you-mean fixes at check time, and a hash-chained trace any reviewer can re-verify` |
+| package registries (AUR · nixpkgs · distro) | `Workflow language + engine for AI pipelines — author .nika.yaml, statically audit (cost/permits/secrets), run on any LLM provider, verify the trace. Single static Rust binary` |
+| static-analysis / linter lists | `A static analyzer for AI workflows: schema, DAG order, cost bounds, secret-flow and permission escapes caught before execution — findings carry codes and machine-applicable fixes` |
+| VS Code extension showcases | `The .nika.yaml cockpit: check-as-you-type diagnostics from the real engine, a live DAG canvas that runs and replays workflows, cost inlays before a token is spent` |
+
+### Alternative-to anchors (comparison sites — honest pairings only)
+
+State what differs, never "better than". Anchors that hold: **n8n / Windmill /
+Kestra** (visual-or-server orchestrators → nika is file-first, one binary, no
+server) · **GitHub Actions for AI steps** (nika adds the static audit + local
+runs) · **plain Python scripts + API keys** (the real incumbent — nika adds
+check, budget caps, receipts). Anchors that DON'T hold (never claim): Airflow
+at data-platform scale · Temporal durability · LangGraph/CrewAI agent
+frameworks (different seat: they orchestrate agents, nika runs the
+repeatable slice — link how-nika-compares instead).
 
 Companion: `listings.yaml` (every live submission registers there with its
 pinned description + cadence + kill criterion — see AGENTS.md).

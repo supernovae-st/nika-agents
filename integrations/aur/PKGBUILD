@@ -1,0 +1,20 @@
+# Maintainer: Thibaut Melen <contact@supernovae.studio>
+# Prebuilt-binary package for the Nika workflow engine (nika.sh).
+# Upstream release tarballs contain exactly one file: the static `nika` binary.
+pkgname=nika-bin
+pkgver=0.99.0
+pkgrel=1
+pkgdesc="Workflow language + engine for AI pipelines — audit .nika.yaml statically (cost/permits/secrets) before running, verify the hash-chained trace after"
+arch=('x86_64' 'aarch64')
+url="https://github.com/supernovae-st/nika"
+license=('AGPL-3.0-or-later')
+provides=('nika')
+conflicts=('nika')
+source_x86_64=("nika-${pkgver}-x64.tar.gz::${url}/releases/download/v${pkgver}/nika-linux-x64-${pkgver}.tar.gz")
+source_aarch64=("nika-${pkgver}-arm64.tar.gz::${url}/releases/download/v${pkgver}/nika-linux-arm64-${pkgver}.tar.gz")
+sha256sums_x86_64=('5d3017c965ddb176d50f80d7d7156eec8ff39cb3c0dc34f72b3ffedcc95a5c6b')
+sha256sums_aarch64=('00174155457ece1bccedd0ce7da39b1985c5fa60b178c31859402e70c2102c41')
+
+package() {
+  install -Dm755 "${srcdir}/nika" "${pkgdir}/usr/bin/nika"
+}
