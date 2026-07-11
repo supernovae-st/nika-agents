@@ -628,6 +628,53 @@ entries:
       externals dormant since 2024-12 (19 months) — authoring effort
       withheld, revisit on a fresh external merge
 
+  - surface: awesome-cli-apps-in-a-csv (toolleeo · ai category)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/toolleeo/awesome-cli-apps-in-a-csv/pull/310
+    submitted: 2026-07-11
+    description_block: one-line (bank · quoted CSV field)
+    notes: CSV-based list (2.2k rows · edit data/apps.csv NEVER the README
+      per their rule) · description quoted because commas-in-field (house
+      convention verified on the devops row) · external merge 06-08
+      (rustnet by domcyrus) · first-party disclosed
+
+  - surface: awesome-ai-agents (e2b-dev · 28.7k stars)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/e2b-dev/awesome-ai-agents/pull/1232
+    submitted: 2026-07-11
+    description_block: house long-form (one-liner + details Category/Description/Links)
+    notes: the biggest agents list still unfired — external merge 07-09
+      (PraisonAI · 2 days before our shot) · alphabetical slot
+      MutahunterAI→NLSOM · category Build-your-own + Supports open-source
+      models (their existing vocabulary) · agent-verb angle honest (nika
+      RUNS agent loops as budgeted trace-verified tasks) · fork needed
+      --fork-name (collision with the Jenqyang fork · the TalEliyahu
+      lesson again) · first-party disclosed
+
+  - surface: Awesome-LLMOps (tensorchord · LLMOps→Workflow table)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/tensorchord/Awesome-LLMOps/pull/655
+    submitted: 2026-07-11
+    description_block: one-line (bank · table row + stars badge)
+    notes: the OTHER Awesome-LLMOps (InftyAI sibling already pending 490) ·
+      alphabetical Metaflow→Ploomber · external merge 05-21 (Bernstein by
+      chernistry — the receipts-minded sibling again) · gh fork
+      auto-suffixed Awesome-LLMOps-1 (name collision with the InftyAI
+      fork — 2nd occurrence today, always read the fork URL gh returns) ·
+      first-party disclosed
+
+  - surface: awesome-mlops (kelvins · Workflow Tools)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/kelvins/awesome-mlops/pull/229
+    submitted: 2026-07-11
+    description_block: one-line (bank · bullet form)
+    notes: 5.2k stars · alphabetical MLRun→Orchest · external merge 04-29
+      (patience class ~2 months cadence) · first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
@@ -695,3 +742,13 @@ queued_operator:
       before that box can be checked honestly
     payload_ready: llms-install.md live on main · logo 400x400 to pick from
       the engine media/ set
+
+  - surface: awesome-claude-code (hesreallyhim · 49.8k stars)
+    blocker: WEB-UI ISSUE FORM ONLY — their CONTRIBUTING forbids gh-CLI
+      submissions outright (« not possible via gh CLI » · « recommendations
+      must be created by human beings » · violators risk temporary
+      restriction) · also warns against listing-as-promo (« get users
+      first ») → submit AFTER the Show HN with traction in hand, not before
+    payload_ready: form template recommend-resource.yml · description
+      style = factual one-line, no emojis, no reader address (their STYLE
+      rule) · bank one-line fits after trimming
