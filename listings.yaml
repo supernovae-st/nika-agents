@@ -1103,3 +1103,31 @@ queued_operator:
     blocker: web OAuth at e2b.dev/docs/cla then comment '@cla-bot check' on
       the PR — human-only flow
     payload_ready: nothing else — the PR is complete and CI-green otherwise
+
+  - surface: DockerHub regularization (thibautmelen/nika · OWNED · out of governance)
+    blocker: DockerHub credentials (op) — the completeness critic found our
+      own legacy image at 2136 pulls in NO document · VERIFIED 2026-07-12 —
+      tags 0.77-0.79 · latest = the RETIRED brouillon dialect · last push
+      04-08 · worse than absent (teaches the old language) · fix = update
+      overview to point at current install paths + deprecation note now ·
+      push a current image when the GHCR lane lands (same credential
+      moment) · org namespace supernovae-st is FREE on DockerHub (claim
+      it) · brand-watch — ostis/nika (2407 pulls) is an unrelated semantic
+      NIKA project
+    payload_ready: description-bank one-line + install paths block
+  - surface: Terminal Trove (terminaltrove.com/post/)
+    blocker: web form (op ~15 min) — completeness critic verified LIVE ·
+      /post/ open · nika 404 on their search · the exact CLI directory
+      (newsletter + social reach · AI Coding Agents category exists)
+    payload_ready: description-bank one-line + a GIF from engine media/
+  - surface: GitLab push-mirror (gitlab.com · 0 nika presence verified)
+    blocker: op account/token — piggyback the Codeberg mirror ritual
+      (same push --mirror script · 30 extra seconds per run)
+    payload_ready: mirror script one-liner once tokens exist
+  - surface: arXiv cs.SE tech report (the battery-147 as eval artifact)
+    blocker: G13-class decision + endorsement path (first-time arXiv
+      submitter needs endorsement) — genre VERIFIED alive (GraphBit
+      2026-03-08 + 2 agentic-workflow siblings) · unlocks the
+      citation-class chain (DOI → Wikidata → JOSS all already queued)
+    payload_ready: battery-147 corpus committed · engine issue to file
+      framing it as the eval artifact
