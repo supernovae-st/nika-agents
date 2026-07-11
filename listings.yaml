@@ -1340,14 +1340,18 @@ queued_operator:
       plus grammar glue · registry intake itself is PR-based and alive
     payload_ready: nika lsp is the engine binary · the vscode extension is the
       reference implementation to mirror
-  - surface: docker/mcp-registry (mcp/ namespace Docker Hub + Docker Desktop MCP Toolkit)
-    blocker: the proven integrations/mcp/Dockerfile (in-container 07-09) is not
-      on engine main yet — engine issue 442 carries the datum (their registry
-      BUILDS and HOSTS the image itself once server.yaml points at a repo with
-      a Dockerfile on main · bot-merged self-service intake · pushed daily)
-    payload_ready: server.yaml is a notion-template fill (name nika · category
-      developer-tools · source.project + commit pin) · submission doc is
-      literally written for agents (add_mcp_server.md)
+  - surface: docker/mcp-registry (GATED-STRUCTURAL · license wall · verified 07-11)
+    blocker: their license validator REJECTS copyleft in code — internal/
+      licenses/check.go IsValid() returns false on any gpl/agpl/npl key
+      prefix · nika is AGPL-3.0-or-later by anti-extraction doctrine (Rule 5 ·
+      non-negotiable) · a PR would fail CI mechanically · zero AGPL/GPL
+      entries exist in their catalog (precedent confirms) · DO NOT fire
+    resolved_meanwhile: the old blocker (no Dockerfile on main) DIED same-day —
+      engine 442 closed via PR 465 · root Dockerfile on main · public GHCR
+      image multi-arch amd64+arm64 (manifest answers anonymously) · docker
+      users have their lane TODAY: docker run -i --rm ghcr.io/supernovae-st/
+      nika mcp · the official MCP Registry (registry.modelcontextprotocol.io ·
+      still queued below) has NO license wall and stays the real target
   - surface: ClawHub (clawhub.ai · OpenClaw public skills registry)
     blocker: publish flow needs an OpenClaw toolchain account (human auth) —
       the nika skill (agentskills.io shape · skill-guard SAFE) is the payload
