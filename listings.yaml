@@ -860,7 +860,7 @@ entries:
 
   - surface: RUNG-3 engagement — prefix-dev/pixi 6439 (automate release notes)
     class: submitted-issue
-    status: pending
+    status: closed   # DECLINED politely 2026-07-11 13:33 by baszalmstra — « not comfortable adopting a relatively random tool… even though it looks cool! » · conceded gracefully same-hour · the trust-bar datum: 25-star tool offering release-path infra to a 7.4k repo hits the credibility wall — RUNG-3 calibrates DOWN in repo size (mex 1.1k class) until traction
     url: https://github.com/prefix-dev/pixi/issues/6439#issuecomment-4946167168
     submitted: 2026-07-11
     description_block: the proof IS the content (pixi-release-notes.nika.yaml ·
@@ -1041,6 +1041,18 @@ entries:
     description_block: n/a (their curation)
     notes: same-author companion list · nika grep-verified · organic
 
+  - surface: awesome-pre-commit-hooks (cleder · YAML · first-mover)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/cleder/awesome-pre-commit-hooks/issues/1
+    submitted: 2026-07-12
+    description_block: one-line (em-dash house format · commit-time audit angle)
+    notes: 7th GATE CLASS DISCOVERED — repo blocks CreatePullRequest for
+      new contributors (interaction limits · fork+branch+push all fine ·
+      only the PR-open refused) → routed as issue with the exact line +
+      offer to PR if lifted · would be their first external contribution ·
+      first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
@@ -1175,3 +1187,11 @@ queued_operator:
       citation-class chain (DOI → Wikidata → JOSS all already queued)
     payload_ready: battery-147 corpus committed · engine issue to file
       framing it as the eval artifact
+
+  - surface: useful-actions (GuillaumeFalourd · GATED-marketplace)
+    blocker: their house format REQUIRES a live demo-workflow badge in
+      THEIR repo + a github.com/marketplace/actions/ link — our action is
+      not on the Marketplace yet (the checkbox gate 6bis-4) · fire this
+      right after the checkbox is done
+    payload_ready: entry line + the demo workflow yml (trivial once
+      marketplace slug exists)
