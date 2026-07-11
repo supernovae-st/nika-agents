@@ -161,6 +161,28 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: awesome-mcp-clients (punkpeye · 6.5k stars · the CLIENT side)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/punkpeye/awesome-mcp-clients/pull/248
+    submitted: 2026-07-11
+    description_block: house table format (GitHub/License/Type/Platforms rows)
+    notes: the client-side list none of the 4 server directories cover —
+      invoke verb = MCP client per task · both-sides-of-protocol angle ·
+      external merge precedent 06-07 (Ano) · alphabetical Nerve→Nika→NextChat
+      · same maintainer as awesome-mcp-servers 9743 (glama-gated) — separate
+      list, no sequencing conflict · first-party disclosed
+
+  - surface: ruanyf weekly (科技爱好者周刊 · 96k stars · issue intake)
+    class: submitted-issue
+    status: pending
+    url: https://github.com/ruanyf/weekly/issues/10673
+    submitted: 2026-07-11
+    description_block: zh-CN copy dédiée (check-before-run · receipts · local-first)
+    notes: the 开源自荐 pattern (5 reader submissions same-day verified) ·
+      editor picks into the Friday weekly · zh copy hand-crafted (MCP-ZH 383
+      precedent) · 利益声明 disclosure in body · largest single zh dev reach
+
   - surface: LobeHub MCP marketplace (lobehub/lobehub · self-service)
     class: submitted-issue
     status: closed
