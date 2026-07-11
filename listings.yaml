@@ -914,6 +914,56 @@ entries:
     notes: engine PR 453 MERGED — badge endpoint 200-verified · closes the
       SWH loop (save accepted → origin live → README badge)
 
+  - surface: awesome-agent-skills (VoltAgent · Community/Development and Testing)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/VoltAgent/awesome-agent-skills/pull/782
+    submitted: 2026-07-11
+    description_block: skills lead (author-check-repair loop · house bold format)
+    notes: 27.8k stars · external merge same-day (taisly) · coderabbitai
+      neighborhood · nika-agents is the artifact · first-party disclosed
+
+  - surface: awesome-privacy (pluja · AI Coding)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/pluja/awesome-privacy/pull/928
+    submitted: 2026-07-11
+    description_block: one-line (privacy angle · license stated like neighbors)
+    notes: 19k stars · external merge 07-07 · the structural-privacy angle
+      (offline local models · nothing leaves unless declared) ·
+      first-party disclosed
+
+  - surface: awesome-opensource-ai (alvinreal · Multi-Agent Orchestration)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/alvinreal/awesome-opensource-ai/pull/584
+    submitted: 2026-07-11
+    description_block: one-line (truly-open-source angle · stars badge house format)
+    notes: 4.1k stars · external merge same-day · their bar « truly open
+      source » = AGPL no-open-core fits verbatim · first-party disclosed
+
+  - surface: awesome-agents (kyrolabs · Frameworks)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/kyrolabs/awesome-agents/pull/627
+    submitted: 2026-07-11
+    description_block: one-line (colon format · stars badge)
+    notes: 2.6k stars · external merge 07-09 · the 200-star staircase rung
+      fired early (the ladder said 200 — intake is live NOW) · 3rd fork
+      name collision today (gh suffixed awesome-agents-1 · always read the
+      returned URL) · first-party disclosed
+
+  - surface: awesome-rust-tools (unpluggedcoder · Dev-Utilities)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/unpluggedcoder/awesome-rust-tools/pull/48
+    submitted: 2026-07-11
+    description_block: one-line (em-dash house format)
+    notes: 700 stars · external merge 07-05 · placement incident caught by
+      self-review (inserted before bytehound in an alphabetical section →
+      moved to the mise-nika-onefetch slot same-minute on the branch) ·
+      first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
