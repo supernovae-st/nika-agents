@@ -1289,6 +1289,15 @@ entries:
     notes: 222 stars · external merge 06-19 · the last zh A1 target
       standing except J-nowcow ko · first-party disclosed (利益相关)
 
+  - surface: awesome-vibe-coding-resources (acvnace · Command Line Tools)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/acvnace/awesome-vibe-coding-resources/pull/41
+    submitted: 2026-07-12
+    description_block: one-line (vibe-task-capture angle · agenttrace neighbor)
+    notes: 244 stars · external merge 07-10 (danii1 into this exact
+      section) · B1 dossier target · first-party disclosed
+
 queued_operator:
   - surface: J-nowcow/awesome-korean-agent-skills (ko auto-tracker · 23 stars · pushed daily)
     blocker: their bar is Korean support (skill in Korean OR Korean README OR
@@ -1483,3 +1492,18 @@ queued_operator:
       right after the checkbox is done
     payload_ready: entry line + the demo workflow yml (trivial once
       marketplace slug exists)
+
+  - surface: HeyClaude / JSONbored awesome-claude (heyclau.de/submit form)
+    blocker: their PREFERRED path is the website form with public preflight
+      checks + GitHub continue (single-entry MDX auto-PR · Superagent +
+      maintainer-agent review) — direct PRs are the advanced path with a
+      heavy SEO-schema MDX · the form is faster and cleaner (op ~10 min)
+    payload_ready: three-line MCP description from the bank · safety_notes
+      (read-only oracle · no exec) + privacy_notes (local stdio · zero
+      telemetry) pre-drafted in the bank spirit
+  - surface: awesome-korean-agent-skills (J-nowcow · GATED-ko-docs)
+    blocker: their FIRST criterion is Korean support (skill in Korean OR
+      Korean README docs OR ko auto-detection) — nika has none today ·
+      firing against an explicit bar burns trust · unlock = a ko section
+      in the kit README or a ko docs page (G14-adjacent build-lite)
+    payload_ready: the A1 ko line (used once the docs exist)
