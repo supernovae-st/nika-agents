@@ -560,6 +560,32 @@ entries:
       SKILL.md) · zero Hermes references grep-verified pre-submit ·
       first-party disclosed
 
+  - surface: Raycast MCP registry (raycast/extensions · model-context-protocol-registry)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/raycast/extensions/pull/29366
+    submitted: 2026-07-11
+    description_block: three-line MCP lead (the oracle IS the listing)
+    notes: COMMUNITY_ENTRIES data-only edit (alphabetical slot · command nika
+      args [mcp] · zero env — the simplest config in the file) · icon = org
+      avatar URL (regenerates at source per mirror-law) · monthly merged
+      precedents on this extension (29225 · 28376) · their npm-build checklist
+      box left unchecked HONESTLY (data-only change · noted in the PR body) ·
+      first-party disclosed
+
+  - surface: up-for-grabs.net (_data/projects/nika.yml)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/up-for-grabs/up-for-grabs.net/pull/5937
+    submitted: 2026-07-11
+    description_block: one-line (bank · trimmed lead)
+    notes: contributor-funnel class — the good-first-issue label link (4 open
+      showcase issues) IS the listing · their stats bot re-counts
+      issue-count post-merge · yaml validated pre-push · first-party
+      disclosed · sibling verdict same-pass — goodfirstissue.dev GATED
+      (bar >=10 contributors + intake moved to a Google Form · revisit when
+      the contributor funnel fills)
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
