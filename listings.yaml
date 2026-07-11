@@ -612,6 +612,22 @@ entries:
       (bar >=10 contributors + intake moved to a Google Form · revisit when
       the contributor funnel fills)
 
+  - surface: llama.cpp README (ggml-org · Infrastructure list)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/ggml-org/llama.cpp/pull/25558
+    submitted: 2026-07-11
+    description_block: one-line (llama-server-consumer angle · house dash format)
+    notes: the 85k-star local-inference flagship — claim BINARY-PROVEN
+      pre-submit (nika doctor lists llamacpp among the 5 local providers ·
+      llamacpp/<model> form) · same section class as llama-swap (consumer
+      on top of llama-server) · author-submitted precedents cited in the
+      PR body (llama-swap 11032 · LLMKube 20212) · huge-repo README edits
+      batch slowly — patience class · first-party disclosed ·
+      same-pass GATED verdict recorded — mistralai/cookbook third_party
+      externals dormant since 2024-12 (19 months) — authoring effort
+      withheld, revisit on a fresh external merge
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
