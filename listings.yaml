@@ -161,6 +161,18 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
+  - surface: mistralai/cookbook third_party/Nika (the EU plasmid)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/mistralai/cookbook/pull/295
+    submitted: 2026-07-12
+    description_block: content-class (worked example + README · nika graph DAG)
+    notes: mega-plan W1.3 · the vendor-integrations dir (CAMEL/Chainlit/
+      Haystack live there · external merge 06-30) · release-notes flow with
+      mistral-large-latest · the killer demo is the REAL cost ceiling
+      ($0.0012) the checker prints because Mistral is cataloged · 0 hints ·
+      permits declared tight · commit GitHub-signed · first-party disclosed
+
   - surface: goose recipes gallery (aaif-goose · documentation recipes)
     class: submitted-pr
     status: pending
