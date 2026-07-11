@@ -159,15 +159,21 @@ entries:
     notes: fit-perfect section (Dify/FastGPT/Haystack live there) · house
       triple-badge format · external merge 06-23 · first-party disclosed
 
-  - surface: LobeHub MCP marketplace (lobehub/lobehub · manual review)
+  - surface: LobeHub MCP marketplace (lobehub/lobehub · self-service)
     class: submitted-issue
-    status: pending
+    status: closed
     url: https://github.com/lobehub/lobehub/issues/17007
     submitted: 2026-07-11
     description_block: request-issue (their 15667 pattern cloned · oracle 8 tools)
-    notes: labels mcp:submission + manual-review auto-applied on the
-      precedent · .mcpb bundles + brew install path in the body ·
-      loop iteration 2 shot · first-party disclosed
+    notes: bot-closed same-hour — issues intake RETIRED, replaced by a
+      self-service CLI flow (their publish-mcp skill · lhm login +
+      github connect = BROWSER AUTH, human-only per their own skill
+      rules · repo-owner match required) → operator runbook is
+      `npx -y @lobehub/market-cli login` then `github connect` then
+      `plugin submit https://github.com/supernovae-st/nika` (async
+      import ~minutes · poll plugin list max 10 min) · probe verified
+      2026-07-11 (no local credentials yet) · 6th gate class — intake
+      migrated from issues to authed self-service
 
   - surface: awesome-claude-dxt (milisp · Development Tools)
     class: submitted-pr
