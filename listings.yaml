@@ -1127,6 +1127,17 @@ entries:
       processes killed · law upgraded — heredocs carrying prose ALWAYS
       quoted, interpolation via sidecar files · first-party disclosed
 
+  - surface: Awesome-LM-SSP (CryptoAILab · collection/toolkit.md)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/CryptoAILab/Awesome-LM-SSP/pull/137
+    submitted: 2026-07-12
+    description_block: dated toolkit entry (their [YYYY/MM] newest-first
+      format · Agent+Defense badges · AgentShield-Merkle analog slot)
+    notes: 2k stars academic-lab list · monthly sweep cadence (03/04/05) ·
+      external precedent = Virtue-Research self-adding their harness ·
+      4th S1-dossier target fired · first-party disclosed
+
 queued_operator:
   - surface: HelloGitHub (521xueweihan/HelloGitHub · 164k stars · monthly OSS digest zh)
     blocker: self-recommendation is explicitly invited (README line 35 both
