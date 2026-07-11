@@ -581,6 +581,32 @@ entries:
     notes: upside-not-gate (day-1 = tap/URL already live) · measured external
       merge latency ≥14d · fallback category software-development offered
 
+  - surface: JackyST0/awesome-agent-skills (DevOps · bilingual pair)
+    class: submitted-pr
+    status: pending   # 587 stars · external merges 06-17/22 (nike-17 · ununununium · zriyansh) · CONTRIBUTING bilingual-sync rule honored · awaiting maintainer
+    url: https://github.com/JackyST0/awesome-agent-skills/pull/64
+    submitted: 2026-07-11
+    description_block: agent-skills lead (checked workflows · tamper-evident traces)
+    payload: EN bullet under DevOps + ZH 4-column table row (README + README_ZH
+      same move per their CONTRIBUTING) · platform All (Claude Code · Codex ·
+      Hermes · OpenCode)
+    kill_check: 2026-09-11
+    notes: sister GO-queue item finally fired · fork-basename TRAP hit and
+      healed — ThibautMelen/awesome-agent-skills was ALREADY the VoltAgent
+      fork so this fork landed as awesome-agent-skills-1 and the first signed
+      commit polluted the sister PR VoltAgent 782 (reset to sister head
+      2d88d3f3 same-hour · PR OPEN clean) · law — resolve fork name via
+      parent.full_name BEFORE any createCommitOnBranch
+
+  - surface: linny006/claude-code-plugin-tracker (organic)
+    class: organic-listing
+    status: merged
+    merged: 2026-07-11
+    url: https://github.com/linny006/claude-code-plugin-tracker
+    notes: 3rd linny006 pickup (awesome-agent-skills + mcp-servers-live +
+      this) — a genuine super-spreader node · count as reference, maintain
+      nothing
+
   - surface: alvinreal/awesome-openclaw (Security and Safety)
     class: submitted-pr
     status: pending   # 707 stars · external merge 07-04 (Giri-Aayush) · owner active · awaiting maintainer
