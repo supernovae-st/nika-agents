@@ -598,14 +598,14 @@ entries:
       2d88d3f3 same-hour · PR OPEN clean) · law — resolve fork name via
       parent.full_name BEFORE any createCommitOnBranch
 
-  - surface: linny006/claude-code-plugin-tracker (organic)
-    class: organic-listing
-    status: merged
-    merged: 2026-07-11
+  - surface: linny006/claude-code-plugin-tracker (rolling index · NOT durable)
+    class: rolling-index
+    status: rotated-out   # 07-12 verified — 15-minute auto-refresh (+46/-46 per tick) · we rotated out of the window same-day
     url: https://github.com/linny006/claude-code-plugin-tracker
-    notes: 3rd linny006 pickup (awesome-agent-skills + mcp-servers-live +
-      this) — a genuine super-spreader node · count as reference, maintain
-      nothing
+    notes: HONESTY CORRECTION 07-12 — all three linny006 repos are 15-minute
+      rolling auto-indexes (+N/-N every tick) · presence = a rotating window,
+      never a durable reference · the super-spreader read was a mirage ·
+      rolling-index entries count ZERO in the reference tally
 
   - surface: alvinreal/awesome-openclaw (Security and Safety)
     class: submitted-pr
@@ -1092,8 +1092,8 @@ entries:
       self-promo by-author lines merged 06-24 into this same section) ·
       offline-zero-keys learning angle · first-party disclosed
 
-  - surface: linny006/awesome-agent-skills (organic pickup · NOT submitted)
-    class: organic-listing
+  - surface: linny006/awesome-agent-skills (rolling index · NOT durable)
+    class: rolling-index
     status: merged
     url: https://github.com/linny006/awesome-agent-skills
     submitted: 2026-07-12
@@ -1102,8 +1102,8 @@ entries:
       grep-verified) · 2nd/3rd organic pickup after awesome-rig · count as
       references, maintain nothing
 
-  - surface: linny006/mcp-servers-live (organic pickup · NOT submitted)
-    class: organic-listing
+  - surface: linny006/mcp-servers-live (rolling index · NOT durable)
+    class: rolling-index
     status: merged
     url: https://github.com/linny006/mcp-servers-live
     submitted: 2026-07-12
