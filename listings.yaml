@@ -1155,6 +1155,19 @@ entries:
       external precedent = Virtue-Research self-adding their harness ·
       4th S1-dossier target fired · first-party disclosed
 
+  - surface: vLLM docs (vllm-project · docs/serving/integrations/nika.md)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/vllm-project/vllm/pull/48359
+    submitted: 2026-07-12
+    description_block: full integration page (codex.md precedent shape ·
+      what/how/install/serve/checked-example/verify)
+    notes: 60k-star repo merging externals daily · R2 firing-order slot 2 ·
+      vllm verified as 1 of nika's 5 local providers pre-write · the
+      example workflow statically checked against the released engine
+      before writing · DCO sign-off in commit · AI-usage disclosed in the
+      PR body (their norm) · first-party disclosed
+
 queued_operator:
   - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
     blocker: commitment-class — each creates a MAINTAINED build recipe signed
