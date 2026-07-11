@@ -85,7 +85,7 @@ entries:
 
   - surface: awesome-rust (awesome-rust-com · the living sibling · Applications)
     class: submitted-pr
-    status: pending
+    status: merged   # 🎉 MERGED 2026-07-11 — the living sibling landed (Applications section live · no notability bar)
     url: https://github.com/awesome-rust-com/awesome-rust/pull/94
     submitted: 2026-07-10
     description_block: one-line (description-bank §one-line)
@@ -100,7 +100,9 @@ entries:
     submitted: 2026-07-10
     description_block: one-line (description-bank §one-line)
     notes: a DEDICATED Workflow Engine section (camel-committer merges 06-03) ·
-      first-party disclosed
+      first-party disclosed · 2026-07-11 maintainer requested Copilot review →
+      its star-count house-format finding fixed same-hour on the PR branch
+      (« Nika (⭐25) » · commit 4efbe22) + courteous reply
 
   - surface: awesome-gemini-cli (Piebald-AI · MCP Servers)
     class: submitted-pr
@@ -271,13 +273,18 @@ entries:
 
   - surface: buildwithclaude (davepoon · plugins/all-skills)
     class: submitted-pr
-    status: pending
+    status: closed
     url: https://github.com/davepoon/buildwithclaude/pull/237
     submitted: 2026-07-10
+    closed: 2026-07-11
     description_block: skills-registries lead (description-bank §per-surface)
     notes: frontmatter adapted to their house format (category automation ·
       requires.bins nika) · BODY byte-identical to the kit SKILL v1.1.0 ·
-      daily external merges · first-party disclosed
+      daily external merges · first-party disclosed ·
+      CLOSED 2026-07-11 by davepoon (review verdict — body was Hermes
+      tool-call language · frontmatter fine · security clean) — invited
+      resubmit fixed same-day with the Claude Code-native authoring body,
+      PR 238 (own entry)
 
   - surface: SchemaStore catalog (*.nika.yaml editor association)
     class: submitted-pr
@@ -293,7 +300,7 @@ entries:
 
   - surface: claude-code-templates / aitmpl.com (davila7 · 28.7k stars)
     class: submitted-pr
-    status: pending
+    status: merged   # 🎉 MERGED 2026-07-10 — mcps/devtools/nika.json live (aitmpl.com · 28.7k★ reach)
     url: https://github.com/davila7/claude-code-templates/pull/693
     submitted: 2026-07-10
     description_block: MCP directories lead (description-bank §per-surface)
@@ -343,7 +350,7 @@ entries:
 
   - surface: awesome-ai-agents-2026 (ARUNAGIRINATHAN-K · Data Pipeline and Workflow)
     class: submitted-pr
-    status: pending
+    status: merged   # 🎉 MERGED 2026-07-11 — post-review oxford-comma fix · maintainer confirmed with a ✅
     url: https://github.com/ARUNAGIRINATHAN-K/awesome-ai-agents-2026/pull/147
     submitted: 2026-07-10
     description_block: one-line (description-bank §one-line · agents variant)
@@ -504,6 +511,33 @@ entries:
       since 06-25 carry has-glama) — unblocks via the Glama listing below,
       then add the score badge to the PR line
 
+  - surface: This Week in Rust — CFP Projects (rust-lang/this-week-in-rust)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/rust-lang/this-week-in-rust/pull/8375
+    submitted: 2026-07-11
+    description_block: the CFP entry IS the content (issue 424 · nika-chart showcase)
+    notes: contributor-funnel class (not a listing) — THE Rust weekly's
+      call-for-participation slot · guidelines complied point-by-point (OSI
+      license · public tracker · difficulty stated in the issue body ·
+      contributing guide linked — issue 424 patched pre-submit for the last
+      two) · draft 2026-07-15 edited at their placeholder anchor · one issue
+      per week per their rule (the 425-427 sisters stay for later weeks) ·
+      first-party disclosed
+
+  - surface: buildwithclaude (davepoon · plugins/all-skills · resubmission)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/davepoon/buildwithclaude/pull/238
+    submitted: 2026-07-11
+    description_block: skills-registries frontmatter (their reviewed shape) +
+      the Claude Code-native authoring body (kit blob e376c830)
+    notes: invited resubmit (their 237 review said body was Hermes tool-call
+      language · frontmatter fine) — body now byte-identical to the kit's
+      Claude Code plugin skill (.agents/plugins/nika/skills/nika-authoring/
+      SKILL.md) · zero Hermes references grep-verified pre-submit ·
+      first-party disclosed
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
@@ -537,3 +571,37 @@ queued_operator:
       + nika-mcp-linux-x64 · MCPB.sha256 companion · manifest 0.2 binary ·
       probed from the unpacked bundle) — the same artifacts serve the MCP
       Registry mcpb package lane (fileSha256 from MCPB.sha256)
+
+  - surface: Context7 (context7.com/add-library)
+    blocker: web form (account class) — points at docs.nika.sh
+    payload_ready: llms.txt already LIVE x3 (docs.nika.sh/llms.txt ·
+      /llms-full.txt · nika.sh/llms.txt — 200-verified 2026-07-11 · Mintlify
+      emits them) — the form just needs the repo + docs URLs
+  - surface: llms.txt directories (llmstxt.site · directory.llmstxt.cloud · llmstxthub.com)
+    blocker: 3 web submit forms (~15 min batched with Context7)
+    payload_ready: the three live llms.txt URLs above
+  - surface: AlternativeTo
+    blocker: account must be >=1 WEEK old before suggesting (their anti-spam)
+      — create the account TODAY so the cooldown runs during warm-up ·
+      suggest + claim (email at nika.sh domain) next week · position vs
+      n8n/Zapier/Temporal/Windmill
+    payload_ready: description-bank one-line · platforms/license/tags
+  - surface: european-alternatives.eu
+    blocker: register + in-site suggestion tool (email/chat suggestions
+      refused by their policy) · existing categories only
+    payload_ready: double-qualification (FR company + self-hostable OSS ·
+      relaxed criteria for open source) · description-bank one-line
+  - surface: cursor.directory/plugins/new + Continue hub + PulseMCP/mcp.so clients pages
+    blocker: web logins (all self-serve) · the clients angle lists
+      nika-as-MCP-CLIENT — the official modelcontextprotocol.io clients page
+      is GONE (redirect · verified 2026-07-11), these directories are what
+      remains on that axis
+    payload_ready: repo URL (cursor auto-detects the Open Plugin format) ·
+      Continue mcp block YAML · description-bank MCP lead
+  - surface: Cline MCP marketplace (cline/mcp-marketplace intake issue)
+    blocker: their form requires confirming « tested that Cline can install
+      it from README + llms-install.md » — llms-install.md shipped to main
+      (engine PR 436 · merged 2026-07-11) · needs ONE Cline e2e session
+      before that box can be checked honestly
+    payload_ready: llms-install.md live on main · logo 400x400 to pick from
+      the engine media/ set
