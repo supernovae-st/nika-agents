@@ -1193,6 +1193,30 @@ entries:
       test claim is CI-proven (three dogfooded workflows re-proven every
       push) · first-party disclosed
 
+  - surface: litellm-docs (BerriAI · docs/projects/Nika.md + sidebar)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/BerriAI/litellm-docs/pull/536
+    submitted: 2026-07-12
+    description_block: projects page (smolagents-precedent shape · honest
+      gateway framing via the documented openai+base_url mechanism)
+    notes: R2 firing-order slot 3 · the NEW docs repo (moved out of litellm
+      04-24 — any stale plan targeting the old repo is void) · BOTH files
+      per the 461 precedent (page + sidebars.js registration) · framing
+      law honored — nika is NOT built on litellm, the proxy slots in as
+      gateway · high-velocity repo (merges daily) · first-party disclosed
+
+  - surface: awesome-chatgpt-zh (EmbraceAGI · docs/AI_tools.md)
+    class: submitted-pr
+    status: pending
+    url: https://github.com/EmbraceAGI/awesome-chatgpt-zh/pull/63
+    submitted: 2026-07-12
+    description_block: dedicated zh line (em-dash + 中文句号 house format ·
+      LLocalSearch local-first neighbor)
+    notes: 11.6k stars · reawakened 06-07 after 2y gap — fire-and-forget
+      patience class · A1 dossier line used verbatim · first-party
+      disclosed (利益相关)
+
 queued_operator:
   - surface: package-manager expansion (conda-forge · nixpkgs · MacPorts)
     blocker: commitment-class — each creates a MAINTAINED build recipe signed
