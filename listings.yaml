@@ -731,6 +731,17 @@ entries:
       quarterly verify per cadence class · sibling cascades recorded in
       wave-5 doc (trackawesomelist · Changelog Nightly star-spike)
 
+  - surface: awesome-rig (0xPlaygrounds · organic pickup · NOT submitted by us)
+    class: organic-listing
+    status: merged
+    url: https://github.com/0xPlaygrounds/awesome-rig
+    submitted: 2026-07-11
+    description_block: n/a (their curation · their words)
+    notes: found by the cluster-C mirror sweep (113 stars · pushed 06-24 ·
+      RIG rust-AI ecosystem list · nika grep-verified in their README) ·
+      first fully organic third-party listing · count as a reference,
+      maintain nothing
+
 queued_operator:
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
