@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "e374dfbc55169ccaaa5095093c22117fe84fe97d",
+  "synced_at_engine_sha": "63bdc62cc106dd624b308e958b49ad37a454034a",
   "entries": [
     {
       "class": "engine-mirror",
@@ -12,12 +12,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.claude-plugin/plugin.json",
-      "sha256": "f9adb641e59b7f0cc68774aa8ae9959f6b6e5269e7acead8eda220549447c5ce"
+      "sha256": "b366d373a1f019afc4aaeecf2e9b7eb8ccd87267ad4f4b3624b0d7641ba307e5"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
-      "sha256": "6491288d931c77228713f09fa76749ede857a338e300d8e232d4bdc593a5b7fd"
+      "sha256": "be7ee036c8c22c6c0e274e0ef92f0742414814fee37e35025b74eb1f1c56c5b0"
     },
     {
       "class": "engine-mirror",
@@ -77,7 +77,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.cursor-plugin/plugin.json",
-      "sha256": "1ee5ae8fa7c647422792ffc228073f5dc5792d2f13ff77430f26113f09f97bcb"
+      "sha256": "9d9cae84578c330292c18362f083c68f7e85e1b2cfa295498e1ebdfb0dac63c6"
     },
     {
       "class": "engine-mirror",
@@ -112,7 +112,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/CHANGELOG.md",
-      "sha256": "c524e20bd85fbb7cc3664791420a3ce35b75d5d325663af828208c6a13c82316"
+      "sha256": "3acfe8100c687eb5ef073ed236dd9a2bc341b20f4d9c9b948b434722117dfa8c"
     },
     {
       "class": "engine-mirror",
