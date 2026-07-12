@@ -285,7 +285,8 @@ entries:
     url: https://github.com/aliaihub/awesome-hermes-usecases/pull/11
     submitted: 2026-07-11
     description_block: usecase FILE (their bar · runnable demo + primary sources)
-    notes: 07-11 — missing '## Sources' section (CONTRIBUTING evidence rule)
+    notes: >-
+      07-11 — missing '## Sources' section (CONTRIBUTING evidence rule)
       added in a compliance commit on the PR branch (3 primary sources:
       docs integration guide · nika-agents skill repo · hermes-agent#61632) ·
       prior: content contribution (usecases/deterministic-workflow-delegation.md
@@ -491,7 +492,8 @@ entries:
     url: https://github.com/ksimback/hermes-ecosystem/issues/505
     submitted: 2026-07-10
     description_block: hermes/agent catalogs lead (description-bank §per-surface)
-    notes: 07-11 revival — root cause found (validator gates on '[Repo]' title
+    notes: >-
+      07-11 revival — root cause found (validator gates on '[Repo]' title
       prefix; CLI title never matched) · single self-serve edit applied
       (title+body one event · nika-agents paths corrected · Hermes integration
       story explicit) · validator lane proven live (#506→bot PR in 31min) ·
@@ -1314,20 +1316,21 @@ entries:
       merged 06-27 with the twin pitch — execution governance for agent work)
     notes: 504 stars · ext merges 06-27+06-09 · recent-merge format
       name-link-desc followed · first-party disclosed
-||||||| parent of 2ded831 (chore(listings): outreach swarm wave — 3 sent · 3 revived · 2 operator-queued)
   - surface: awesome-hermes-agent (0xNyk · Community Skills)
     class: submitted-pr
     status: pending
     url: https://github.com/0xNyk/awesome-hermes-agent/issues/223
     submitted: 2026-07-11
     description_block: hermes/agent catalogs lead (description-bank §per-surface)
-    payload: submission issue mirroring their resource-submission form (title
+    payload: >-
+      submission issue mirroring their resource-submission form (title
       convention '[Submission]: nika' · all required fields · maturity beta ·
       first-party disclosed) — intake is issue→maintainer batch triage, not PR.
       LICENSE file added to nika-agents same-move (their form requires one ·
       the README's declared AGPL-3.0-or-later materialized, no licensing change)
     kill_check: 2026-09-09
-    notes: 4.6k★ · alive (pushed 07-04) · nika absent from README pre-submission ·
+    notes: >-
+      4.6k★ · alive (pushed 07-04) · nika absent from README pre-submission ·
       reconciles the SamurAIGPT#84 note ('0xNyk GATED — every merge is the
       owner'): that's their DOCUMENTED intake (form issue → maintainer batch
       commits · 'open an issue — not a PR') — the issue IS the sanctioned
@@ -1353,13 +1356,15 @@ entries:
     url: https://github.com/OWASP/DockSec/issues/92#issuecomment-4948723755
     submitted: 2026-07-11
     description_block: container-scanning example lead (description-bank §per-surface)
-    payload: offered examples/ai-agent-frameworks/nika-workflow-runner/
+    payload: >-
+      offered examples/ai-agent-frameworks/nika-workflow-runner/
       {Dockerfile,docker-compose.yml,workflow.nika.yaml,README.md} — the
       sidecar shape their issue names (app+Ollama+MCP) on the official
       ghcr image · wrong/right API-key-in-ENV pair for scan findings ·
       permits: as the reviewable blast-radius contrast · disclosed
     kill_check: 2026-09-09
-    notes: OWASP Lab project 454★ · issue #92 asks exactly for agent-framework
+    notes: >-
+      OWASP Lab project 454★ · issue #92 asks exactly for agent-framework
       container examples · scope-creep escape hatch offered in the comment
 
   - surface: LibHunt (libhunt.com/r/nika · Rust index)
@@ -1427,12 +1432,14 @@ queued_operator:
     payload_ready: nika lsp is the engine binary · the vscode extension is the
       reference implementation to mirror
   - surface: docker/mcp-registry (GATED-STRUCTURAL · license wall · verified 07-11)
-    blocker: their license validator REJECTS copyleft in code — internal/
+    blocker: >-
+      their license validator REJECTS copyleft in code — internal/
       licenses/check.go IsValid() returns false on any gpl/agpl/npl key
       prefix · nika is AGPL-3.0-or-later by anti-extraction doctrine (Rule 5 ·
       non-negotiable) · a PR would fail CI mechanically · zero AGPL/GPL
       entries exist in their catalog (precedent confirms) · DO NOT fire
-    resolved_meanwhile: the old blocker (no Dockerfile on main) DIED same-day —
+    resolved_meanwhile: >-
+      the old blocker (no Dockerfile on main) DIED same-day —
       engine 442 closed via PR 465 · root Dockerfile on main · public GHCR
       image multi-arch amd64+arm64 (manifest answers anonymously) · docker
       users have their lane TODAY: docker run -i --rm ghcr.io/supernovae-st/
@@ -1451,19 +1458,6 @@ queued_operator:
     payload_ready: description-bank one-line (zh variant to draft at submit
       time) · the digest reaches the largest zh dev audience of any single
       surface in the ledger · pairs with the ruanyf/weekly merge (same bassin)
-||||||| parent of 2ded831 (chore(listings): outreach swarm wave — 3 sent · 3 revived · 2 operator-queued)
-  - surface: Terminal Trove (terminaltrove.com)
-    blocker: web form https://terminaltrove.com/post/ (free · one pass · human)
-    payload_ready: 'name: nika · tagline ≤100c: "A workflow language for AI —
-      one .nika.yaml, statically checked before a single token is spent" ·
-      categories: workflow/automation + AI · repo URL + brew install line ·
-      swarm-verified 07-11 (their intake is form-only)'
-  - surface: hesreallyhim/awesome-claude-code
-    blocker: their rule — ALL recommendations via the web UI issue form
-      template ('not possible to submit using the gh CLI' · agent submissions
-      must go through the form) — operator-only by design
-    payload_ready: category Skills · the nika-authoring skill + /nika:*
-      commands (supernovae-st/nika-agents) · swarm-verified 07-11
   - surface: glama.ai (glama.ai/mcp/servers · 53k servers)
     blocker: web « Add Server » flow (account) + paste the Dockerfile on
       Glama's side — their checks only need the server to start and answer

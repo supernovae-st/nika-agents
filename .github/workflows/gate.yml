@@ -86,9 +86,11 @@ jobs:
           import json, pathlib, sys
           versions = {}
           for p in (".agents/plugins/nika/.claude-plugin/plugin.json",
-                    ".agents/plugins/nika/.codex-plugin/plugin.json"):
+                    ".agents/plugins/nika/.codex-plugin/plugin.json",
+                    ".agents/plugins/nika/.cursor-plugin/plugin.json"):
               versions[p] = json.loads(pathlib.Path(p).read_text())["version"]
           for p in (".claude-plugin/marketplace.json",
+                    ".cursor-plugin/marketplace.json",
                     ".agents/plugins/marketplace.json"):
               m = json.loads(pathlib.Path(p).read_text())
               for entry in m.get("plugins", []):
