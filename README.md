@@ -38,6 +38,10 @@ claude plugin install nika@nika
 claude plugin marketplace update nika   # rung 1: refresh the CLONE
 claude plugin update nika@nika          # rung 2: move the INSTALL, then restart
 
+# Or climb every rung on every surface you have (Cursor · Claude Code ·
+# Codex), one gesture — and `--check` reports drift read-only (CI-able):
+scripts/update-mirrors.sh
+
 # Cursor — search "nika" in the marketplace (Settings → Plugins), one Add
 # installs the full bundle: rule + skill + subagent + commands + hooks + MCP.
 # Or wire this repo as a team marketplace: Dashboard → Plugins → add
