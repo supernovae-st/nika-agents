@@ -488,7 +488,7 @@ entries:
 
   - surface: hermes-ecosystem atlas (ksimback/hermes-ecosystem)
     class: submitted-pr
-    status: pending
+    status: pending   # 07-12: validator re-ran on the title fix → bot opened catalog PR #512 (Skills & Skill Registries) · awaiting ksimback manual review
     url: https://github.com/ksimback/hermes-ecosystem/issues/505
     submitted: 2026-07-10
     description_block: hermes/agent catalogs lead (description-bank §per-surface)
@@ -1338,7 +1338,7 @@ entries:
 
   - surface: open-webui/docs (tutorials/integrations/dev-tools)
     class: submitted-pr
-    status: pending
+    status: closed   # 07-12: maintainer closed — « already covered by our openai compatible page » · gracious close-out comment posted (one reply max, no re-push) · lesson: for cookbook-class PRs, grep THEIR docs for existing generic-mechanism coverage before pitching a tool page
     url: https://github.com/open-webui/docs/pull/1319
     submitted: 2026-07-11
     description_block: openai-compatible base_url lead (description-bank §per-surface)
