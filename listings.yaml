@@ -17,6 +17,7 @@ policy:
     with a courteous note, record the outcome here, and stay on the day-1
     paths (tap/URL/npx) — no listing is load-bearing.
   ritual: >
+  version_coherence: scripts/version-coherence.sh (the 0.x law + install surfaces quote the latest release · run with the ritual · RED stays red until the debt clears)
     Monthly (scriptable later): for each entry, check url is live and the
     shown description still matches the pinned block. Quarterly: prune dead
     surfaces. Every submission and close is announced (L8).
