@@ -32,10 +32,10 @@ the account exists.
 
 - `package()` only installs the binary — running the downloaded binary in
   `package()` would break aarch64 builds on x86_64 build hosts.
-- Shell completions: the engine generates them (`nika completions <shell>`)
-  but the release tarball carries only the binary. Upstream idea filed:
-  ship pre-generated completions in the tarballs so distro packages can
-  install them without executing the target-arch binary.
+- Shell completions: SHIPPED upstream (#487, closed 2026-07-12) — tarballs
+  from the next tag carry `completions/`, and package() installs them
+  conditionally (present ≥0.100, absent on 0.99.0) without ever executing
+  the target-arch binary.
 - The ledger entry lives in `listings.yaml` (`queued_operator` until the
   account ceremony happens).
 

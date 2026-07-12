@@ -17,4 +17,11 @@ sha256sums_aarch64=('00174155457ece1bccedd0ce7da39b1985c5fa60b178c31859402e70c21
 
 package() {
   install -Dm755 "${srcdir}/nika" "${pkgdir}/usr/bin/nika"
+  # Tarballs ≥0.100 carry completions/ (upstream #487) — install when present,
+  # still without ever executing the target-arch binary.
+  if [ -d "${srcdir}/completions" ]; then
+    install -Dm644 "${srcdir}/completions/nika.bash" "${pkgdir}/usr/share/bash-completion/completions/nika"
+    install -Dm644 "${srcdir}/completions/_nika" "${pkgdir}/usr/share/zsh/site-functions/_nika"
+    install -Dm644 "${srcdir}/completions/nika.fish" "${pkgdir}/usr/share/fish/vendor_completions.d/nika.fish"
+  fi
 }
