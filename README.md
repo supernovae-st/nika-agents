@@ -28,11 +28,15 @@ brew install supernovae-st/tap/nika   # the binary first; plugins invoke it
 # Codex
 codex plugin marketplace add supernovae-st/nika-agents
 codex plugin add nika@nika
+codex plugin marketplace upgrade nika   # later: pull a new kit version
+                                        # (the per-version cache refreshes on the next run)
 
-# Claude Code
+# Claude Code — updating is TWO rungs (proven live: an install sat 3 releases
+# behind, silently, with a fresh clone right next to it):
 claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
-claude plugin marketplace update nika   # later: pull a new kit version (installed clones never self-update)
+claude plugin marketplace update nika   # rung 1: refresh the CLONE
+claude plugin update nika@nika          # rung 2: move the INSTALL, then restart
 
 # Cursor — search "nika" in the marketplace (Settings → Plugins), one Add
 # installs the full bundle: rule + skill + subagent + commands + hooks + MCP.
@@ -40,8 +44,9 @@ claude plugin marketplace update nika   # later: pull a new kit version (install
 # supernovae-st/nika-agents
 # (A manual drop into ~/.cursor/plugins/local/ loads MCP + skills ONLY —
 # Cursor's local loader ignores the other components. Until the marketplace
-# listing serves you: `nika init` equips the repo (rules · mcp), and
-# subagents/hooks land project-side with nika#509.)
+# listing serves you: `nika init` equips the repo fully — rules · mcp ·
+# the three subagents · delegation rule · the three seatbelt hooks, all
+# project-side and byte-identical to this kit (engine ≥0.101).)
 
 # Hermes, or any skills.sh-compatible client
 hermes skills tap add supernovae-st/nika-agents      # then: hermes skills list
