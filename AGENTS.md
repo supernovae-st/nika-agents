@@ -64,3 +64,18 @@ python3 scripts/check-skill-commands.py   # kit-native skills vs the binary
 python3 scripts/check-vocab.py            # the description-bank vocabulary law
 # pins + upstream + manifest gates run in CI (.github/workflows/gate.yml)
 ```
+
+## Concurrent sessions (the shared-checkout law)
+
+Two agent sessions regularly hold this repo's ONE local checkout. Two
+incidents in 24h (2026-07-11/12) wrote the law:
+
+1. **Never commit in the shared checkout.** Another session can switch
+   the branch between your edit and your commit — both bites landed on a
+   sister feature branch. Ship via the git data API instead (blob → tree
+   → commit → ref on a fresh branch), then PR.
+2. **Re-parse every YAML you write, before it ships.**
+   `python3 -c "import yaml; yaml.safe_load(open('listings.yaml'))"` costs
+   one second; the broken-parse incident cost a sister session a repair
+   commit. CI now gates the parse — do not rely on it discovering your
+   break.
