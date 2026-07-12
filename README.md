@@ -32,6 +32,7 @@ codex plugin add nika@nika
 # Claude Code
 claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
+claude plugin marketplace update nika   # later: pull a new kit version (installed clones never self-update)
 
 # Cursor — search "nika" in the marketplace (Settings → Plugins), one Add
 # installs the full bundle: rule + skill + subagent + commands + hooks + MCP.
