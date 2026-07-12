@@ -12,12 +12,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.claude-plugin/plugin.json",
-      "sha256": "b366d373a1f019afc4aaeecf2e9b7eb8ccd87267ad4f4b3624b0d7641ba307e5"
+      "sha256": "4f43a90e8b76bae92abaa399508bc6f0e3bb4c67d65da99aa7375d69304e3c46"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
-      "sha256": "be7ee036c8c22c6c0e274e0ef92f0742414814fee37e35025b74eb1f1c56c5b0"
+      "sha256": "55725e997f23d65be0955d47766393c77e46484fba9f5a7cc1e1ef15dba71c61"
     },
     {
       "class": "engine-mirror",
@@ -77,12 +77,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.cursor-plugin/plugin.json",
-      "sha256": "9d9cae84578c330292c18362f083c68f7e85e1b2cfa295498e1ebdfb0dac63c6"
+      "sha256": "12fa468a20977c77456642872ed1dbebdf75c04b5d6dbcd4ea5d16093b194495"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/agents/nika-author.md",
-      "sha256": "25d45398d92b3963d28eb50094242b47333efa7e4ad24d148cf9a4a86f4d11bd"
+      "sha256": "9ab79d55151583e94ca2ba7e73b0bd585ad196c0f47f43f8a8e36c2a42a0afc3"
     },
     {
       "class": "engine-mirror",
@@ -112,7 +112,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/CHANGELOG.md",
-      "sha256": "3acfe8100c687eb5ef073ed236dd9a2bc341b20f4d9c9b948b434722117dfa8c"
+      "sha256": "9f627a6aeae8005307bdb35cfdbc5ee6bd4e318bd0a6ddf97f483c1067138644"
     },
     {
       "class": "engine-mirror",
@@ -132,12 +132,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/agents/nika-debugger.md",
-      "sha256": "ba761353a5640dd248a008dc7d8f11fb22a140558bd3fa7296c32cffa6c7393c"
+      "sha256": "48df42f1901d02cb4488b74c6a842a517c0681df55a31e80f0057cfa0a987229"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/agents/nika-migrator.md",
-      "sha256": "821bc7709e5891589d91fbce4788d4e97c47d8c7ffb8ea81305e699ac227aaa5"
+      "sha256": "0c38c9cb4ebd39d6156e441804ff2441be8fc861012420a6e300ff572d5c31bc"
     },
     {
       "class": "engine-mirror",
@@ -176,5 +176,5 @@
       "source": ".agents/plugins/nika/assets/nika-logo.png"
     }
   ],
-  "engine_sha": "53f697239c3bc01091c4db55b2bc1195d97a575a"
+  "engine_sha": "2d8d8b6fdb3227e67f54569154d611e871028b0c"
 }
