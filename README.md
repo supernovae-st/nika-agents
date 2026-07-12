@@ -14,12 +14,13 @@
 
 **Teach your agent to hand repeatable work to [Nika](https://github.com/supernovae-st/nika):
 a plain-text workflow it can check before a token is spent and verify
-after.** This repo is the install surface: the `nika-authoring` skill
-(author → check → repair loop), the `/nika:check` · `/nika:explain` ·
-`/nika:new` commands, and the read-only MCP oracle (8 tools:
-`nika_check` · `nika_explain` · `nika_schema` · `nika_examples` ·
-`nika_template` · `nika_canon` · `nika_catalog` · `nika_tools`), for the
-plugin ecosystems:
+after.** This repo is the install surface: 4 skills (author · debug ·
+operate · migrate), 3 subagents, 5 commands (`/nika:check` ·
+`/nika:explain` · `/nika:new` · `/nika:trace` · `/nika:permits`),
+3 hooks and the read-only MCP oracle (8 tools: `nika_check` ·
+`nika_explain` · `nika_schema` · `nika_examples` · `nika_template` ·
+`nika_canon` · `nika_catalog` · `nika_tools`), for the plugin
+ecosystems:
 
 ```sh
 brew install supernovae-st/tap/nika   # the binary first; plugins invoke it
@@ -60,8 +61,8 @@ One-click MCP wiring where the client supports it (binary still required):
 
 ```
 ENGINE  supernovae-st/nika              the source of truth
-  ├─ .agents/plugins/nika/              THE plugin kit (skill · subagent ·
-  │    3 manifests: claude · codex ·     commands · rule · hooks · MCP · logo)
+  ├─ .agents/plugins/nika/              THE plugin kit (skills · subagents ·
+  │    3 manifests: claude · codex ·     commands · rules · hooks · MCP · logo)
   │    cursor                            — mirrored HERE, byte-pinned
   ├─ nika init                          per-REPO scaffold (AGENTS.md ·
   │                                      .cursor/{rules,mcp.json} · .vscode ·
@@ -99,15 +100,21 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
 
 ```
 .agents/plugins/marketplace.json      Codex marketplace manifest
-.agents/plugins/nika/                 the plugin (skill + commands + MCP bundle)
+.agents/plugins/nika/                 the plugin (the full suite, one bundle)
   .codex-plugin/plugin.json           Codex manifest
   .claude-plugin/plugin.json          Claude Code manifest
   .cursor-plugin/plugin.json          Cursor manifest (logo + all components)
-  skills/nika-authoring/SKILL.md      the authoring skill (agentskills.io shape)
-  agents/nika-author.md               the authoring subagent (route + fill + repair)
-  commands/{check,explain,new}.md     the /nika:* slash commands
-  hooks/hooks.json                    check-on-edit (afterFileEdit on *.nika.yaml)
+  skills/{nika-authoring,nika-debugging,nika-operating,nika-migration}/
+                                      author · run forensics · day-2 ops · script porting
+  agents/{nika-author,nika-debugger,nika-migrator}.md
+                                      the three subagents (write · root-cause · port)
+  commands/{check,explain,new,trace,permits}.md
+                                      the /nika:* slash commands
+  hooks/cursor-hooks.json             sessionStart (the nika map) · afterFileEdit
+                                      (check-on-edit) · beforeShellExecution (guard-run:
+                                      a nika run must pass nika check — deny teaches)
   rules/nika-workflow-language.mdc    the language rule (the init template, verbatim)
+  rules/nika-delegation.mdc           WHEN to propose a workflow, WHICH surface to use
   assets/nika-logo.png                the marketplace logo
   .mcp.json                           the read-only oracle wiring
 .claude-plugin/marketplace.json       Claude Code marketplace manifest
