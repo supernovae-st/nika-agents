@@ -111,9 +111,9 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
                                       the three subagents (write · root-cause · port)
   commands/{check,explain,new,trace,permits}.md
                                       the /nika:* slash commands
-  hooks/cursor-hooks.json             sessionStart (the nika map) · afterFileEdit
-                                      (check-on-edit) · beforeShellExecution (guard-run:
-                                      a nika run must pass nika check — deny teaches)
+  hooks/{cursor,claude}-hooks.json    the three seatbelts, one file per dialect:
+                                      session map · check-on-edit · guard-run (a nika
+                                      run must pass nika check — the deny teaches)
   rules/nika-workflow-language.mdc    the language rule (the init template, verbatim)
   rules/nika-delegation.mdc           WHEN to propose a workflow, WHICH surface to use
   assets/nika-logo.png                the marketplace logo

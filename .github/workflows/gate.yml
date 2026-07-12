@@ -144,14 +144,18 @@ jobs:
           set -euo pipefail
           base="https://raw.githubusercontent.com/supernovae-st/nika/main"
           drifted=0
-          for f in $(python3 -c "import json;print('\n'.join(e['path'] for e in json.load(open('mirror.json'))['entries'] if e['class']=='engine-mirror'))"); do
-            curl -fsSL "${base}/${f}" -o /tmp/upstream
+          # path=local file · source (optional)=where it lives in the ENGINE
+          # tree when the two differ (e.g. the root marketplace logo pinned
+          # to the kit's) — the fetch follows the SOURCE, the diff reads the
+          # local path.
+          while IFS=$'\t' read -r f src; do
+            curl -fsSL "${base}/${src}" -o /tmp/upstream
             if ! diff -q /tmp/upstream "$f" > /dev/null; then
               drifted=1
-              echo "::warning::${f} differs from engine main — upstream moved, re-sync + re-pin due"
+              echo "::warning::${f} differs from engine main (${src}) — upstream moved, re-sync + re-pin due"
               diff -u "$f" /tmp/upstream | head -40 || true
             fi
-          done
+          done < <(python3 -c 'import json; [print(e["path"], e.get("source", e["path"]), sep="\t") for e in json.load(open("mirror.json"))["entries"] if e["class"]=="engine-mirror"]')
           if [ "$drifted" = "1" ] && [ "${{ github.event_name }}" = "schedule" ]; then
             echo "::error::engine main moved past the mirror pins — run the re-sync"
             exit 1
