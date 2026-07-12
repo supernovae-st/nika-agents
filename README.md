@@ -38,6 +38,10 @@ claude plugin marketplace update nika   # later: pull a new kit version (install
 # installs the full bundle: rule + skill + subagent + commands + hooks + MCP.
 # Or wire this repo as a team marketplace: Dashboard → Plugins → add
 # supernovae-st/nika-agents
+# (A manual drop into ~/.cursor/plugins/local/ loads MCP + skills ONLY —
+# Cursor's local loader ignores the other components. Until the marketplace
+# listing serves you: `nika init` equips the repo (rules · mcp), and
+# subagents/hooks land project-side with nika#509.)
 
 # Hermes, or any skills.sh-compatible client
 hermes skills tap add supernovae-st/nika-agents      # then: hermes skills list
