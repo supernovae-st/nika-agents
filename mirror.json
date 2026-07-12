@@ -1,6 +1,6 @@
 {
   "mirror_version": 1,
-  "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against \u2014 a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
+  "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
   "synced_at_engine_sha": "f776703eee0b444f845d3bbe8d1e199a1be8db7e",
   "entries": [
@@ -12,12 +12,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.claude-plugin/plugin.json",
-      "sha256": "6d97bc8e15b83ea102408df05f45426d65629e860e84c5c50512edc001171a56"
+      "sha256": "fb0d7e302dfb91c7abc38aa23fc109f762e327ab6949b5a43e807df9084096e6"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
-      "sha256": "91c867d6f3ab110e1542be7603de71fe6b53e0bf67bfe3b717a0493d16ed895f"
+      "sha256": "04d9f77017fc82044ac220ba794dc06589069a78c76796025ba0d79a26d626b0"
     },
     {
       "class": "engine-mirror",
@@ -47,37 +47,77 @@
     {
       "class": "kit-native",
       "path": "integrations/opencode/README.md",
-      "proof": "taught subcommands ship (scripts/check-skill-commands.py) \u00b7 wiring live-verified: opencode 1.17.5 mcp list connected + tools/call completed against nika 0.98.0"
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · wiring live-verified: opencode 1.17.5 mcp list connected + tools/call completed against nika 0.98.0"
     },
     {
       "class": "kit-native",
       "path": "integrations/opencode/opencode.json",
-      "proof": "parses in CI \u00b7 same stanza live-verified opencode 1.17.5"
+      "proof": "parses in CI · same stanza live-verified opencode 1.17.5"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/README.md",
-      "proof": "taught subcommands ship (scripts/check-skill-commands.py) \u00b7 stanza matches the engine wire writers"
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · stanza matches the engine wire writers"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/THREAT-MODEL.md",
-      "proof": "taught subcommands ship (scripts/check-skill-commands.py) \u00b7 claims scoped to shipped machinery only"
+      "proof": "taught subcommands ship (scripts/check-skill-commands.py) · claims scoped to shipped machinery only"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/server.json",
-      "proof": "parses in CI \u00b7 MCP Registry manifest shape \u2014 submission itself is a later, announced step"
+      "proof": "parses in CI · MCP Registry manifest shape — submission itself is a later, announced step"
     },
     {
       "class": "kit-native",
       "path": "integrations/mcp/Dockerfile",
-      "proof": "built + introspection-probed in-container 2026-07-09 (ubuntu-24.04 glibc-2.39 \u00b7 SHA256SUMS-verified fetch \u00b7 initialize + tools/list answered over stdio)"
+      "proof": "built + introspection-probed in-container 2026-07-09 (ubuntu-24.04 glibc-2.39 · SHA256SUMS-verified fetch · initialize + tools/list answered over stdio)"
     },
     {
       "class": "kit-native",
       "path": "rules/nika-workflow-language.mdc",
-      "proof": "byte-what `nika init` writes at engine 0.99.0 (regenerate: nika init in a tmp dir, diff .cursor/rules/nika.mdc) \u2014 refresh when the language surface changes (envelope/verbs frozen)"
+      "proof": "byte-what `nika init` writes at engine 0.99.0 (regenerate: nika init in a tmp dir, diff .cursor/rules/nika.mdc) — refresh when the language surface changes (envelope/verbs frozen)"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/.cursor-plugin/plugin.json",
+      "sha256": "4a87cc5d1e3f64fd74964c22bd04adf1c17953777189b8b80cd2148996ae5c60"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/agents/nika-author.md",
+      "sha256": "25d45398d92b3963d28eb50094242b47333efa7e4ad24d148cf9a4a86f4d11bd"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/scripts/check-on-edit.sh",
+      "sha256": "f76bd317af433e7c2389ab97fc682cf8cd732c03128b5258f17652edbc3b6176"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/rules/nika-workflow-language.mdc",
+      "sha256": "ed9f0346607dd0bbf0fcf84812020d2875a16a58f5caf52274fa7da6642a2c80"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/assets/nika-logo.png",
+      "sha256": "921adbf3419182378d267a25ab58381de0370092c6987d2dec9bf48b580611ad"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/hooks/cursor-hooks.json",
+      "sha256": "c20d8e5f0d0a2ffdb11f1732b0cae083bbe1928feb4a25c922b8954231a9c6c1"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/README.md",
+      "sha256": "e849b7aa0a0031ba536f414074e34fdc76f55516f15a570d5f330181ed42c684"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/CHANGELOG.md",
+      "sha256": "3cfcd0b2c635c053ecb574d529e48ce5fc5d722a2653acea72c0b87562bb7fa5"
     }
   ]
 }

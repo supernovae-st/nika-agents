@@ -32,6 +32,11 @@ codex plugin add nika@nika
 claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
 
+# Cursor — search "nika" in the marketplace (Settings → Plugins), one Add
+# installs the full bundle: rule + skill + subagent + commands + hooks + MCP.
+# Or wire this repo as a team marketplace: Dashboard → Plugins → add
+# supernovae-st/nika-agents
+
 # Hermes, or any skills.sh-compatible client
 hermes skills tap add supernovae-st/nika-agents      # then: hermes skills list
 hermes skills install https://raw.githubusercontent.com/supernovae-st/nika-agents/main/skills/autonomous-ai-agents/nika/SKILL.md
@@ -51,6 +56,37 @@ One-click MCP wiring where the client supports it (binary still required):
 
 > 🗺️ **Every door in one page**: install paths, IDEs, agents, skills, MCP, CI, SDKs: [docs.nika.sh/integrations/everywhere](https://docs.nika.sh/integrations/everywhere).
 
+## How the pieces fit (the three layers)
+
+```
+ENGINE  supernovae-st/nika              the source of truth
+  ├─ .agents/plugins/nika/              THE plugin kit (skill · subagent ·
+  │    3 manifests: claude · codex ·     commands · rule · hooks · MCP · logo)
+  │    cursor                            — mirrored HERE, byte-pinned
+  ├─ nika init                          per-REPO scaffold (AGENTS.md ·
+  │                                      .cursor/{rules,mcp.json} · .vscode ·
+  │                                      copilot brief · CLAUDE.md · skill)
+  └─ nika wire <client>                 per-MACHINE wiring (cursor · zed ·
+                                         cline · continue · claude · …)
+
+THIS REPO  supernovae-st/nika-agents    the install surface (light clone —
+                                         marketplaces clone their target)
+   Claude Code · Codex · Cursor          the mirrored plugin, one Add each
+   Hermes / skills.sh · opencode ·       kit-native integrations
+   MCP registries (Glama · server.json)
+
+nika-vscode  supernovae-st/nika-vscode  the IDE product (compiled extension:
+                                         LSP · live DAG canvas · replay
+                                         debugger · runs view — VS Code ·
+                                         Cursor · Windsurf, one build)
+```
+
+Three mechanisms, no overlap: the **plugin** teaches any agent the
+language (per-agent) · **`nika init`** equips one repository (per-repo)
+· **`nika wire`** configures one machine's clients (per-machine). The
+extension is not a plugin: it is the full IDE surface, and on Cursor it
+nudges you to the plugin for the agent side.
+
 ## Why a separate repo
 
 `plugin marketplace add` clones its target. The engine repo carries the full
@@ -66,10 +102,16 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
 .agents/plugins/nika/                 the plugin (skill + commands + MCP bundle)
   .codex-plugin/plugin.json           Codex manifest
   .claude-plugin/plugin.json          Claude Code manifest
+  .cursor-plugin/plugin.json          Cursor manifest (logo + all components)
   skills/nika-authoring/SKILL.md      the authoring skill (agentskills.io shape)
+  agents/nika-author.md               the authoring subagent (route + fill + repair)
   commands/{check,explain,new}.md     the /nika:* slash commands
+  hooks/hooks.json                    check-on-edit (afterFileEdit on *.nika.yaml)
+  rules/nika-workflow-language.mdc    the language rule (the init template, verbatim)
+  assets/nika-logo.png                the marketplace logo
   .mcp.json                           the read-only oracle wiring
 .claude-plugin/marketplace.json       Claude Code marketplace manifest
+.cursor-plugin/marketplace.json       Cursor marketplace manifest
 skills/autonomous-ai-agents/nika/     the Hermes delegation skill (kit-native)
 integrations/opencode/                opencode wiring (live-verified · pinned)
 integrations/mcp/                     generic MCP wiring + registry manifest + threat model
