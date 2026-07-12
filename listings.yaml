@@ -297,7 +297,7 @@ entries:
 
   - surface: mise registry (jdx/mise · registry/nika.toml)
     class: submitted-pr
-    status: pending
+    status: closed   # jdx closed without comment 2026-07-12T00:02Z (notability class — the bot had flagged 25 stars) · our transparency reply predated the close, one-reply rule satisfied · retry criterion: post-1.0 traction (stars/coverage), NOT before
     url: https://github.com/jdx/mise/pull/10932
     submitted: 2026-07-11
     description_block: one-line (registry variant · statically-checked angle)
@@ -1391,6 +1391,26 @@ entries:
     kill_check: 2026-10-12
     notes: quick-win artifact during wave-2 verify · Actions/Codespaces angle
       (gh is the tooling spine there) · nika-action stays the rich CI lane
+
+  - surface: crates.io (nika + the nika-* namespace)
+    class: auto-indexed
+    status: live
+    url: https://crates.io/crates/nika
+    submitted: 2026-07-12
+    description_block: crates.io lead (bank §package registries · the nika
+      crate page carries the public painkiller line + keywords ai/workflow/
+      llm/dag/yaml + docs link)
+    payload: anti-squat 7/7 EXECUTED (nika-cap chart dap display fx
+      pck-manifest tmpl · 0.0.0 house reservation shape · ownership verified) ·
+      description refresh 12/12 (the nika crate swapped its brouillon-era
+      « Semantic YAML workflow engine » line for the public one · 11 stale
+      nika-* reservations re-shaped) — crates.io metadata only moves via
+      publish, so each refresh is a 0.0.1 empty reservation version
+    kill_check: null
+    notes: the un-park proper (real code · cargo install nika) stays
+      ADR-022-gated (release-train chantier · payloads file §11) · lib.rs
+      auto-indexes from crates.io so the refreshed descriptions propagate
+      there free
 
 queued_operator:
   - surface: GitHub social preview (engine repo og:image)
