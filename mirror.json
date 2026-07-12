@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "2c16b5d159b171c2c32c6c641325ac772c629f8f",
+  "synced_at_engine_sha": "2cedb3198aa97b2454c2cbe214091585413d68eb",
   "entries": [
     {
       "class": "engine-mirror",
@@ -12,12 +12,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.claude-plugin/plugin.json",
-      "sha256": "4461956663b70b97a762dd4e3d9435ab896c1b44745a8783fc84d7a6dc20fa12"
+      "sha256": "b06c1eeb653190b6a89f9aa2b6b2659aa642ad8b9ef8b585a0ce6fb8adebb85f"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
-      "sha256": "f344efe602490e4bd6f9e6acfbf106d10955967fb1118e40e8c2ee18e9bbfce6"
+      "sha256": "bd79fe2e92bdafbf1f91e4b915ee7e6752ab7faf1e715115fce4de5530de8639"
     },
     {
       "class": "engine-mirror",
@@ -77,7 +77,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.cursor-plugin/plugin.json",
-      "sha256": "2ecf6746aa2a12ea09275476dcbfba45cdb2ab27470c89ea219d1a929733dde9"
+      "sha256": "2e5f6cc28675611c451accf1f905f8127e0db769b0d8ab4ee3893abd6d858c27"
     },
     {
       "class": "engine-mirror",
@@ -112,7 +112,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/CHANGELOG.md",
-      "sha256": "ee84172fcde86cc02d266db53f335d44567785ba500dcadf0e7f813217190249"
+      "sha256": "75586c74c8d98609f02ca98019b9fb098b31377206234e54f6b7ec0abe27b3ae"
     },
     {
       "class": "engine-mirror",
@@ -162,7 +162,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/session-context.sh",
-      "sha256": "1ce2bfbd149e54139b1ce73aed713964fd1a4d8d3cf977e44a585f843292e109"
+      "sha256": "835a31e17ac458555ba2e8396a4399ca2a16a63090785a778fb7dec646cc4368"
     },
     {
       "class": "engine-mirror",
