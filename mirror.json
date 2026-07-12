@@ -175,6 +175,5 @@
       "sha256": "921adbf3419182378d267a25ab58381de0370092c6987d2dec9bf48b580611ad",
       "source": ".agents/plugins/nika/assets/nika-logo.png"
     }
-  ],
-  "engine_sha": "2d8d8b6fdb3227e67f54569154d611e871028b0c"
+  ]
 }
