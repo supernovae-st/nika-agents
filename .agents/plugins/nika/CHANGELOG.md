@@ -3,6 +3,12 @@
 The bundle every marketplace installs (Claude Code · Codex · Cursor).
 Versions move together across all manifests (the mirror gate pins it).
 
+## 0.101.0 — 2026-07-13
+
+Lockstep on the engine wave (the sovereign lane ships whole — every
+release binary serves local models). Kit content = the 0.100.1
+readonly patch, renumbered onto the wave.
+
 ## 0.100.1 — 2026-07-12
 
 - The three subagents declare `readonly: true` — Cursor ENFORCES what the
