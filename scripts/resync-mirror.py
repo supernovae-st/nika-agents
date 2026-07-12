@@ -37,7 +37,7 @@ def main() -> int:
     for e in manifest["entries"]:
         if e["class"] != "engine-mirror":
             continue
-        upstream = fetch(RAW.format(repo=repo, path=e["path"]))
+        upstream = fetch(RAW.format(repo=repo, path=e.get("source", e["path"])))
         digest = hashlib.sha256(upstream).hexdigest()
         local = ROOT / e["path"]
         same_bytes = local.is_file() and local.read_bytes() == upstream
