@@ -120,18 +120,20 @@ terminal(command="nika new flow.nika.yaml --from chain", workdir="~/project")
 narrates what it will do, the waves, the cost floor, and what it touches —
 before anything runs.
 
-The artifact you are producing looks like this (checks clean on 0.98):
+The artifact you are producing looks like this (W1 map form — the task
+key IS the identity):
 
 ```yaml
 nika: v1
-workflow: daily-brief
+workflow:
+  id: daily-brief
 model: ollama/qwen3.5:4b
 tasks:
-  - id: fetch
+  fetch:
     invoke:
       tool: "nika:fetch"
       args: { url: "https://hn.algolia.com/api/v1/search?tags=front_page" }
-  - id: brief
+  brief:
     depends_on: [fetch]
     infer:
       max_tokens: 300
