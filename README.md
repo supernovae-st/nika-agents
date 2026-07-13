@@ -31,7 +31,7 @@ codex plugin add nika@nika
 codex plugin marketplace upgrade nika   # later: pull a new kit version
                                         # (the per-version cache refreshes on the next run)
 
-# Claude Code — updating is TWO rungs (proven live: an install sat 3 releases
+# Claude Code · updating is TWO rungs (proven live: an install sat 3 releases
 # behind, silently, with a fresh clone right next to it):
 claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
@@ -39,16 +39,16 @@ claude plugin marketplace update nika   # rung 1: refresh the CLONE
 claude plugin update nika@nika          # rung 2: move the INSTALL, then restart
 
 # Or climb every rung on every surface you have (Cursor · Claude Code ·
-# Codex), one gesture — and `--check` reports drift read-only (CI-able):
+# Codex), one gesture · and `--check` reports drift read-only (CI-able):
 scripts/update-mirrors.sh
 
-# Cursor — search "nika" in the marketplace (Settings → Plugins), one Add
+# Cursor · search "nika" in the marketplace (Settings → Plugins), one Add
 # installs the full bundle: rule + skill + subagent + commands + hooks + MCP.
 # Or wire this repo as a team marketplace: Dashboard → Plugins → add
 # supernovae-st/nika-agents
 # (A manual drop into ~/.cursor/plugins/local/ loads MCP + skills ONLY —
 # Cursor's local loader ignores the other components. Until the marketplace
-# listing serves you: `nika init` equips the repo fully — rules · mcp ·
+# listing serves you: `nika init` equips the repo fully · rules · mcp ·
 # the three subagents · delegation rule · the three seatbelt hooks, all
 # project-side and byte-identical to this kit (engine ≥0.101).)
 
@@ -77,7 +77,7 @@ One-click MCP wiring where the client supports it (binary still required):
 ENGINE  supernovae-st/nika              the source of truth
   ├─ .agents/plugins/nika/              THE plugin kit (skills · subagents ·
   │    3 manifests: claude · codex ·     commands · rules · hooks · MCP · logo)
-  │    cursor                            — mirrored HERE, byte-pinned
+  │    cursor                            · mirrored HERE, byte-pinned
   ├─ nika init                          per-REPO scaffold (AGENTS.md ·
   │                                      .cursor/{rules,mcp.json} · .vscode ·
   │                                      copilot brief · CLAUDE.md · skill)
@@ -92,7 +92,7 @@ THIS REPO  supernovae-st/nika-agents    the install surface (light clone —
 
 nika-vscode  supernovae-st/nika-vscode  the IDE product (compiled extension:
                                          LSP · live DAG canvas · replay
-                                         debugger · runs view — VS Code ·
+                                         debugger · runs view · VS Code ·
                                          Cursor · Windsurf, one build)
 ```
 
@@ -126,7 +126,7 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
                                       the /nika:* slash commands
   hooks/{cursor,claude}-hooks.json    the three seatbelts, one file per dialect:
                                       session map · check-on-edit · guard-run (a nika
-                                      run must pass nika check — the deny teaches)
+                                      run must pass nika check · the deny teaches)
   rules/nika-workflow-language.mdc    the language rule (the init template, verbatim)
   rules/nika-delegation.mdc           WHEN to propose a workflow, WHICH surface to use
   assets/nika-logo.png                the marketplace logo
