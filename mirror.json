@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "a31ad81d58377d6b07b891b9e45a482bd7f140d2",
+  "synced_at_engine_sha": "ff0cba5b85b73d551ba1fec2dad4928f823f20de",
   "entries": [
     {
       "class": "engine-mirror",
@@ -37,7 +37,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/commands/new.md",
-      "sha256": "acf463befb8afa5ba148310dd7daf41b3dd07d7bd03e1149605069973f398e85"
+      "sha256": "a3af7ad8b955d811b41494b142bff88ee31b7a8e3497e265a0002e7d5bdf4d4e"
     },
     {
       "class": "kit-native",
