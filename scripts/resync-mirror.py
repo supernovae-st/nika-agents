@@ -102,6 +102,20 @@ class Source:
 
 
 def main() -> int:
+    # Strict argv — this tool REWRITES bytes by default, so a guessed flag
+    # (a `--check` that does not exist) must fail loud, never fall through
+    # to the mutating path. Earned live 2026-07-14.
+    args = sys.argv[1:]
+    i = 0
+    while i < len(args):
+        if args[i] == "--engine":
+            if i + 1 == len(args):
+                sys.exit("usage: resync-mirror.py [--dry] [--engine <dir>] — --engine needs a path")
+            i += 2
+        elif args[i] == "--dry":
+            i += 1
+        else:
+            sys.exit(f"unknown flag {args[i]!r} — usage: resync-mirror.py [--dry] [--engine <dir>]")
     dry = "--dry" in sys.argv
     manifest_path = ROOT / "mirror.json"
     manifest = json.loads(manifest_path.read_text())
