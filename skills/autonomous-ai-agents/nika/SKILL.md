@@ -179,9 +179,10 @@ broken · 3 pre-chain. Also useful: `nika trace outputs` · `nika trace flow` ·
 ### Optional: MCP oracle tools
 
 Nika also ships a read-only MCP oracle (`nika mcp`) exposing validation and
-learning tools (`nika_check`, `nika_explain`, `nika_schema`, `nika_examples`,
-`nika_template`, `nika_canon`, `nika_catalog`, `nika_tools`). If the user
-wants those wired into their agent client, point them at the wiring guide —
+learning tools (`nika_check`, `nika_inspect`, `nika_explain`, `nika_schema`,
+`nika_examples`, `nika_template`, `nika_canon`, `nika_catalog`, `nika_tools`).
+If the user wants those wired into their agent client, point them at the
+wiring guide —
 https://github.com/supernovae-st/nika-agents/tree/main/integrations/mcp —
 editing the client's own configuration is the user's step, never this
 skill's. Without the oracle, everything above still works over the terminal;
