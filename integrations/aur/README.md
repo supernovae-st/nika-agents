@@ -19,7 +19,7 @@ docker run --rm -v "$PWD:/pkg" -w /pkg archlinux:base-devel \
 docker run --rm -v "$PWD:/pkg" -w /pkg archlinux:base-devel \
   bash -c "useradd -m b && chown -R b /pkg && pacman -Sy --noconfirm && su b -c 'makepkg -si --noconfirm'"
 # 5. Push = publish:
-git add PKGBUILD .SRCINFO && git commit -m "nika-bin 0.99.0" && git push
+git add PKGBUILD .SRCINFO && git commit -m "nika-bin 0.105.0" && git push
 ```
 
 ## Per-release refresh (agent-preparable)
@@ -44,4 +44,4 @@ the account exists.
 `KSXGitHub/github-actions-deploy-aur@v4.1.3` (verified maintained) in the
 engine's release workflow, next to the brew bump: regenerates PKGBUILD
 version + sha256s + .SRCINFO and pushes to AUR on every tag — the AUR
-« do not submit and forget » maintainer obligation becomes structural.
+"do not submit and forget" maintainer obligation becomes structural.
