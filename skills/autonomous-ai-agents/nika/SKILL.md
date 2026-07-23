@@ -1,7 +1,7 @@
 ---
 name: nika
-description: "Runs repeatable AI work as checked, budgeted workflow files."
-version: 1.1.0
+description: "Runs repeatable AI work as checked, budgeted, trace-verified workflow files."
+version: 1.1.1
 author: Thibaut Melen (@ThibautMelen) · SuperNovae Studio (github.com/supernovae-st)
 license: MIT
 platforms: [linux, macos]
@@ -134,16 +134,18 @@ tasks:
       tool: "nika:fetch"
       args: { url: "https://hn.algolia.com/api/v1/search?tags=front_page" }
   brief:
-    depends_on: [fetch]
+    with:
+      hn: ${{ tasks.fetch.output }}
     infer:
       max_tokens: 300
       prompt: |
-        Five bullet points, most signal first: ${{ tasks.fetch.output }}
+        Five bullet points, most signal first: ${{ with.hn }}
 outputs:
   brief: ${{ tasks.brief.output }}
 ```
 
-One file, plain YAML: tasks, an explicit dependency, a bounded model step,
+One file, plain YAML: tasks, a named wire (the binding IS the edge —
+`brief` runs after `fetch` because it reads it), a bounded model step,
 a declared output. That file is what gets checked, run, diffed and reused.
 
 ### Cost honesty

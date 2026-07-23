@@ -45,7 +45,8 @@ permissions, visibly, like any other command you'd review.
 
 Companions in this folder: [`server.json`](server.json) is the MCP Registry
 manifest, publishable as-is — its `mcpb` package lanes point at the live
-v0.98.0 release bundles with their real `fileSha256`; the npm lane behind
+0.99.0 release bundles with their real `fileSha256` (bump both at the
+MCP-Registry submission); the npm lane behind
 them is the future-revival shape, not a live package yet (install via
 brew, the Dockerfile, or the bundles meanwhile);
 [`THREAT-MODEL.md`](THREAT-MODEL.md) states plainly what the oracle and the
