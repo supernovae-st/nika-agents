@@ -115,7 +115,8 @@ terminal(command="nika new --from '?'")
 terminal(command="nika new flow.nika.yaml --from chain", workdir="~/project")
 ```
 
-`--from` also accepts plain-words intent. Edit the skeleton (`vars:`,
+`--from` also accepts plain-words intent. Edit the skeleton (the value
+authorities `inputs:` · `config:` · `const:` · `secrets:`, then `permits:`,
 `tasks:`, `outputs:`), then **check it**. `nika explain flow.nika.yaml`
 narrates what it will do, the waves, the cost floor, and what it touches —
 before anything runs.
@@ -128,6 +129,11 @@ nika: v1
 workflow:
   id: daily-brief
 model: ollama/qwen3.5:4b
+permits:                       # absent = ZERO authority · an effect without a grant refuses
+  exec: false
+  net:
+    http: ["hn.algolia.com"]
+  tools: ["nika:fetch"]
 tasks:
   fetch:
     invoke:
