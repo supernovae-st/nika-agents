@@ -42,6 +42,13 @@ layout parity is verified; the round trip is not. Anyone who runs it and
 sees `nika` listed under `plugin marketplace list` has PROVEN it, and this
 paragraph becomes a date and a version instead of a caveat.
 
+What the bundle's two halves each carry is worth knowing before you debug a
+missing piece — and this part IS probed here, against `nika mcp` 0.106.0 on
+this machine. The oracle serves nine `nika_*` tools over `tools/list` and
+declares no other capability: `prompts/list` answers `-32601`. So the five
+`/nika:*` commands are read from the plugin manifest, never from MCP — a
+client that loaded the MCP stanza alone gets validation and no commands.
+
 ## The project scaffold — works with no plugin at all
 
 `nika init` writes `AGENTS.md`, the editor rules and the authoring skill
@@ -51,6 +58,15 @@ from there: author → `nika check` → run budget-capped → `nika trace verify
 ```sh
 nika init
 ```
+
+That scaffold carries the language floor, which matters because a session
+writing its first `.nika.yaml` from memory lands on retired shapes: the
+envelope is thirteen keys and closed, values are classified across
+`inputs:` · `config:` · `const:` · `secrets:` (the older catch-all blocks
+refuse at PARSE), and an absent `permits:` block is ZERO authority rather
+than unrestricted — `NIKA-AUTH-006`. Every one of those is caught by
+`nika check` before a token is spent, and `--fix` / `--infer-permits`
+print the repair.
 
 Two OpenClaude-specific facts worth knowing when you wire things by hand:
 

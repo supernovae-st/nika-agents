@@ -45,4 +45,27 @@ Two facts we verified live so you don't have to:
   tool names instead of reading them.
 
 The oracle validates and teaches; running workflows stays on the terminal,
-where `--max-cost-usd`, effect permits and the trace live.
+where `--max-cost-usd`, effect permits and the trace live. Nine tools ride
+`tools/list` and nothing else does — `prompts/list` is not served at 0.106.0,
+so the `/nika:*` slash commands are a plugin feature, not an MCP one.
+
+## Three things a session gets wrong from memory
+
+An opencode session writing its first `.nika.yaml` from training data
+usually trips on the same three. Each is a refusal at `nika check`, before
+a token is spent — but knowing them saves the round trip:
+
+- **The envelope is closed.** Thirteen keys, `additionalProperties: false`;
+  the two older catch-all value blocks are retired (`NIKA-VALUES-001` /
+  `-002`). A parameter the caller supplies is an `inputs:` declaration, a
+  fixed value is a `const:` entry, deployment settings are `config:`, and
+  credentials are `secrets:` references. `nika check <file> --fix` migrates
+  what it can prove.
+- **`permits:` absent means ZERO authority**, not unrestricted. An `exec:`,
+  a fetch or a file write with no grant refuses with `NIKA-AUTH-006`. Pure
+  compute says `permits: {}`; everything else gets the block
+  `nika check <file> --infer-permits` prints.
+- **A builtin usually beats `exec:`.** `nika catalog --tools` lists what an
+  `invoke` reaches with no MCP server at all — HTTP, files, JSON, hashing,
+  charts. `nika check --native-strict` fails the file on an `exec:` a
+  builtin already covers.

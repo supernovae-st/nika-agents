@@ -1,7 +1,7 @@
 ---
 name: nika
 description: "Runs repeatable AI work as checked, budgeted, trace-verified workflow files."
-version: 1.1.1
+version: 1.2.0
 author: Thibaut Melen (@ThibautMelen) · SuperNovae Studio (github.com/supernovae-st)
 license: MIT
 platforms: [linux, macos]
@@ -78,7 +78,8 @@ Cloud model with a hard budget (always set one for paid models):
 terminal(command="nika run flow.nika.yaml --model mistral/mistral-small-latest --max-cost-usd 0.25", workdir="~/project")
 ```
 
-Pass workflow variables:
+Supply the declared `inputs:` (repeatable · JSON when it parses · an
+undeclared key is refused, never silently ignored):
 
 ```
 terminal(command="nika run report.nika.yaml --var city=Paris --var days=7 --max-cost-usd 0.50", workdir="~/project")
@@ -115,11 +116,9 @@ terminal(command="nika new --from '?'")
 terminal(command="nika new flow.nika.yaml --from chain", workdir="~/project")
 ```
 
-`--from` also accepts plain-words intent. Edit the skeleton (the value
-authorities `inputs:` · `config:` · `const:` · `secrets:`, then `permits:`,
-`tasks:`, `outputs:`), then **check it**. `nika explain flow.nika.yaml`
-narrates what it will do, the waves, the cost floor, and what it touches —
-before anything runs.
+`--from` also accepts plain-words intent. Edit the skeleton, then
+**check it**. `nika explain flow.nika.yaml` narrates what it will do, the
+waves, the cost floor, and what it touches — before anything runs.
 
 The artifact you are producing looks like this (W1 map form — the task
 key IS the identity):
@@ -154,6 +153,184 @@ One file, plain YAML: tasks, a named wire (the binding IS the edge —
 `brief` runs after `fetch` because it reads it), a bounded model step,
 a declared output. That file is what gets checked, run, diffed and reused.
 
+### The envelope — thirteen keys, no more
+
+`additionalProperties: false` at the top level: a key outside this list is
+a PARSE refusal, not a warning. Only `nika:`, `workflow:` and `tasks:` are
+required; the rest earn their place. `nika mcp`'s `nika_schema` tool serves
+the machine-readable copy.
+
+```yaml
+nika: v1                          # 1 · the language contract · exactly v1
+workflow:                         # 2 · identity
+  id: daily-brief
+model: ollama/qwen3.5:4b          # 3 · default model · <provider>/<name>
+types:                            # 4 · named types (PascalCase · acyclic)
+  Brief:
+    object:
+      headline: string
+      bullets: { array: string }
+inputs:                           # 5 · what the CALLER supplies
+  feed_url:
+    type: string
+config:                           # 6 · what the DEPLOYMENT supplies
+  locale:
+    type: string
+    default: "en"
+const:                            # 7 · baked into the file
+  max_items: 5
+secrets:                          # 8 · store references · never literals
+  FEED_TOKEN:
+    source: env
+    key: FEED_TOKEN
+    egress:                       # the sanctioned sinks · absent = default-deny
+      - { to: "nika:fetch" }
+      - { to: "infer" }
+permits:                          # 9 · absent = ZERO authority
+  net:
+    http: ["hn.algolia.com"]
+  tools: ["nika:fetch"]
+run:                              # 10 · entropy + clock, declared not ambient
+  entropy: { seeded: 42 }
+  clock: virtual
+policy:                           # 11 · named law, judged at check
+  require:
+    human_gate_before: ["exec"]
+tasks:                            # 12 · the work
+  fetch:
+    timeout: "30s"
+    invoke:
+      tool: "nika:fetch"
+      args:
+        url: "${{ inputs.feed_url }}"
+        headers: { authorization: "${{ secrets.FEED_TOKEN }}" }
+  brief:
+    with:
+      raw: ${{ tasks.fetch.output }}
+      n: ${{ const.max_items }}
+      lang: ${{ config.locale }}
+    returns: Brief
+    infer:
+      max_tokens: 400
+      prompt: |
+        In ${{ with.lang }}, give ${{ with.n }} bullets: ${{ with.raw }}
+outputs:                          # 13 · the return value
+  brief: ${{ tasks.brief.output }}
+```
+
+### Where a value comes from (four authorities)
+
+One question decides the block: **who supplies this?**
+
+| Block | Supplier | Read as | Use for |
+|---|---|---|---|
+| `inputs:` | the caller (`--var k=v`) | `${{ inputs.X }}` | per-run parameters |
+| `config:` | the deployment | `${{ config.X }}` | non-sensitive settings that may appear in logs |
+| `const:` | the file itself | `${{ const.X }}` | fixed values baked in |
+| `secrets:` | a store | `${{ secrets.X }}` | credentials · masked · never inline |
+
+The two older catch-all envelope blocks are retired — `NIKA-VALUES-001`
+and `NIKA-VALUES-002` refuse them at PARSE and name the replacement. This
+is a classify step, not a rename: a required parameter is an `inputs:`
+declaration, a fixed value is a `const:` entry. `nika check <file> --fix`
+migrates what it can prove and skips what it cannot.
+
+Secrets are tracked through the graph, not just at the reference: if a
+tainted task output flows into a later step, `check` names the path and
+refuses until `egress:` sanctions that sink.
+
+### Permits — absent means zero authority
+
+`permits:` is the declared capability boundary. **No block at all is not
+"unrestricted" — it is zero.** A task with an effect and no grant refuses
+at check with `NIKA-AUTH-006` (`exec` · `net` · `fs` all fire), and once
+the block is present every category is default-deny unless listed.
+
+- Pure compute states the zero explicitly: `permits: {}`.
+- `nika check <file> --infer-permits` prints the tightest block the body
+  actually needs — paste it in rather than guessing wide.
+- A grant nothing reaches draws a `NIKA-DRIFT-001` hint: the boundary is
+  meant to shrink to the body.
+
+### Beyond the verb — the task modifiers
+
+Exactly one verb per task (`infer` · `exec` · `invoke` · `agent`), plus any
+of these on the same task:
+
+| Modifier | What it does |
+|---|---|
+| `with:` | bind another task's output — **the binding IS the edge** |
+| `after:` | pure ordering · `{ producer: success }` (or `failure`) |
+| `when:` | a local condition, evaluated after the gate |
+| `for_each:` | map the task over a list · `max_parallel:` caps it · `fail_fast:` aborts |
+| `retry:` | re-attempt policy |
+| `on_error:` / `on_finally:` | the failure path · cleanup that always runs |
+| `output:` | named jq bindings, read as `${{ tasks.X.<name> }}` |
+| `returns:` | the task's typed output contract |
+| `timeout:` | quoted Go-duration · `"30s"` · `"5m"` |
+| `inert:` / `declassify:` | the two audited doors: data-as-code, and taint |
+
+`nika catalog --tools` lists the builtins an `invoke` reaches without any
+MCP server — 28 of them across six families (core · file · data · network ·
+introspection · media). Reach for one before writing `exec:`.
+
+### A workflow can call a workflow
+
+`invoke:` carries **exactly one** of `tool:` or `workflow:` — both, or
+neither, is a PARSE refusal. The child is an ordinary workflow file:
+
+```yaml
+nika: v1
+workflow:
+  id: page-title
+inputs:
+  url:
+    type: string
+permits:
+  net:
+    http: ["example.com"]
+  tools: ["nika:fetch"]
+tasks:
+  get:
+    invoke:
+      tool: "nika:fetch"
+      args: { url: "${{ inputs.url }}", mode: text }
+outputs:
+  text: ${{ tasks.get.output }}
+```
+
+The parent calls it by a **static** path — a `${{ }}`-templated target is
+refused (`NIKA-COMP-001`), because a call graph you cannot draw before the
+run is one you cannot bound:
+
+```yaml
+nika: v1
+workflow:
+  id: site-report
+inputs:
+  target:
+    type: string
+permits:
+  net:
+    http: ["example.com"]
+  tools: ["nika:fetch"]
+tasks:
+  page:
+    invoke:
+      workflow: "./page-title.nika.yaml"
+      args:
+        url: "${{ inputs.target }}"
+outputs:
+  text: ${{ tasks.page.output }}
+```
+
+The one law that surprises people: **a child never gains authority the
+parent lacks.** Drop the parent's `permits:` above and check refuses with
+`NIKA-COMP-002` — the child's `nika:fetch` is outside the parent boundary.
+So a parent that only delegates still declares what its children reach,
+and the drift hint on those entries is advisory where the containment
+refusal is not. Cycles are refused too (`NIKA-COMP-003`).
+
 ### Cost honesty
 
 - When the workflow prices above the budget, `--max-cost-usd` refuses to
@@ -172,16 +349,38 @@ a declared output. That file is what gets checked, run, diffed and reused.
 ### Receipts and verification
 
 Every run writes a trace under `.nika/traces/` — the run card prints the
-trace path on its `trace:` line. Both commands take that path (bare
-invocations are a usage error):
+trace path on its `trace:` line. Pass that path; bare, both commands fall
+back to the workspace's latest trace and say which one they read:
 
 ```
 terminal(command="nika trace show .nika/traces/<run>.ndjson", workdir="~/project")
 terminal(command="nika trace verify .nika/traces/<run>.ndjson", workdir="~/project")
 ```
 
-`trace verify` checks the tamper-evidence hash chain: exit 0 intact · 2
-broken · 3 pre-chain. Also useful: `nika trace outputs` · `nika trace flow` ·
+`trace verify` checks the tamper-evidence hash chain, then climbs a proof
+ladder and reports **the highest tier honestly attained**:
+
+| Tier | What it proves | How to reach it |
+|---|---|---|
+| chain intact | no line was altered after it was written | every run |
+| `SEALED` | a custody key signed the run | `--key <pub>` |
+| `ANCHORED` | the `<trace>.anchor.json` sidecar verifies offline | `--anchored` |
+| `REPLAYED` | a fresh journal of the same workflow matches | `--replay <trace>` |
+
+Exit 0 the tier holds · 2 broken or forged · 3 unchained or a missing
+input. A fourth verdict is not a failure: **`INCOMPLETE`** means the
+journal never reached a terminal frame — the run was killed or crashed, so
+the chain still attests every complete line while the lifecycle end is
+unattested. Report it as what it is; do not call it a pass or a break.
+
+Quote the chain head back against the one the run card printed — that is
+what closes the loop; the chain alone is tamper-EVIDENT, not tamper-proof.
+
+For a run someone else must audit, `nika evidence <trace>` writes
+`<trace-stem>.evidence/` — `journal.ndjson`, `pack.json` (the manifest and
+receipt, which say plainly whether a seal is present) and `VERIFY.md` (the
+auditor's three commands). Add `--workflow <file>` to unlock the boundary
+and the receipt. Also useful: `nika trace outputs` · `nika trace flow` ·
 `nika trace reproduce` · `nika trace export` (OTLP lines).
 
 ### Optional: MCP oracle tools
@@ -208,8 +407,10 @@ live.
 | `nika run <file> --model <p/m> --max-cost-usd <usd>` | Execute with budget |
 | `nika test <file>` | Golden test under the mock provider (offline) |
 | `nika trace show/verify/outputs/flow <trace>` | Receipts after a run (path from the run card's `trace:` line) |
+| `nika evidence <trace>` | Export the auditor pack (journal · manifest · receipt · VERIFY.md) |
 | `nika doctor` | Diagnose env/keys — prints exact fixes |
 | `nika catalog` | Provider/model ids + required env vars |
+| `nika catalog --tools` | The builtins an `invoke` reaches without MCP |
 
 ## Procedure
 
@@ -225,7 +426,9 @@ live.
    `process(action="poll"|"log")`.
 7. After the run: `nika trace show <trace>` + `nika trace verify <trace>`
    (path from the run card); report outputs, actual cost, and the verify
-   verdict to the user.
+   verdict to the user — including `INCOMPLETE`, which means the run died
+   before a terminal frame. When someone must audit it later,
+   `nika evidence <trace>` exports the pack.
 
 ### Rules
 
@@ -253,6 +456,15 @@ live.
   custom endpoint model.
 - Workflow `outputs:` are not resolved on a budget stop — per-task values
   live in the trace (`nika trace outputs`).
+- Deleting a `permits:` block to unblock a refusal does the opposite: absent
+  is zero authority, not unrestricted. Widen the grant, or run
+  `nika check <file> --infer-permits` and paste what it prints.
+- A parent that only delegates still declares what its children reach, and
+  then draws a drift hint on grants its own body never uses. The hint is
+  advisory; the containment refusal underneath it is not — do not "fix" the
+  hint by emptying the block.
+- `nika trace verify` exits 0 on `INCOMPLETE` too. Read the verdict word,
+  not just the exit code, before telling the user a run is proven.
 
 ## Verification
 
