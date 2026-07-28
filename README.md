@@ -52,6 +52,12 @@ scripts/update-mirrors.sh
 # the three subagents · delegation rule · the three seatbelt hooks, all
 # project-side and byte-identical to this kit (engine ≥0.101).)
 
+# OpenClaude · its plugin loader reads the Claude Code marketplace layout
+# (.claude-plugin/marketplace.json), so this kit installs unported:
+npm install -g @gitlawb/openclaude
+openclaude plugin marketplace add supernovae-st/nika-agents
+openclaude plugin install nika@nika
+
 # Hermes, or any skills.sh-compatible client
 hermes skills tap add supernovae-st/nika-agents      # then: hermes skills list
 hermes skills install https://raw.githubusercontent.com/supernovae-st/nika-agents/main/skills/autonomous-ai-agents/nika/SKILL.md
@@ -135,6 +141,7 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
 .cursor-plugin/marketplace.json       Cursor marketplace manifest
 skills/autonomous-ai-agents/nika/     the Hermes delegation skill (kit-native)
 integrations/opencode/                opencode wiring (live-verified · pinned)
+integrations/openclaude/              OpenClaude · plugin path + Skill Hub dossier
 integrations/mcp/                     generic MCP wiring + registry manifest + threat model
 integrations/description-bank.md      the words every listing copies
 mirror.json                           the drift contract (classes + pins)
