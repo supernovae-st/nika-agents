@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "6cb82cc6cbc9b73261b2c69628db7f41361ded57",
+  "synced_at_engine_sha": "a87ceee7c4b66fee2c29cdddc12b6510fb49149c",
   "entries": [
     {
       "class": "engine-mirror",
@@ -12,12 +12,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.claude-plugin/plugin.json",
-      "sha256": "667ad87bc57df29d165b6dbd377db44996e0f9d47ec67d32bdc311848dc88e2d"
+      "sha256": "312c90e77860777460d384c1ca7b0b93d9995d0f035cdf5b83555f4d12a208bf"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
-      "sha256": "0dd306f7bfa060b3e439267cff00fabcbfa12ad5a4e8babd131801623a482635"
+      "sha256": "377057c7261ad50fa93ef0f599da567f374d0b5c65c0223a7f824a11c175b614"
     },
     {
       "class": "engine-mirror",
@@ -77,7 +77,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.cursor-plugin/plugin.json",
-      "sha256": "7981637dc88e05dca9724e36097faff1853deb6a2c9d7de260bd52cd092eba6e"
+      "sha256": "d373d43307123a93733c475c8da6efcf841e26b6cc5a9d163ebe9cf8e05c384c"
     },
     {
       "class": "engine-mirror",
@@ -87,7 +87,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/check-on-edit.sh",
-      "sha256": "7fa4edcc60c7dfa8e6e5846cf145056123f8d5066e78f21735f88431f17fd692"
+      "sha256": "9d091312baf5341958b4c321f4207c1587039fea1ccf96ae3629a0c03a4135ec"
     },
     {
       "class": "engine-mirror",
@@ -112,7 +112,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/CHANGELOG.md",
-      "sha256": "b13ec0b8f6c3da73faca4aaf2c27922a433cc4753c97818753695662a73a045b"
+      "sha256": "67337eea8c1439815821ec9a5ef88a73f5641101260500cbeadfa80ff2306741"
     },
     {
       "class": "engine-mirror",
