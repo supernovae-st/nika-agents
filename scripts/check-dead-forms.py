@@ -47,8 +47,11 @@ DEAD_USAGE = [
      "NIKA-DAG-005 · the predicate is `success`"),
     (re.compile(r":\s*failed\b"),
      "NIKA-DAG-005 · the predicate is `failure`"),
-    (re.compile(r"\btype:\s*boolean\b"),
-     "NIKA-TYPE-001 · the one boolean spelling is `bool`"),
+    # `type: boolean` is NOT listed here on purpose. It is dead under the
+    # value authorities (NIKA-TYPE-001 wants `bool`) but perfectly correct
+    # inside a `schema:` block, which is JSON Schema and not Nika's type
+    # grammar. A regex cannot tell those apart from one line, and a gate
+    # that reds a legitimate schema example teaches people to ignore it.
     # Column 0 inside a fence is the ENVELOPE level, where both blocks are
     # dead. An INDENTED `env:` is a task's own environment map and is very
     # much alive, which is why the anchor matters more than the word.
