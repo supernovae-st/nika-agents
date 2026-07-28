@@ -70,6 +70,13 @@ jobs:
           echo "all manifests parse"
       - name: The vocabulary law holds (description-bank discipline)
         run: python3 scripts/check-vocab.py
+      # The engine refuses the kit that teaches a form it rejects; this is
+      # the same ratchet for the surfaces owned HERE. Earned 2026-07-28,
+      # when the plugin was found teaching `vars:`, `${{ env.X }}`, a
+      # scalar `workflow:` and `capture: text` three releases after each
+      # became a refusal.
+      - name: No kit-native surface teaches a dead language form
+        run: python3 scripts/check-dead-forms.py
       - name: The listings registry parses
         run: |
           python3 - << 'EOF'
