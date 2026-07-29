@@ -41,7 +41,9 @@ claude plugin update nika@nika          # rung 2: move the INSTALL, then restart
 # Or climb every rung on every surface you have (binary · Cursor ·
 # Claude Code · Codex), one gesture — the nika binary itself is lifted
 # when it lags the kit's release train · and `--check` reports drift
-# read-only (CI-able):
+# read-only (CI-able), reading BOTH rungs per client: the marketplace
+# clone AND the install the sessions actually load (claude:
+# installed_plugins.json · codex: the per-version cache):
 scripts/update-mirrors.sh
 
 # Cursor · search "nika" in the marketplace (Settings → Plugins), one Add
