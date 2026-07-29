@@ -139,6 +139,8 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
 
 **This building** · THE AI KIT · agents learn the language here (the authoring skill · the MCP oracle · commands).
 
+**Root** · neither · this building teaches the LANGUAGE. Its corpus is a sha256-pinned mirror of nika-spec and its commands are probed against the released engine · nothing authoritative is typed here.
+
 **Consumes** · the engine's `.agents/plugins/` (mirrored byte-pinned · the heal follows the release train).
 
 **Serves** · Claude Code · Codex · Cursor sessions, one Add each.
