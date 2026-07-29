@@ -90,37 +90,67 @@ else
 fi
 
 # ── Claude Code (TWO rungs: the clone, then the install) ──────────────
+# Rung 2 IS probeable: installed_plugins.json is the install rung of
+# record (the cache retains old version dirs — the JSON, not a dir
+# listing, says what sessions load). The prior claim that it was not
+# probeable read-only died empirically 2026-07-29.
+claude_install_version() {
+  [[ -f "$HOME/.claude/plugins/installed_plugins.json" ]] &&
+    python3 -c 'import json,os
+p = os.path.expanduser("~/.claude/plugins/installed_plugins.json")
+print(json.load(open(p))["plugins"]["nika@nika"][0]["version"])' 2>/dev/null || echo absent
+}
 if command -v claude >/dev/null 2>&1; then
   CLAUDE_CLONE="$HOME/.claude/plugins/marketplaces/nika/.agents/plugins/nika/.claude-plugin/plugin.json"
   v="$(surface_version "$CLAUDE_CLONE")"
-  if [[ "$v" == absent ]]; then
+  iv="$(claude_install_version)"
+  if [[ "$v" == absent && "$iv" == absent ]]; then
     echo "· claude: plugin not installed — skipped (claude plugin install nika@nika)"
-  elif [[ "$v" == "$repo_version" && $CHECK -eq 1 ]]; then
-    echo "✔ claude: $v (clone; the INSTALL may still lag — rung 2 is not probeable read-only)"
+  elif [[ "$v" == "$repo_version" && "$iv" == "$repo_version" && $CHECK -eq 1 ]]; then
+    echo "✔ claude: $v (both rungs)"
   elif [[ $CHECK -eq 1 ]]; then
-    echo "✖ claude: clone at $v (repo has $repo_version)"; drift=1
+    echo "✖ claude: clone $v · install $iv (repo has $repo_version)"; drift=1
   else
     claude plugin marketplace update nika >/dev/null 2>&1 || true       # rung 1: the clone
-    out="$(claude plugin update nika@nika 2>&1 | tail -1 || true)"      # rung 2: the install
-    echo "✔ claude: $out"
+    claude plugin update nika@nika >/dev/null 2>&1 || true              # rung 2: the install
+    niv="$(claude_install_version)"
+    if [[ "$niv" == "$repo_version" ]]; then
+      echo "✔ claude: install $iv → $niv — restart the session to load it"
+    else
+      echo "✖ claude: install did not reach $repo_version (still $niv) — claude plugin install nika@nika, then restart"
+    fi
   fi
 else
   echo "· claude: CLI absent — skipped"
 fi
 
-# ── Codex (one rung: the clone; per-version cache follows on next run) ─
+# ── Codex (TWO rungs too: the clone, then the per-version cache the
+#    sessions load — the cache refreshes on the next codex run) ────────
+codex_cache_version() {
+  local d names=()
+  for d in "$HOME/.codex/plugins/cache/nika/nika"/*/; do
+    [[ -d "$d" ]] || continue
+    d="$(basename "$d")"
+    [[ "$d" =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?$ ]] && names+=("$d")
+  done
+  ((${#names[@]})) && printf '%s\n' "${names[@]}" | sort -t. -k1,1n -k2,2n -k3,3n | tail -1
+}
 if command -v codex >/dev/null 2>&1; then
   CODEX_CLONE="$HOME/.codex/.tmp/marketplaces/nika/.agents/plugins/nika/.claude-plugin/plugin.json"
   v="$(surface_version "$CODEX_CLONE")"
-  if [[ "$v" == absent ]]; then
+  cv="$(codex_cache_version)"
+  [[ -n "$cv" ]] || cv=absent
+  if [[ "$v" == absent && "$cv" == absent ]]; then
     echo "· codex: plugin not installed — skipped (codex plugin add nika@nika)"
+  elif [[ "$v" == "$repo_version" && "$cv" == "$repo_version" && $CHECK -eq 1 ]]; then
+    echo "✔ codex: $v (both rungs)"
   elif [[ "$v" == "$repo_version" && $CHECK -eq 1 ]]; then
-    echo "✔ codex: $v"
+    echo "✔ codex: clone $v · cache $cv — a codex run refreshes the cache"
   elif [[ $CHECK -eq 1 ]]; then
-    echo "✖ codex: $v (repo has $repo_version)"; drift=1
+    echo "✖ codex: clone $v · cache $cv (repo has $repo_version)"; drift=1
   else
     codex plugin marketplace upgrade nika >/dev/null 2>&1 || true
-    echo "✔ codex: $v → $(surface_version "$CODEX_CLONE") (cache refreshes on next run)"
+    echo "✔ codex: clone $v → $(surface_version "$CODEX_CLONE") · cache $cv refreshes on the next codex run"
   fi
 else
   echo "· codex: CLI absent — skipped"
