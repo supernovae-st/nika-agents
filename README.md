@@ -120,6 +120,33 @@ is instant. The files are mirrored verbatim from the engine's
 [`.agents/plugins/`](https://github.com/supernovae-st/nika/tree/main/.agents/plugins).
 File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-st/nika).
 
+<!-- city:map -->
+## The city · where this repo sits
+
+```
+📜 nika-spec ──── the civil code · the law tables, the corpus, the exam
+    │ sync-pack: byte-gated mirror        │ projectors: drift-gated
+    ▼                                     ▼
+⚙️ nika ───────── the engine + the catalog (the yellow pages)
+    │ the release train                  🖥️ nika.sh · 📖 nika-docs
+    ▼                                     the showroom · the manual
+📦 homebrew-tap · npm · Docker ── the docks
+🔌 nika-client · 🎨 nika-vscode · 🤖 nika-agents ── the doors   ◀── you are here
+🏪 nika-registry ── the market · 🔍 nika-site-audit ── the witness
+```
+
+**This building** · THE AI KIT · agents learn the language here (the authoring skill · the MCP oracle · commands).
+
+**Consumes** · the engine's `.agents/plugins/` (mirrored byte-pinned · the heal follows the release train).
+
+**Serves** · Claude Code · Codex · Cursor sessions, one Add each.
+
+**Truth lives** · everything here is a MIRROR · file issues and PRs against the engine.
+
+Every fact has one home · everything else is a gated projection.
+The living map: [nika.sh/map](https://nika.sh/map).
+<!-- /city:map -->
+
 ## What's inside
 
 ```
