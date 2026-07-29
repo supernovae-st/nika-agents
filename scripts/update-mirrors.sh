@@ -8,6 +8,8 @@
 # next to it — the clone had updated, the install had not). This script
 # climbs every rung on every surface it finds, and says what it did:
 #
+#   binary       nika on PATH (brew is the writer)  upgrade when it lags the
+#                                                   kit train (major.minor)
 #   Cursor       ~/.cursor/plugins/local/nika        rsync from this repo
 #   Claude Code  marketplace clone + install         BOTH rungs + restart note
 #   Codex        marketplace clone (per-version cache refreshes on next run)
@@ -16,7 +18,10 @@
 #   scripts/update-mirrors.sh --check    # read-only: report drift, exit 1 if any
 #
 # A surface that is absent is skipped with a note, never an error — the
-# script serves laptops with one client as well as the full triple.
+# script serves laptops with one client as well as the full triple. The
+# binary rides the same contract: absent → note + install line, never an
+# auto-install (the marketplaces never consented to placing system
+# binaries; this script keeps that line even as an explicit gesture).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -31,6 +36,43 @@ drift=0
 surface_version() { # $1 = plugin.json path
   [[ -f "$1" ]] && python3 -c "import json;print(json.load(open('$1'))['version'])" 2>/dev/null || echo absent
 }
+
+# ── The binary first (every surface invokes it · brew is the writer) ──
+# Compared at major.minor: the kit is cut per release train, patch
+# releases ship binary-only, so patch drift is not a finding.
+if command -v nika >/dev/null 2>&1; then
+  bin_v="$(nika --version 2>/dev/null | tr -cd '0-9.')"
+  IFS=. read -r r_maj r_min _ <<<"$repo_version"
+  IFS=. read -r b_maj b_min _ <<<"${bin_v:-.}"
+  if [[ -z "$b_maj" || -z "$b_min" ]]; then
+    echo "· binary: nika answers no parseable version — skipped"
+  elif (( b_maj == r_maj && b_min == r_min )); then
+    echo "✔ binary: nika $bin_v (the $r_maj.$r_min train)"
+  elif (( b_maj < r_maj || (b_maj == r_maj && b_min < r_min) )); then
+    if [[ $CHECK -eq 1 ]]; then
+      echo "✖ binary: nika $bin_v lags the kit train $repo_version — brew upgrade nika"; drift=1
+    elif command -v brew >/dev/null 2>&1; then
+      brew upgrade nika >/dev/null 2>&1 || true
+      nv="$(nika --version 2>/dev/null | tr -cd '0-9.')"
+      if [[ "$nv" == "$bin_v" ]]; then
+        echo "✖ binary: brew moved nothing (still $nv) — the tap may not carry the $r_maj.$r_min train yet"
+      else
+        echo "✔ binary: nika $bin_v → $nv"
+      fi
+    else
+      echo "✖ binary: nika $bin_v lags the kit train $repo_version and brew is absent — update via your install path (nika.sh)"
+    fi
+  else
+    # The binary rides ahead: the stale side is THIS CHECKOUT, not brew.
+    if [[ $CHECK -eq 1 ]]; then
+      echo "✖ binary: nika $bin_v rides ahead of this checkout ($repo_version) — git pull, then re-run"; drift=1
+    else
+      echo "· binary: nika $bin_v rides ahead of this checkout ($repo_version) — git pull, then re-run"
+    fi
+  fi
+else
+  echo "· binary: nika absent — every surface invokes it (brew install supernovae-st/tap/nika)"
+fi
 
 # ── Cursor (local plugin dir · rsync is the only writer) ──────────────
 CURSOR_DIR="$HOME/.cursor/plugins/local/nika"

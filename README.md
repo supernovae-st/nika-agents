@@ -38,8 +38,10 @@ claude plugin install nika@nika
 claude plugin marketplace update nika   # rung 1: refresh the CLONE
 claude plugin update nika@nika          # rung 2: move the INSTALL, then restart
 
-# Or climb every rung on every surface you have (Cursor · Claude Code ·
-# Codex), one gesture · and `--check` reports drift read-only (CI-able):
+# Or climb every rung on every surface you have (binary · Cursor ·
+# Claude Code · Codex), one gesture — the nika binary itself is lifted
+# when it lags the kit's release train · and `--check` reports drift
+# read-only (CI-able):
 scripts/update-mirrors.sh
 
 # Cursor · search "nika" in the marketplace (Settings → Plugins), one Add
