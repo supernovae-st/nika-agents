@@ -120,6 +120,8 @@ is instant. The files are mirrored verbatim from the engine's
 [`.agents/plugins/`](https://github.com/supernovae-st/nika/tree/main/.agents/plugins).
 File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-st/nika).
 
+![nika check audits the workflow (plan, permits, cost, secrets, types, the lethal-trifecta gate), then nika run executes it locally and seals the hash-chained trace — the audit-then-run story](https://raw.githubusercontent.com/supernovae-st/nika/main/media/nika-hero.gif)
+
 <!-- city:map -->
 ## The city · where this repo sits
 
