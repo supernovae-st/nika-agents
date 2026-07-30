@@ -112,8 +112,11 @@ Every surviving `exec:` gets a row in the workflow's header comment:
 
 ## Discipline
 
-- References: `${{ tasks.<id>.output }}` · `${{ vars.x }}` ·
-  `${{ env.KEY }}` · `${{ secrets.X }}` (never inline a credential).
+- References: `${{ tasks.<id>.output }}` · `${{ const.x }}` (a fixed
+  value) · `${{ inputs.x }}` (a typed parameter, set with `--var
+  key=value`) · `${{ env.KEY }}` · `${{ secrets.X }}` (never inline a
+  credential). `vars:` is a DEAD envelope field: the engine refuses it
+  with NIKA-VALUES-001 and `nika check --fix` migrates it.
 - In `outputs:` bind `${{ tasks.<id>.output }}` — never the bare
   `${{ tasks.<id> }}`: that binds the ENVELOPE (status + timestamps),
   so `nika test` goldens drift red on every run. `nika check` teaches
