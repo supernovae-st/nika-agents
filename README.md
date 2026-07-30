@@ -23,7 +23,7 @@ One Add installs the whole suite: 4 skills · 3 subagents · 6 slash commands
 <code>nika_template</code> · <code>nika_canon</code> · <code>nika_catalog</code> ·
 <code>nika_tools</code> · <code>nika_inspect</code>).</p>
 
-![nika check audits the workflow (plan, permits, cost, secrets, types, the lethal-trifecta gate), then nika run executes it locally and seals the hash-chained trace · the audit-then-run story](https://raw.githubusercontent.com/supernovae-st/nika/main/media/nika-hero.gif)
+![A fresh machine: nika wire all creates the MCP config for fifteen agent clients in one command, then nika welcome confirms every editor wired, local models first, zero keys needed · the one-command wiring story, recorded against the released binary](media/wire-all.gif)
 
 ## Pick your door
 
@@ -81,7 +81,9 @@ Once installed, paste one of these into your agent:
 The plugin proposes the command; you type it. Spend is capped at the call
 that would cross the cap, the effect boundary is declared in the file and
 reviewable in a diff, and every run leaves a hash-chained trace you can
-verify afterwards. Running stays yours.
+verify afterwards. Running stays yours:
+
+![nika check audits the workflow (plan, permits, cost, secrets, types, the lethal-trifecta gate), then nika run executes it locally and seals the hash-chained trace · the audit-then-run story](https://raw.githubusercontent.com/supernovae-st/nika/main/media/nika-hero.gif)
 
 ## Proven where you work
 
