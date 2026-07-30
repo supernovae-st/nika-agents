@@ -193,9 +193,9 @@ clients:
     install: "workspace .agents/mcp_config.json or global ~/.gemini/config/mcp_config.json (mcpServers map · remote key serverUrl) · agy plugin import gemini migrates"
     components: {mcp: mcp-config, scaffold: init}
     class_gap: "closed-source Go binary agy · no third-party plugin loader documented · MCP + the AGENTS.md family carry the teaching"
-    wire_pending: "WireTarget::Antigravity lands engine-side at W2 · workspace .agents/ paths are already the init surface"
+    wire_pending: "WireTarget::Antigravity shipped engine-side (34bb14833) · the probe activates at the first release shipping it"
     docs: "pending · the page ships at proven (mission W2)"
-    notes: "recon 2026-07-30 [PRIMARY]: skills read from workspace .agents/skills/ · context files GEMINI.md + AGENTS.md · parity with gemini-cli not 1:1 at launch per Google's own post"
+    notes: "recon 2026-07-30 [PRIMARY] + probe 2026-07-31: agy 1.1.8 installed from the inspected official script · headless demands Google OAuth before any run (browser · operator gesture) so the load proof waits at that wall · no agy mcp list — the proof is stream-json init.tools · skills read workspace .agents/skills/ · parity with gemini-cli not 1:1 at launch per Google's own post"
 
   - id: qwen-code
     name: Qwen Code
@@ -242,21 +242,25 @@ clients:
 
   - id: copilot-cli
     name: GitHub Copilot CLI (standalone)
-    class: C
+    class: B
     status: wired
-    install: "the project .mcp.json (written by the kit · read from cwd up to repo root) + AGENTS.md (nika init) cover it today · machine-level: ~/.copilot/mcp-config.json wants stdio entries typed local"
+    install: "copilot mcp add nika -- nika mcp  (writes ~/.copilot/mcp-config.json) · the project .mcp.json shipped by the kit is read natively (cwd up to repo root) and AGENTS.md too"
     components: {mcp: mcp-config, scaffold: init}
-    class_gap: "its machine config wants `type: local` on stdio entries (not the standard shape · a dedicated wire desired lands at wave 3 with local proof) · in-IDE Copilot stays covered by the VS Code page"
+    class_gap: "in-IDE Copilot stays covered by the VS Code page · known wart upstream: CLI says mcpServers, VS Code says servers"
+    wire_pending: "WireTarget::Copilot shipped engine-side (37f95f0de · desired matches their writer: tools ['*'] + type local) · the probe activates at the first release shipping it"
+    proof_partial: "verified live 2026-07-31 · copilot 1.0.76 · nika 0.106.1 · copilot mcp add ran, copilot mcp get nika answers Status: Enabled · Type: local · Source: User (their own manager reads it back) · a session-level tool call stays owed (Copilot auth = operator gesture)"
     docs: "pending · a page ships at proven"
-    notes: "wave-2 recon 2026-07-31 [PRIMARY docs.github.com]: npm @github/copilot 1.0.76 · brew cask copilot-cli · the gh-copilot extension died 2025-10-25 · per-repo .mcp.json + .github/mcp.json shipped ~May 2026 · known wart: CLI says mcpServers, VS Code says servers"
+    notes: "wave-2/3 recon+probe [PRIMARY + on-machine]: brew cask copilot-cli · the gh-copilot extension died 2025-10-25 · their mcp --help names the workspace sources .mcp.json and .github/mcp.json — the kit interop confirmed by the binary itself"
 
   - id: amp
     name: Amp (Sourcegraph)
     class: B
-    status: recon
-    install: "amp mcp add nika -- nika mcp (their CLI writes .amp/settings.json · workspace servers are approval-gated: amp mcp approve nika) · machine-level key is amp.mcpServers in ~/.config/amp/settings.json"
+    status: wired
+    install: "amp mcp add nika -- nika mcp  (writes amp.mcpServers in ~/.config/amp/settings.json · global scope by default · --workspace targets .amp/settings.json, approval-gated)"
     components: {skills: init, mcp: mcp-config, scaffold: init}
-    class_gap: "settings may be .jsonc (the Zed lesson applies — never rewrite comments) and the key is amp-prefixed, so a dedicated patch lands at wave 3 with local proof · AGENTS.md native multi-level · skills read .agents/skills AND .claude/skills (both init-covered)"
+    class_gap: "AGENTS.md native multi-level · skills read .agents/skills AND .claude/skills (both init-covered) · settings may be .jsonc — the engine writer hands the snippet instead of rewriting comments"
+    wire_pending: "WireTarget::Amp shipped engine-side (37f95f0de · the literal dotted amp.mcpServers key · JSONC guard) · the probe activates at the first release shipping it"
+    proof_partial: "verified live 2026-07-31 · amp 0.0.1785443059 · nika 0.106.1 · amp mcp add ran, amp mcp list reads back `nika command nika mcp` from the global settings · a session-level tool call stays owed (Amp account auth = operator gesture)"
     docs: "pending · the page ships at proven"
     notes: "wave-2 recon 2026-07-31 [PRIMARY ampcode.com/manual]: their recommended lane is MCP-servers-IN-skills (an mcp.json inside the skill dir · tools hidden until the skill loads) — a kit lane worth a gated probe · SDK stream exposes mcp_servers status (deterministic proof surface)"
 
