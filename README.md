@@ -153,7 +153,7 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
 
 **Consumes** · the engine's `.agents/plugins/` (mirrored byte-pinned · the heal follows the release train).
 
-**Serves** · Claude Code · Codex · Cursor sessions, one Add each.
+**Serves** · Claude Code · Codex · Cursor · Grok Build sessions, one Add each (OpenClaude rides the same layout).
 
 **Truth lives** · everything here is a MIRROR · file issues and PRs against the engine.
 
