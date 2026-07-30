@@ -60,10 +60,13 @@ npx skills add supernovae-st/nika-agents
 ```
 
 **Cursor** · search "nika" in Settings → Plugins, one Add installs the full
-bundle. **Everyone else** (opencode · Kimi Code · Gemini CLI · Zed · Cline ·
-Copilot CLI · Warp · 30+ clients): `nika init` equips the repo, `nika wire
-<client>` wires the machine, and the read-only oracle rides any MCP client.
-Every door on one page: [docs.nika.sh/integrations/everywhere](https://docs.nika.sh/integrations/everywhere).
+bundle (a manual drop into `~/.cursor/plugins/local/` loads MCP + skills
+ONLY · until the listing serves you, `nika init` equips the repo fully).
+**Everyone else** (opencode · Kimi Code · Gemini CLI · Zed · Cline ·
+Copilot CLI · Amp · Warp · 30+ clients): `nika init` equips the repo,
+`nika wire <client>` wires the machine, and the read-only oracle rides any
+MCP client. Every door on one page:
+[docs.nika.sh/integrations/everywhere](https://docs.nika.sh/integrations/everywhere).
 
 ## Your first minute
 
