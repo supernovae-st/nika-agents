@@ -210,13 +210,54 @@ clients:
   - id: kimi-code
     name: Kimi Code CLI (Moonshot)
     class: B
-    status: recon
-    install: "kimi mcp add --transport stdio nika -- nika mcp · or --mcp-config-file with the standard mcpServers shape"
-    components: {mcp: mcp-config}
-    class_gap: "no plugin loader documented · MCP carries the teaching · AGENTS.md read UNVERIFIED (their own repo uses .agents/skills · reading ours is unproven)"
-    wire_pending: "target the successor: kimi-cli states it is evolving into Kimi Code CLI and winding down · wire target lands at W3 against kimi-code"
+    status: wired
+    install: "add nika to ~/.kimi-code/mcp.json (mcpServers map · their two-level contract) · the legacy kimi-cli `kimi mcp add` subcommand does NOT exist in kimi-code"
+    components: {skills: init, mcp: mcp-config}
+    class_gap: "no AGENTS.md auto-load (their docs are silent · upstream asks open) · skills scan 4 tiers including project and user .agents/skills — the init-written authoring skill is discovered · MCP carries the oracle"
+    wire_pending: "WireTarget::Kimi shipped engine-side (155bd53b6) · the probe activates at the first release shipping it"
     docs: "pending · the page ships at proven (mission W3)"
-    notes: "recon 2026-07-30 [PRIMARY] · MoonshotAI/kimi-cli Apache-2.0 with full MCP + ACP · successor repo MoonshotAI/kimi-code"
+    notes: "wave-2 recon 2026-07-31 [PRIMARY moonshotai.github.io/kimi-code] · verified live on the operator machine (kimi-code 0.30.0): mcp.json entry written · doctor green · the ACP session lists the workspace's Claude-format skills (discovery proven) · the oracle handshake stays owed — ACP does not expose the MCP tool list, the check is /mcp in the TUI or a stream-json run"
+
+  - id: kiro
+    name: Kiro CLI (the Amazon Q Developer CLI rebrand)
+    class: B
+    status: recon
+    install: "add nika to ~/.kiro/settings/mcp.json (mcpServers map · the legacy ~/.aws/amazonq/mcp.json is still read, .kiro wins)"
+    components: {mcp: mcp-config}
+    class_gap: "no AGENTS.md read documented (steering files are their mechanism) · MCP carries the oracle"
+    wire_pending: "WireTarget::Kiro shipped engine-side (155bd53b6) · the probe activates at the first release shipping it"
+    docs: "pending · the page ships at proven"
+    notes: "wave-2 recon 2026-07-31 [PRIMARY kiro.dev + AWS docs]: Amazon Q Developer CLI rebranded to Kiro · Q frozen at 1.19.7 · end-of-support announced · license moved Apache-2.0 to AWS-IP · never ship a page teaching the q surface"
+
+  - id: warp
+    name: Warp · Oz CLI
+    class: C
+    status: wired
+    install: "already covered by interop: Warp reads ~/.claude.json, the project .mcp.json and ~/.codex/config.toml — nika wire claude or codex opens this door today"
+    components: {mcp: mcp-config, scaffold: init}
+    class_gap: "the door is INTEROP by their design (docs.warp.dev capabilities/mcp) · native ~/.warp/.mcp.json exists (a wire target lands only on real demand) · AGENTS.md read natively (WARP.md compat) · project-scoped servers never auto-spawn · house doctrine: operator surface, interop yes, no fork no dependency"
+    docs: "pending · a page ships at proven"
+    notes: "wave-2 recon 2026-07-31 [PRIMARY]: warp-cli deprecated, the CLI is oz (brew cask oz) · oz agent run --mcp takes a BARE map without the mcpServers wrapper · even local runs report progress to Warp's servers — named in any future page"
+
+  - id: copilot-cli
+    name: GitHub Copilot CLI (standalone)
+    class: C
+    status: wired
+    install: "the project .mcp.json (written by the kit · read from cwd up to repo root) + AGENTS.md (nika init) cover it today · machine-level: ~/.copilot/mcp-config.json wants stdio entries typed local"
+    components: {mcp: mcp-config, scaffold: init}
+    class_gap: "its machine config wants `type: local` on stdio entries (not the standard shape · a dedicated wire desired lands at wave 3 with local proof) · in-IDE Copilot stays covered by the VS Code page"
+    docs: "pending · a page ships at proven"
+    notes: "wave-2 recon 2026-07-31 [PRIMARY docs.github.com]: npm @github/copilot 1.0.76 · brew cask copilot-cli · the gh-copilot extension died 2025-10-25 · per-repo .mcp.json + .github/mcp.json shipped ~May 2026 · known wart: CLI says mcpServers, VS Code says servers"
+
+  - id: amp
+    name: Amp (Sourcegraph)
+    class: B
+    status: recon
+    install: "amp mcp add nika -- nika mcp (their CLI writes .amp/settings.json · workspace servers are approval-gated: amp mcp approve nika) · machine-level key is amp.mcpServers in ~/.config/amp/settings.json"
+    components: {skills: init, mcp: mcp-config, scaffold: init}
+    class_gap: "settings may be .jsonc (the Zed lesson applies — never rewrite comments) and the key is amp-prefixed, so a dedicated patch lands at wave 3 with local proof · AGENTS.md native multi-level · skills read .agents/skills AND .claude/skills (both init-covered)"
+    docs: "pending · the page ships at proven"
+    notes: "wave-2 recon 2026-07-31 [PRIMARY ampcode.com/manual]: their recommended lane is MCP-servers-IN-skills (an mcp.json inside the skill dir · tools hidden until the skill loads) — a kit lane worth a gated probe · SDK stream exposes mcp_servers status (deterministic proof surface)"
 
   - id: lmstudio
     name: LM Studio
