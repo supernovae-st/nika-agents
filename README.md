@@ -15,9 +15,9 @@
 **Teach your agent to hand repeatable work to [Nika](https://github.com/supernovae-st/nika):
 a plain-text workflow it can check before a token is spent and verify
 after.** This repo is the install surface: 4 skills (author · debug ·
-operate · migrate), 3 subagents, 5 commands (`/nika:check` ·
-`/nika:explain` · `/nika:new` · `/nika:trace` · `/nika:permits`),
-3 hooks and the read-only MCP oracle (9 tools: `nika_check` ·
+operate · migrate), 3 subagents, 6 commands (`/nika:check` ·
+`/nika:explain` · `/nika:new` · `/nika:trace` · `/nika:permits` ·
+`/nika:doctor`), 3 hooks and the read-only MCP oracle (9 tools: `nika_check` ·
 `nika_explain` · `nika_schema` · `nika_examples` · `nika_template` ·
 `nika_canon` · `nika_catalog` · `nika_tools` · `nika_inspect`), for the plugin
 ecosystems:
@@ -166,7 +166,7 @@ The living map: [nika.sh/map](https://nika.sh/map).
                                       author · run forensics · day-2 ops · script porting
   agents/{nika-author,nika-debugger,nika-migrator}.md
                                       the three subagents (write · root-cause · port)
-  commands/{check,explain,new,trace,permits}.md
+  commands/{check,explain,new,trace,permits,doctor}.md
                                       the /nika:* slash commands
   hooks/{cursor,claude}-hooks.json    the three seatbelts, one file per dialect:
                                       session map · check-on-edit · guard-run (a nika

@@ -87,6 +87,21 @@ class Source:
         with urllib.request.urlopen(RAW.format(repo=self.repo, path=path), timeout=30) as resp:
             return resp.read()
 
+    def ls(self, prefix: str) -> list[str]:
+        """Every blob under prefix on engine main — clone ls-tree or trees API."""
+        if self.clone is not None:
+            r = subprocess.run(
+                ["git", "-C", str(self.clone), "ls-tree", "-r", "--name-only",
+                 "origin/main", prefix],
+                capture_output=True, text=True, check=True,
+            )
+            return [p for p in r.stdout.splitlines() if p]
+        url = f"https://api.github.com/repos/{self.repo}/git/trees/main?recursive=1"
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            tree = json.loads(resp.read())["tree"]
+        return [t["path"] for t in tree
+                if t["type"] == "blob" and t["path"].startswith(prefix)]
+
     def try_local_fallback(self) -> bool:
         """Rate-limited mid-run: switch to a discoverable clone if one exists."""
         for candidate in (
@@ -157,6 +172,34 @@ def main() -> int:
             if str(local).endswith(".sh"):
                 local.chmod(0o755)
             e["sha256"] = digest
+
+    # Addition-blindness ratchet (earned 2026-07-30: the engine grew
+    # commands/doctor.md and the walk above — entries-only — never saw it,
+    # while the mirrored manifests already announced six commands). The
+    # engine bundle scope must be FULLY covered: an upstream file without
+    # an entry is mirrored + pinned on the spot; an entry whose source
+    # vanished upstream is named loud (pruning stays a human move).
+    scope = manifest.setdefault("engine_scope", ".agents/plugins/nika/")
+    upstream_set = set(source.ls(scope))
+    known = {e.get("source", e["path"]) for e in manifest["entries"]
+             if e["class"] == "engine-mirror"}
+    for path in sorted(upstream_set - known):
+        upstream = source.read(path)
+        digest = hashlib.sha256(upstream).hexdigest()
+        changed += 1
+        print(f"  + {path}  (new upstream file → mirrored + pinned {digest[:9]})")
+        if not dry:
+            local = ROOT / path
+            local.parent.mkdir(parents=True, exist_ok=True)
+            local.write_bytes(upstream)
+            if str(local).endswith(".sh"):
+                local.chmod(0o755)
+            manifest["entries"].append(
+                {"class": "engine-mirror", "path": path, "sha256": digest})
+    for path in sorted(p for p in known
+                       if p.startswith(scope) and p not in upstream_set):
+        print(f"  ! {path}: entry source no longer exists on engine main — "
+              f"prune or re-source the entry (left untouched)")
 
     head = source.head()
     if changed and not dry:

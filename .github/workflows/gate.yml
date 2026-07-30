@@ -79,6 +79,14 @@ jobs:
       # comment is not a carve-out worth maintaining.
       - name: No kit-native surface teaches a dead language form
         run: python3 scripts/check-dead-forms.py
+      # clients.yaml is the SSOT of client coverage (mission nika-client-doors).
+      # Offline half: schema · class-A manifests on disk · every prose count
+      # claim equals the bundle-derived count (the ratchet for the 2026-07-30
+      # class: the bundle grew a 6th command while three kit-native surfaces
+      # kept saying five). The wire probe re-runs below against the released
+      # binary. No untrusted input reaches this step.
+      - name: The client matrix holds (clients.yaml ⇄ bundle ⇄ manifests)
+        run: python3 scripts/check-clients-matrix.py
       - name: The listings registry parses
         run: |
           python3 - << 'EOF'
@@ -170,6 +178,12 @@ jobs:
             exit 1
           fi
           [ "$drifted" = "0" ] && echo "mirror current with engine main" || true
+      # Additions are a THIRD signal (drift moves pinned bytes · corruption
+      # breaks pins · an ADDITION is invisible to both): the engine bundle
+      # scope must hold no file the mirror does not pin. Same severity split
+      # as drift — warn on push/PR, fail on the daily cron.
+      - name: Upstream additions (engine grew a bundle file the mirror does not pin?)
+        run: GATE_EVENT="${{ github.event_name }}" python3 scripts/check-clients-matrix.py --upstream
       # Binary truth: fetch the LATEST release (checksum-verified against the
       # published SHA256SUMS — an unverified curl|tar into CI is the exact
       # supply-chain hole the kit exists to close), then assert the teaching
@@ -191,3 +205,4 @@ jobs:
           tar xzf "${asset}"
           NIKA_BIN=./nika python3 scripts/check-mcp-tools.py
           NIKA_BIN=./nika python3 scripts/check-skill-commands.py
+          NIKA_BIN=./nika python3 scripts/check-clients-matrix.py

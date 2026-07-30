@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "f19e9c9286117f02f32ff26726f3361c38ca533e",
+  "synced_at_engine_sha": "e6cdea1c655428c84c4023fba8ca9e7332a521f2",
   "entries": [
     {
       "class": "engine-mirror",
@@ -87,7 +87,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/check-on-edit.sh",
-      "sha256": "34f10f6b3ce6a91c55f3ed4b8cc77556651a7c9e79170d2b1a8e9db0488170f0"
+      "sha256": "297c7c61f8f016797a503f0393080fb18fee606b6fc10e3013d49758148b88f3"
     },
     {
       "class": "engine-mirror",
@@ -189,6 +189,12 @@
       "class": "kit-native",
       "path": "integrations/openclaude/SUBMISSION.md",
       "proof": "submission dossier only · opening the PR is an operator gesture (outward WALL) · hub rules re-read at submission time"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/commands/doctor.md",
+      "sha256": "51a96b9eee2cfbcc7dcfd16053166c6e9ea26e841075232bca7481adb6f4739b"
     }
-  ]
+  ],
+  "engine_scope": ".agents/plugins/nika/"
 }
