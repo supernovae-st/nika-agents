@@ -90,8 +90,8 @@ clients:
   - id: grok-build
     name: Grok Build (xAI)
     class: A
-    status: recon
-    install: "grok plugin marketplace add supernovae-st/nika-agents && grok plugin install nika@nika --trust  (mechanism recon-verified · live proof owed)"
+    status: proven
+    install: "grok plugin marketplace add supernovae-st/nika-agents && grok plugin install nika@nika --trust"
     components: {manifest: claude-layout, skills: claude-layout,
                  subagents: claude-layout, commands: claude-layout,
                  hooks: claude-layout, mcp: claude-layout, scaffold: init}
@@ -99,8 +99,9 @@ clients:
       rules: "grok reads the AGENTS.md and CLAUDE.md families plus .claude/rules natively · init covers the law · .mdc stays a Cursor dialect"
       presentation: "no official xAI catalog found (recon 2026-07-30) · listing lane = awesome-grok-build (mission W1.4)"
     wire_pending: "WireTarget::Grok lands engine-side at W1.2 · the probe activates at the first release shipping it"
-    docs: "pending · the page ships at proven (mission W1.3)"
-    notes: "xAI docs verbatim: Grok automatically reads Claude Code marketplaces, plugins, skills, MCPs, agents, hooks and instruction files · project .mcp.json picked up natively · trust model: plugins off until enabled, plugin hooks and MCP inactive until --trust, enterprise require_sha pins"
+    proof: "verified live 2026-07-30 · grok 0.2.117 · nika 0.106.1 · grok inspect --json lists 4 skills + 6 commands + 3 subagents + the hook file + the oracle from the plugin install (dedup vs the claude compat scan held) · grok mcp doctor --json: command found · server started 0.0s · handshake OK protocol 2025-06-18 · 9 tools discovered · fiche: integrations/grok-build/README.md"
+    docs: integrations/clients/grok-build.mdx
+    notes: "xAI docs verbatim: Grok automatically reads Claude Code marketplaces, plugins, skills, MCPs, agents, hooks and instruction files · project .mcp.json picked up natively · the marketplace was picked up zero-config from the machine's Claude Code settings"
 
   # ── CLASS B · projected wiring (no marketplace · real native config slots) ──
   - id: claude-desktop

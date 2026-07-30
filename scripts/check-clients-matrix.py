@@ -67,6 +67,7 @@ COUNT_SCAN = [
     ".agents/plugins/nika/.claude-plugin/plugin.json",
     ".agents/plugins/nika/.codex-plugin/plugin.json",
     ".agents/plugins/nika/.cursor-plugin/plugin.json",
+    "integrations/grok-build/README.md",
 ]
 CLAIM_PATTERNS = {
     "skills": re.compile(r"(\d+)\s+skills?\b", re.I),

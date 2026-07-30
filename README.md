@@ -62,6 +62,15 @@ npm install -g @gitlawb/openclaude
 openclaude plugin marketplace add supernovae-st/nika-agents
 openclaude plugin install nika@nika
 
+# Grok Build · reads the Claude Code kit natively (marketplace · skills ·
+# subagents · commands · hooks · MCP), so this kit installs unported ·
+# verified live (grok 0.2.117 · full detail: integrations/grok-build/).
+# On a machine already running the Claude Code plugin, grok picks it up
+# with zero configuration. Trust is load-bearing: hooks + MCP stay
+# inactive without it.
+grok plugin marketplace add supernovae-st/nika-agents
+grok plugin install nika@nika --trust
+
 # Hermes, or any skills.sh-compatible client
 hermes skills tap add supernovae-st/nika-agents      # then: hermes skills list
 hermes skills install https://raw.githubusercontent.com/supernovae-st/nika-agents/main/skills/autonomous-ai-agents/nika/SKILL.md
