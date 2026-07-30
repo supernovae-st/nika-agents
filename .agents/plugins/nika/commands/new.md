@@ -16,8 +16,7 @@ Arguments: `$ARGUMENTS` (template + destination; either may be missing).
    `workflow: <kebab-id>` · exactly ONE verb per task · prefer
    `invoke:` builtins over `exec:` (native-first) · every `infer:`
    carries `max_tokens` (the cost ceiling depends on it) · templated
-   parameters ride `inputs:` with `--var key=value` at run time, and fixed
-   values ride `const:` (`vars:` is dead · NIKA-VALUES-001).
+   inputs ride `vars:` with `--var key=value` at run time.
 4. `nika check <file>` — repair from the diagnostics until exit 0, then
    `nika check <file> --native-strict` (any remaining `exec:` needs its
    ledger entry). **Never hand the human a file that does not pass.**

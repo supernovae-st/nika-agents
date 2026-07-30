@@ -35,7 +35,7 @@ sub-second pure-shell pipelines with zero AI and zero HTTP (a
 | a retry/backoff loop around a flaky call | `retry:` on the task — `max_attempts` + `backoff_strategy: exponential` + `jitter: true` (transient provider/network errors only; a wrong prompt never heals by retry) |
 | `for item in …` | `for_each:` fan-out |
 | `if <condition>` | a `when:` gate |
-| `$1`, `$ENV_VAR` parameters | `inputs:` + `--var key=value` (typed) · `const:` (fixed) · `${{ env.KEY }}` |
+| `$1`, `$ENV_VAR` parameters | `vars:` + `--var key=value` · `${{ env.KEY }}` |
 | `API_KEY=…` literals | `${{ secrets.X }}` + `secrets:` block with its `egress:` sink |
 | step B reads step A's output | `with: { a: "${{ tasks.A.output }}" }` on B — the binding IS the edge — then `${{ with.a }}` in the body |
 | step B only waits for step A (no data) | `after: { A: succeeded }` (`terminal` for cleanup/notify paths) |

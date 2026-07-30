@@ -26,7 +26,7 @@ parity is the proof.
    JSON shaping → `nika:jq` or an `output:` binding · file plumbing →
    `nika:read`/`nika:write` · LLM calls → `infer:` with `max_tokens` ·
    loops → `for_each:` · conditionals → `when:` · parameters →
-   `inputs:` (typed · `--var key=value`) or `const:` (fixed) · `${{ env.KEY }}` · credentials → `${{ secrets.X }}`
+   `vars:` + `${{ env.KEY }}` · credentials → `${{ secrets.X }}`
    declared with an `egress:` sink. Every task that reads another's
    output binds it — `with: { alias: "${{ tasks.A.output }}" }` (the
    binding IS the edge) — and reads `${{ with.alias }}`; pure ordering
