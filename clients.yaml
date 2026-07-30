@@ -210,13 +210,14 @@ clients:
   - id: kimi-code
     name: Kimi Code CLI (Moonshot)
     class: B
-    status: wired
+    status: proven
     install: "add nika to ~/.kimi-code/mcp.json (mcpServers map · their two-level contract) · the legacy kimi-cli `kimi mcp add` subcommand does NOT exist in kimi-code"
     components: {skills: init, mcp: mcp-config}
     class_gap: "no AGENTS.md auto-load (their docs are silent · upstream asks open) · skills scan 4 tiers including project and user .agents/skills — the init-written authoring skill is discovered · MCP carries the oracle"
     wire_pending: "WireTarget::Kimi shipped engine-side (155bd53b6) · the probe activates at the first release shipping it"
-    docs: "pending · the page ships at proven (mission W3)"
-    notes: "wave-2 recon 2026-07-31 [PRIMARY moonshotai.github.io/kimi-code] · verified live on the operator machine (kimi-code 0.30.0): mcp.json entry written · doctor green · the ACP session lists the workspace's Claude-format skills (discovery proven) · the oracle handshake stays owed — ACP does not expose the MCP tool list, the check is /mcp in the TUI or a stream-json run"
+    proof: "verified live 2026-07-31 · kimi-code 0.30.0 · nika 0.106.1 · a stream-json headless run emits tool_calls naming mcp__nika__nika_canon (the oracle loaded from ~/.kimi-code/mcp.json and CALLED) · doctor green · ACP session/new lists the init-written skills · fiche: integrations/kimi-code/README.md"
+    docs: integrations/clients/kimi-code.mdx
+    notes: "wave-2 recon 2026-07-31 [PRIMARY moonshotai.github.io/kimi-code] · the file is the contract, never the dead kimi-cli subcommand"
 
   - id: kiro
     name: Kiro CLI (the Amazon Q Developer CLI rebrand)

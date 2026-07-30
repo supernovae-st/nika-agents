@@ -51,6 +51,11 @@
     },
     {
       "class": "kit-native",
+      "path": "integrations/kimi-code/README.md",
+      "proof": "taught subcommands exist in the latest released binary (scripts/check-skill-commands.py) · live fiche re-provable via the stream-json tool_calls run"
+    },
+    {
+      "class": "kit-native",
       "path": "integrations/opencode/README.md",
       "proof": "taught subcommands ship (scripts/check-skill-commands.py) · wiring live-verified: opencode 1.17.5 mcp list connected + tools/call completed against nika 0.98.0"
     },
