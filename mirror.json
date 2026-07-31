@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "e6cdea1c655428c84c4023fba8ca9e7332a521f2",
+  "synced_at_engine_sha": "3ac9af7102cf5e586bdbaecf149301394d4ceea4",
   "entries": [
     {
       "class": "engine-mirror",
@@ -17,7 +17,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/.codex-plugin/plugin.json",
-      "sha256": "e16cf03583a8d1cd500de42dd8c805348afcfcc6eeaa30375c5bf86d386d7624"
+      "sha256": "3065a81d0e115078dde0803af9a974c5ea199de21118bff5b8825445268e7dc0"
     },
     {
       "class": "engine-mirror",
@@ -167,12 +167,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/guard-run.sh",
-      "sha256": "21ee5de6f11ff9f34ea4346777fcad4829f415f033d1b008541260a18b2eca2b"
+      "sha256": "821136eb047ff862a7b25db59b8e16bf6eb64e5e48d2ecdbc0368b751f295fc4"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/session-context.sh",
-      "sha256": "e1001dc44988ebea34bf7b5c16b2a311a050978c676e6367df81829af6f64302"
+      "sha256": "6f090326902fd6dacd4854f890afc2e51cf46be891c274217b75d0dd51351c38"
     },
     {
       "class": "engine-mirror",
@@ -204,6 +204,11 @@
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/commands/doctor.md",
       "sha256": "51a96b9eee2cfbcc7dcfd16053166c6e9ea26e841075232bca7481adb6f4739b"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/scripts/tests/session-context.test.sh",
+      "sha256": "356d13a79b012f31b616a547c0bb61158feeaec208c06fa0d5da8aae0c280112"
     }
   ],
   "engine_scope": ".agents/plugins/nika/"
