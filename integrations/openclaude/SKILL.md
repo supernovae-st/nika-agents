@@ -10,7 +10,7 @@ tags:
   - audit
   - local-first
 trust: community
-version: 0.1.0
+version: 0.1.1
 license: MIT
 author: ThibautMelen
 tools_required:
@@ -61,7 +61,7 @@ comes back every week and hands you a receipt for it.
    nika.sh). Never improvise workflow YAML from memory.
 2. Start from a skeleton, never a blank file. `nika new --from '?'` lists
    the embedded templates, `nika new --from <template> <file>.nika.yaml`
-   writes one, and `nika examples list` shows complete runnable lessons.
+   writes one, and bare `nika try` lists complete runnable lessons.
 3. Fill it in. The envelope is `nika: v1` plus a `workflow:` object
    carrying `id:`, plus a `tasks:` map keyed by task id. Exactly one verb
    per task: `infer` (a model call) · `exec` (a subprocess, whose
@@ -86,7 +86,7 @@ comes back every week and hands you a receipt for it.
    rehearsal costs nothing: `--model mock/echo`.
 8. After a run that mattered, prove it. `nika trace verify <trace>` checks
    the hash-chained journal under `.nika/traces/`, and
-   `nika evidence <trace>` exports a pack a reviewer can check without
+   `nika trace evidence <trace>` exports a pack a reviewer can check without
    trusting you. Cite the trace, never a memory of the run.
 
 ## Examples

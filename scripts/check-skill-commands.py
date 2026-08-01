@@ -6,8 +6,10 @@
 # class "kit-native") are owned here, not mirrored from the engine, so the
 # byte-parity gate cannot protect them; this is their proof instead: extract
 # the subcommands the skill's code blocks invoke, assert each against
-# `nika --help`'s command list. A skill teaching a command the release does
-# not ship (e.g. a 0.99-train verb against a 0.98 brew) goes RED here.
+# `nika --help`'s command list, then probe the quiet doors (a name the help
+# regroup hides, like `nika mcp`, still ships if `nika <sub> --help` answers
+# with exit 0). A skill teaching a command the release does not ship (e.g. a
+# 0.99-train verb against a 0.98 brew) goes RED here.
 #
 # Exit 0 = every taught subcommand ships. Exit 1 = drift (names printed).
 # Local run: NIKA_BIN=/path/to/nika python3 scripts/check-skill-commands.py
@@ -75,6 +77,21 @@ def shipped_subcommands(nika: str) -> set:
     return cmds
 
 
+def quiet_door_ships(nika: str, sub: str, cache: dict) -> bool:
+    """A door absent from the top-level help may still ship: the 0.107 help
+    regroup hid `nika mcp` and `nika catalog` from the Commands list while
+    both keep answering. A subcommand that answers `--help` with exit 0 is
+    served by the binary; a clap unknown-command error is not."""
+    if sub not in cache:
+        try:
+            cache[sub] = subprocess.run(
+                [nika, sub, "--help"], capture_output=True,
+                timeout=30).returncode == 0
+        except subprocess.TimeoutExpired:
+            cache[sub] = False
+    return cache[sub]
+
+
 def main() -> int:
     nika = os.environ.get("NIKA_BIN") or shutil.which("nika")
     if not nika:
@@ -82,10 +99,12 @@ def main() -> int:
               file=sys.stderr)
         return 1
     shipped = shipped_subcommands(nika)
+    probed: dict = {}
     failed = False
     for md in kit_native_paths():
         taught = taught_subcommands(md)
-        missing = taught - shipped
+        missing = {s for s in taught - shipped
+                   if not quiet_door_ships(nika, s, probed)}
         if missing:
             failed = True
             print(f"✗ {md.relative_to(ROOT)} teaches unshipped subcommands: "

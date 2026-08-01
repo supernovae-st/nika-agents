@@ -1,7 +1,7 @@
 ---
 name: nika
 description: "Runs repeatable AI work as checked, budgeted, trace-verified workflow files."
-version: 1.2.0
+version: 1.2.1
 author: Thibaut Melen (@ThibautMelen) · SuperNovae Studio (github.com/supernovae-st)
 license: MIT
 platforms: [linux, macos]
@@ -63,7 +63,7 @@ work should be *repeatable, budgeted, and auditable*.
 Prove the toolchain offline first (no key, no network):
 
 ```
-terminal(command="nika examples run 01-hello --model mock/echo")
+terminal(command="nika try 01-hello")
 ```
 
 Run a real workflow — local model first:
@@ -376,7 +376,7 @@ unattested. Report it as what it is; do not call it a pass or a break.
 Quote the chain head back against the one the run card printed — that is
 what closes the loop; the chain alone is tamper-EVIDENT, not tamper-proof.
 
-For a run someone else must audit, `nika evidence <trace>` writes
+For a run someone else must audit, `nika trace evidence <trace>` writes
 `<trace-stem>.evidence/` — `journal.ndjson`, `pack.json` (the manifest and
 receipt, which say plainly whether a seal is present) and `VERIFY.md` (the
 auditor's three commands). Add `--workflow <file>` to unlock the boundary
@@ -407,7 +407,7 @@ live.
 | `nika run <file> --model <p/m> --max-cost-usd <usd>` | Execute with budget |
 | `nika test <file>` | Golden test under the mock provider (offline) |
 | `nika trace show/verify/outputs/flow <trace>` | Receipts after a run (path from the run card's `trace:` line) |
-| `nika evidence <trace>` | Export the auditor pack (journal · manifest · receipt · VERIFY.md) |
+| `nika trace evidence <trace>` | Export the auditor pack (journal · manifest · receipt · VERIFY.md) |
 | `nika doctor` | Diagnose env/keys — prints exact fixes |
 | `nika catalog` | Provider/model ids + required env vars |
 | `nika catalog --tools` | The builtins an `invoke` reaches without MCP |
@@ -428,7 +428,7 @@ live.
    (path from the run card); report outputs, actual cost, and the verify
    verdict to the user — including `INCOMPLETE`, which means the run died
    before a terminal frame. When someone must audit it later,
-   `nika evidence <trace>` exports the pack.
+   `nika trace evidence <trace>` exports the pack.
 
 ### Rules
 
@@ -471,7 +471,7 @@ live.
 Smoke test (offline, zero keys):
 
 ```
-terminal(command="nika examples run 01-hello --model mock/echo")
+terminal(command="nika try 01-hello")
 ```
 
 Success criteria: run completes exit 0 with a final run card · `nika check`
