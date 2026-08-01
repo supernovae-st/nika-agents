@@ -1,18 +1,20 @@
 <p align="center">
   <a href="https://nika.sh">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://nika.sh/brand/nika-logo-dark.svg">
-      <img src="https://nika.sh/brand/nika-logo-light.svg" alt="Nika" width="220">
+      <source media="(prefers-color-scheme: dark)" srcset="media/hero-dark.svg">
+      <img src="media/hero-light.svg" alt="nika-agents · the Nika plugin marketplace · one Add teaches your agent the language" width="100%">
     </picture>
   </a>
 </p>
 
-<h1 align="center">nika-agents · the Nika plugin marketplace</h1>
-
 <p align="center">
   <a href="https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml"><img src="https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml/badge.svg" alt="gate"></a>
+  <a href="https://github.com/supernovae-st/nika/releases/latest"><img src="https://img.shields.io/github/v/release/supernovae-st/nika?label=engine&color=ff7a3c" alt="engine release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/supernovae-st/nika-agents?color=5b8cff&label=license" alt="license"></a>
   <a href="https://skills.sh/supernovae-st/nika-agents"><img src="https://skills.sh/b/supernovae-st/nika-agents" alt="skills.sh"></a>
 </p>
+
+<h1 align="center">One Add · your agent learns the language</h1>
 
 <p align="center"><b>Teach your agent to hand repeatable work to
 <a href="https://github.com/supernovae-st/nika">Nika</a>: a plain-text
@@ -30,43 +32,84 @@ One Add installs the whole suite: 4 skills · 3 subagents · 6 slash commands
 The binary first, everywhere: `brew install supernovae-st/tap/nika`
 ([other paths](https://nika.sh)). Then one Add for your client:
 
+<p align="center">
+  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-ff7a3c?style=for-the-badge" alt="Claude Code"></a>
+  <a href="#codex"><img src="https://img.shields.io/badge/Codex-5b8cff?style=for-the-badge" alt="Codex"></a>
+  <a href="#grok-build"><img src="https://img.shields.io/badge/Grok_Build-22d3ee?style=for-the-badge" alt="Grok Build"></a>
+  <a href="#openclaude"><img src="https://img.shields.io/badge/OpenClaude-b07bff?style=for-the-badge" alt="OpenClaude"></a>
+  <a href="#hermes-or-any-skillssh-client"><img src="https://img.shields.io/badge/Hermes-9fd0ff?style=for-the-badge" alt="Hermes"></a>
+  <a href="#cursor"><img src="https://img.shields.io/badge/Cursor-0a1226?style=for-the-badge" alt="Cursor"></a>
+  <a href="#everyone-else"><img src="https://img.shields.io/badge/30%2B_more-5a6d8a?style=for-the-badge" alt="30+ more"></a>
+</p>
+
+#### Claude Code
+
 ```sh
-# Claude Code · updating is TWO rungs (clone, then install, then restart)
 claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
 ```
 
+<sub>Updating is TWO rungs: marketplace first, plugin second, restart after.</sub>
+
+#### Codex
+
 ```sh
-# Codex · the per-version cache refreshes on your next run
 codex plugin marketplace add supernovae-st/nika-agents
 codex plugin add nika@nika
 ```
 
+<sub>The per-version cache refreshes on your next run.</sub>
+
+#### Grok Build
+
 ```sh
-# Grok Build · reads the Claude Code kit natively; --trust activates hooks + MCP
 grok plugin marketplace add supernovae-st/nika-agents
 grok plugin install nika@nika --trust
 ```
 
+<sub>Reads the Claude Code kit natively; <code>--trust</code> activates hooks + MCP.</sub>
+
+#### OpenClaude
+
 ```sh
-# OpenClaude · its loader reads the same marketplace layout, unported
 openclaude plugin marketplace add supernovae-st/nika-agents
 openclaude plugin install nika@nika
 ```
 
+<sub>Its loader reads the same marketplace layout, unported.</sub>
+
+#### Hermes, or any skills.sh client
+
 ```sh
-# Hermes, or any skills.sh-compatible client
 npx skills add supernovae-st/nika-agents
 ```
 
-**Cursor** · search "nika" in Settings → Plugins, one Add installs the full
-bundle (a manual drop into `~/.cursor/plugins/local/` loads MCP + skills
-ONLY · until the listing serves you, `nika init` equips the repo fully).
-**Everyone else** (opencode · Kimi Code · Gemini CLI · Zed · Cline ·
-Copilot CLI · Amp · Warp · 30+ clients): `nika init` equips the repo,
-`nika wire <client>` wires the machine, and the read-only oracle rides any
-MCP client. Every door on one page:
-[docs.nika.sh/integrations/everywhere](https://docs.nika.sh/integrations/everywhere).
+<sub>The kit-native skill pack, e2e-proven and listed live on
+<a href="https://skills.sh/supernovae-st/nika-agents">skills.sh</a>.</sub>
+
+#### Cursor
+
+Search "nika" in Settings → Plugins, one Add installs the full bundle (a
+manual drop into `~/.cursor/plugins/local/` loads MCP + skills ONLY · until
+the listing serves you, `nika init` equips the repo fully).
+
+#### Everyone else
+
+opencode · Kimi Code · Gemini CLI · Zed · Cline · Copilot CLI · Amp · Warp ·
+30+ clients: `nika init` equips the repo, `nika wire <client>` wires the
+machine, and the read-only oracle rides any MCP client. Every door on one
+page: [docs.nika.sh/integrations/everywhere](https://docs.nika.sh/integrations/everywhere).
+
+#### One-click doors
+
+Where the client supports a one-click MCP install, one button wires the
+oracle (binary still required):
+
+<p align="center">
+  <a href="https://vscode.dev/redirect/mcp/install?name=nika&config=%7B%22command%22%3A%20%22nika%22%2C%20%22args%22%3A%20%5B%22mcp%22%5D%7D"><img src="https://img.shields.io/badge/VS_Code-install%20nika%20mcp-0098FF?style=for-the-badge&logo=githubcopilot" alt="Install in VS Code"></a>
+  <a href="https://insiders.vscode.dev/redirect/mcp/install?name=nika&config=%7B%22command%22%3A%20%22nika%22%2C%20%22args%22%3A%20%5B%22mcp%22%5D%7D"><img src="https://img.shields.io/badge/VS_Code_Insiders-install%20nika%20mcp-24bfa5?style=for-the-badge&logo=githubcopilot" alt="Install in VS Code Insiders"></a>
+  <a href="https://cursor.com/en/install-mcp?name=nika&config=eyJjb21tYW5kIjogIm5pa2EiLCAiYXJncyI6IFsibWNwIl19"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Install MCP Server in Cursor"></a>
+</p>
 
 ## Your first minute
 
@@ -102,10 +145,15 @@ a deterministic receipt:
 | **Hermes / skills.sh** | e2e-proven skill pack, listed live ([skills.sh](https://skills.sh/supernovae-st/nika-agents)) |
 | **Any MCP client** | the containerized oracle answers `initialize` + `tools/list` on every CI run ([integrations/mcp](integrations/mcp/)) |
 
-One-click MCP wiring where the client supports it (binary still required):
-
-[![Install in VS Code](https://img.shields.io/badge/VS_Code-install%20nika%20mcp-0098FF?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=nika&config=%7B%22command%22%3A%20%22nika%22%2C%20%22args%22%3A%20%5B%22mcp%22%5D%7D)
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=nika&config=eyJjb21tYW5kIjogIm5pa2EiLCAiYXJncyI6IFsibWNwIl19)
+<sub>Listed across the ecosystem:
+<a href="https://skills.sh/supernovae-st/nika-agents">skills.sh</a> ·
+<a href="https://claudepluginhub.com">ClaudePluginHub</a> ·
+<a href="https://github.com/davila7/claude-code-templates">aitmpl.com</a> ·
+<a href="https://crates.io/crates/nika">crates.io</a> ·
+<a href="https://github.com/SchemaStore/schemastore">SchemaStore</a> (<code>*.nika.yaml</code> in every IDE) ·
+<a href="https://www.libhunt.com/r/nika">LibHunt</a> ·
+<a href="https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/supernovae-st/nika">Software Heritage</a>
+· every submission lives in <a href="listings.yaml"><code>listings.yaml</code></a>, verified on a cadence.</sub>
 
 ## Keeping the suite fresh
 
