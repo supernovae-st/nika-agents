@@ -168,10 +168,21 @@ def wire_targets_from_binary() -> set | None:
                              text=True, timeout=30).stdout
     except (FileNotFoundError, subprocess.TimeoutExpired):
         return None
+    # clap inline form (pre-0.107): [possible values: a, b, c]
     m = re.search(r"possible values:\s*([a-z0-9\-,\s]+)\]", out)
-    if not m:
-        return None
-    return {t.strip() for t in m.group(1).split(",") if t.strip()} - {"all"}
+    if m:
+        return {t.strip() for t in m.group(1).split(",") if t.strip()} - {"all"}
+    # clap long form (0.107 help regroup): "Possible values:" then "- x" bullets
+    m = re.search(r"Possible values:\n((?:\s*-\s+[a-z0-9\-]+\S*\n)+)", out)
+    if m:
+        return set(re.findall(r"^\s*-\s+([a-z0-9\-]+)",
+                              m.group(1), re.M)) - {"all"}
+    # The binary ANSWERED but the parse failed: a silent None here reads as
+    # "no binary" and quietly kills the bidirectional wire law (found dead
+    # 2026-08-02, three days after the 0.107 help regroup). Fail loud.
+    raise SystemExit("check-clients-matrix: nika answered `wire --help` but "
+                     "the possible-values parse failed — teach the probe the "
+                     "new clap form")
 
 
 def check_wire(rows, findings):
