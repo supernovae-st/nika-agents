@@ -36,21 +36,25 @@ a memory of the terminal scroll.
 
 ## Prompts and confirm gates (paused OR failed — same answer line)
 
-On a terminal, `nika:prompt` blocks and waits (the run shows as
-`paused` in `nika trace ls`). Headless — which is where an agent
-lives — a prompt without a `default:` FAILS with
-`NIKA-BUILTIN-PROMPT-001` instead. Both states resolve with the same
-line:
+At a terminal, `nika:prompt` asks the human directly and the run
+continues. Headless — which is where an agent lives — a prompt
+without a `default:` **pauses durably** (exit 4 · `workflow_paused`
+in the trace · never a failure frame) and the frame prints its exact
+resume line. Three ways to answer, all recorded tamper-evident the same way:
 
 ```
-nika run <file> --resume <trace> --answer <task>=<value>
+nika run <file> --answer <task>=<value>                    # pre-answer at launch
+nika run <file> --resume <trace> --answer <task>=<value>   # resume the pause
+args: { …, default: <value> }                              # unattended default
 ```
 
 Confirm gates take booleans (`--answer approve=true`); every task the
 journal already proved is skipped as a visible cache hit, so only the
 prompt and its downstream run. Removing a paused trace refuses
 without `--force` and names the prompt it would destroy — that
-refusal is protecting an answer, not being difficult.
+refusal is protecting an answer, not being difficult. (Traces
+recorded by 0.106.x and earlier can still show a
+`NIKA-BUILTIN-PROMPT-001` failure — same repair line.)
 
 A failed run's card prints its own forensics line (`autopsy:
 nika trace peek <trace> <task>`) — start there, it points at the
@@ -105,7 +109,7 @@ re-executes). A journal that never reached a lifecycle-terminal frame
 verifies **INCOMPLETE**: the verifier's finding about a run that died
 mid-flight — not a pass, and not a tamper claim. Say which one you
 have. Cite the trace in any report — a verified chain is proof, prose
-is not; `nika evidence <trace>` exports the pack an auditor reads
+is not; `nika trace evidence <trace>` exports the pack an auditor reads
 without trusting you.
 
 ## Honesty lines
