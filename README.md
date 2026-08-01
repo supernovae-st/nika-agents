@@ -25,12 +25,17 @@ One Add installs the whole suite: 4 skills · 3 subagents · 6 slash commands
 <code>nika_template</code> · <code>nika_canon</code> · <code>nika_catalog</code> ·
 <code>nika_tools</code> · <code>nika_inspect</code>).</p>
 
-![A fresh machine: nika wire all creates the MCP config for fifteen agent clients in one command, then nika welcome confirms every editor wired, local models first, zero keys needed · the one-command wiring story, recorded against the released binary](media/wire-all.gif)
+![A fresh machine: nika wire all previews the MCP config for every agent client, one confirmation applies the sweep, then nika welcome confirms every editor wired, local models first, zero keys needed · the one-command wiring story, recorded against the released binary](media/wire-all.gif)
 
 ## Pick your door
 
-The binary first, everywhere: `brew install supernovae-st/tap/nika`
-([other paths](https://nika.sh)). Then one Add for your client:
+The binary first, everywhere ([other paths](https://nika.sh)):
+
+```sh
+brew install supernovae-st/tap/nika
+```
+
+Then one Add for your client:
 
 <p align="center">
   <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-ff7a3c?style=for-the-badge" alt="Claude Code"></a>
@@ -42,16 +47,16 @@ The binary first, everywhere: `brew install supernovae-st/tap/nika`
   <a href="#everyone-else"><img src="https://img.shields.io/badge/30%2B_more-5a6d8a?style=for-the-badge" alt="30+ more"></a>
 </p>
 
-#### Claude Code
+### Claude Code
 
 ```sh
 claude plugin marketplace add supernovae-st/nika-agents
 claude plugin install nika@nika
 ```
 
-<sub>Updating is TWO rungs: marketplace first, plugin second, restart after.</sub>
+Updating is TWO rungs: marketplace first, plugin second, restart after.
 
-#### Codex
+### Codex
 
 ```sh
 codex plugin marketplace add supernovae-st/nika-agents
@@ -60,7 +65,7 @@ codex plugin add nika@nika
 
 <sub>The per-version cache refreshes on your next run.</sub>
 
-#### Grok Build
+### Grok Build
 
 ```sh
 grok plugin marketplace add supernovae-st/nika-agents
@@ -69,7 +74,7 @@ grok plugin install nika@nika --trust
 
 <sub>Reads the Claude Code kit natively; <code>--trust</code> activates hooks + MCP.</sub>
 
-#### OpenClaude
+### OpenClaude
 
 ```sh
 openclaude plugin marketplace add supernovae-st/nika-agents
@@ -78,7 +83,7 @@ openclaude plugin install nika@nika
 
 <sub>Its loader reads the same marketplace layout, unported.</sub>
 
-#### Hermes, or any skills.sh client
+### Hermes, or any skills.sh client
 
 ```sh
 npx skills add supernovae-st/nika-agents
@@ -87,23 +92,24 @@ npx skills add supernovae-st/nika-agents
 <sub>The kit-native skill pack, e2e-proven and listed live on
 <a href="https://skills.sh/supernovae-st/nika-agents">skills.sh</a>.</sub>
 
-#### Cursor
+### Cursor
 
 Search "nika" in Settings → Plugins, one Add installs the full bundle (a
 manual drop into `~/.cursor/plugins/local/` loads MCP + skills ONLY · until
 the listing serves you, `nika init` equips the repo fully).
 
-#### Everyone else
+### Everyone else
 
 opencode · Kimi Code · Gemini CLI · Zed · Cline · Copilot CLI · Amp · Warp ·
 30+ clients: `nika init` equips the repo, `nika wire <client>` wires the
 machine, and the read-only oracle rides any MCP client. Every door on one
 page: [docs.nika.sh/integrations/everywhere](https://docs.nika.sh/integrations/everywhere).
 
-#### One-click doors
+### One-click doors
 
 Where the client supports a one-click MCP install, one button wires the
-oracle (binary still required):
+read-only oracle — the oracle only: the full plugin still arrives through
+your client's Add above (binary still required):
 
 <p align="center">
   <a href="https://vscode.dev/redirect/mcp/install?name=nika&config=%7B%22command%22%3A%20%22nika%22%2C%20%22args%22%3A%20%5B%22mcp%22%5D%7D"><img src="https://img.shields.io/badge/VS_Code-install%20nika%20mcp-0098FF?style=for-the-badge&logo=githubcopilot" alt="Install in VS Code"></a>
@@ -161,12 +167,20 @@ Every surface invokes the binary and the plugin kits ride its release train,
 but no surface updates another: brew never touches a plugin, a marketplace
 never touches the binary.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="media/update-rungs-dark.svg">
+    <img src="media/update-rungs-light.svg" alt="Updating: brew upgrade nika for the binary · then the two rungs for the Claude Code plugin: marketplace update, plugin update, restart" width="100%">
+  </picture>
+</p>
+
 | Surface | Update gesture |
 |---|---|
 | Binary | `brew upgrade nika` |
 | Claude Code plugin | `claude plugin marketplace update nika` **then** `claude plugin update nika@nika` (two rungs · restart after) |
 | Codex plugin | `codex plugin marketplace upgrade nika` |
-| Every surface at once | `scripts/update-mirrors.sh` (`--check` reports drift read-only, CI-able) |
+| Cursor plugin | Settings → Plugins → nika (the listing serves the current train) |
+| Every surface at once (maintainers) | `scripts/update-mirrors.sh` (`--check` reports drift read-only, CI-able) |
 
 `nika doctor` is the coherence oracle: it reads what each client actually
 loads, names any kit lagging the binary's train, and prints the exact

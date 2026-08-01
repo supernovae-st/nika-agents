@@ -30,6 +30,9 @@ Enter
 Sleep 700ms
 Type "nika wire all"
 Enter
+Sleep 2600ms
+Type "y"
+Enter
 Sleep 4200ms
 
 Type "clear"
