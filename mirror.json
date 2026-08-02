@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "6b2929d334a9d982ccfb31f03c5b338885ddcf5c",
+  "synced_at_engine_sha": "ad7c3d29607af66bb880c5195f4c41f7569ab9c0",
   "entries": [
     {
       "class": "engine-mirror",
@@ -37,7 +37,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/commands/new.md",
-      "sha256": "6e23a464401b16cc1fec211734f7028e033af07dd643bf2efb8676d3d517c5b8"
+      "sha256": "f4d8ff594de468221417007e6084f9da378080ea0516fc368029d612bc6cdad5"
     },
     {
       "class": "kit-native",
@@ -92,7 +92,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/agents/nika-author.md",
-      "sha256": "d0bcb3befb85d65d7bf180402882ba5d09f0b919d29390dcc9ea3361801ba50a"
+      "sha256": "308b1a9162f35e5d235d306034c97aa277a67d1249611fc60c26dc19361331b1"
     },
     {
       "class": "engine-mirror",
@@ -117,7 +117,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/README.md",
-      "sha256": "dac2190776c17a45bf1120c9fb56fae0e0106ea03c97907e7b6cdedfdb3efedf"
+      "sha256": "91e58dfc5b6fa7cf76190f0414cd9c1c0c7e55482ee92a24357707c26039c610"
     },
     {
       "class": "engine-mirror",
@@ -142,12 +142,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/agents/nika-debugger.md",
-      "sha256": "15849e1d31e5ef1f0c452a07ec124e65708df2da34ae6686f66ec9548c7a9edb"
+      "sha256": "09590a4f55ef3afff6fc96479a6c6e64976ade4d032056649caeec03a562becf"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/agents/nika-migrator.md",
-      "sha256": "7717a02b9d3b00693b523bdf02ea252638bd9e933d40354b1721e074d113d99f"
+      "sha256": "2796f91c0405d31160328df9914aeff8502a487f07ce64f3b6b4c052040c5294"
     },
     {
       "class": "engine-mirror",
