@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" role="img" aria-label="Updating: brew upgrade nika for the binary · then the two rungs for the Claude Code plugin: marketplace update, plugin update, restart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" role="img" aria-label="Updating: brew upgrade nika for the binary · then the two rungs for the Claude Code plugin: marketplace update, plugin update, restart · out of sync? nika doctor names the lagging kit and prints the fix">
   <!-- The update rungs · same THEME contract as hero-dark.svg (the light
        twin swaps only the THEME block · scripts/media/derive-hero-light.py). -->
   <style>
@@ -53,6 +53,7 @@
     </g>
 
     <text class="mono lbl" x="40" y="44">the binary</text>
+    <text class="mono dim" x="1160" y="44" text-anchor="end">out of sync? nika doctor names it</text>
     <rect x="40" y="60" width="208" height="40" rx="8" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
     <rect class="h1" x="40" y="60" width="208" height="40" rx="8" fill="none" stroke="var(--accent)" opacity="0"/>
     <text class="mono cmd" x="60" y="86">brew upgrade nika</text>

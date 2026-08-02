@@ -163,9 +163,16 @@ a deterministic receipt:
 
 ## Keeping the suite fresh
 
+The binary moved and a kit stayed behind? One command names it:
+
+```sh
+nika doctor    # reads what each client actually loads · names any kit
+               # lagging the binary's train · prints the exact per-client fix
+```
+
 Every surface invokes the binary and the plugin kits ride its release train,
 but no surface updates another: brew never touches a plugin, a marketplace
-never touches the binary.
+never touches the binary. The gestures, per surface:
 
 <p align="center">
   <picture>
@@ -182,9 +189,8 @@ never touches the binary.
 | Cursor plugin | Settings → Plugins → nika (the listing serves the current train) |
 | Every surface at once (maintainers) | `scripts/update-mirrors.sh` (`--check` reports drift read-only, CI-able) |
 
-`nika doctor` is the coherence oracle: it reads what each client actually
-loads, names any kit lagging the binary's train, and prints the exact
-per-client fix. Drift is advisory (warn · exit 0).
+Drift is advisory (`nika doctor` warns · exit 0) and every fix line it
+prints is copy-paste ready.
 
 ## How the pieces fit (the three layers)
 
