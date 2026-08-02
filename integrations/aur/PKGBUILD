@@ -2,7 +2,7 @@
 # Prebuilt-binary package for the Nika workflow engine (nika.sh).
 # Upstream release tarballs contain exactly one file: the static `nika` binary.
 pkgname=nika-bin
-pkgver=0.106.1
+pkgver=0.107.0
 pkgrel=1
 pkgdesc="Workflow language + engine for AI pipelines — audit .nika.yaml statically (cost/permits/secrets) before running, verify the hash-chained trace after"
 arch=('x86_64' 'aarch64')
@@ -12,8 +12,8 @@ provides=('nika')
 conflicts=('nika')
 source_x86_64=("nika-${pkgver}-x64.tar.gz::${url}/releases/download/v${pkgver}/nika-linux-x64-${pkgver}.tar.gz")
 source_aarch64=("nika-${pkgver}-arm64.tar.gz::${url}/releases/download/v${pkgver}/nika-linux-arm64-${pkgver}.tar.gz")
-sha256sums_x86_64=('7c4afa3d0dfe0685102c2efbfb91c50df34a5c6a372a0a8106390c87a79c7e12')
-sha256sums_aarch64=('4c1af6b87f59653843ef28bee33577d9b345323e9d1a5222e8c0ec9103bb2b26')
+sha256sums_x86_64=('cc2e419537384abcfdc5e52f486c75d3f0805c1cbadb60975bd11e7af6434bb5')
+sha256sums_aarch64=('d2d73ffb4f9946db3330afd33b2b39c412e41f87d2cdd0750112dca3d7febb7f')
 
 package() {
   install -Dm755 "${srcdir}/nika" "${pkgdir}/usr/bin/nika"
