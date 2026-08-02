@@ -55,12 +55,19 @@ if [ -f "$(dirname "$0")/../integrations/aur/PKGBUILD" ]; then
 fi
 
 # ── 3 · the known-drift ledger (RED until the operator ceremony lands) ──
-ghcr_tags="$(curl -fsSL "https://ghcr.io/token?scope=repository:supernovae-st/nika:pull" | python3 -c "import json,sys; print(json.load(sys.stdin)['token'])" | xargs -I{} curl -fsSL -H "Authorization: Bearer {}" "https://ghcr.io/v2/supernovae-st/nika/tags/list" | python3 -c "import json,sys; print(' '.join(json.load(sys.stdin).get('tags') or []))" || true)"
-case "$ghcr_tags" in
-  *"$latest"*) say "✔ ghcr carries ${latest}" ;;
-  "") say "· ghcr — no tags visible (skip)" ;;
+#
+# `?n=1000` is load-bearing: the registry paginates at 100 by default, and
+# this repository's first page is entirely pre-Diamond tags. Without it the
+# check read 100 of 189 tags, never saw 0.107.0, and reported « ghcr serves
+# only pre-Diamond tags » about a registry that was carrying the current
+# release the whole time (caught 2026-08-02). A gate that cries wolf gets
+# read as noise, which costs more than the check is worth.
+ghcr_tags="$(curl -fsSL "https://ghcr.io/token?scope=repository:supernovae-st/nika:pull" | python3 -c "import json,sys; print(json.load(sys.stdin)['token'])" | xargs -I{} curl -fsSL -H "Authorization: Bearer {}" "https://ghcr.io/v2/supernovae-st/nika/tags/list?n=1000" | python3 -c "import json,sys; print(' '.join(json.load(sys.stdin).get('tags') or []))" || true)"
+case " $ghcr_tags " in
+  *" $latest "*) say "✔ ghcr carries ${latest}" ;;
+  "  ") say "· ghcr — no tags visible (skip)" ;;
   *)
-    say "✖ ghcr serves only pre-Diamond tags (${ghcr_tags%% sha*}…) — the brouillon-latest drift (payloads §14)"
+    say "✖ ghcr does not carry ${latest} — the brouillon-latest drift (payloads §14)"
     fail=1
     ;;
 esac
