@@ -2,7 +2,7 @@
   "mirror_version": 1,
   "comment": "The kit's drift contract. Two classes: engine-mirror files are byte-identical projections of supernovae-st/nika (pinned by sha256 at the engine SHA they were proven against — a pin mismatch is corruption, an upstream move is a re-sync alert, never the same signal); kit-native files are owned here and proven against the latest released binary instead.",
   "engine_repo": "supernovae-st/nika",
-  "synced_at_engine_sha": "ad7c3d29607af66bb880c5195f4c41f7569ab9c0",
+  "synced_at_engine_sha": "ab5f27f812f6795c5e70b174421d95fcf1fbf3b1",
   "entries": [
     {
       "class": "engine-mirror",
@@ -117,7 +117,7 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/README.md",
-      "sha256": "91e58dfc5b6fa7cf76190f0414cd9c1c0c7e55482ee92a24357707c26039c610"
+      "sha256": "dc4f6bb0c4e892f4c8e4b4384d82da7abcbe7a2d393d6bd7283d2dd78806d5e1"
     },
     {
       "class": "engine-mirror",
@@ -167,12 +167,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/guard-run.sh",
-      "sha256": "821136eb047ff862a7b25db59b8e16bf6eb64e5e48d2ecdbc0368b751f295fc4"
+      "sha256": "4792f9a56e6b3101e2b750b225c0f3c232dfd77809bba87fa11b7add865c1b71"
     },
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/session-context.sh",
-      "sha256": "e1713d4ae514ff51fc7132b89508672410697b45ec576b966a20232b284082d1"
+      "sha256": "aacf0dd030325345c2dac4850ebe7c8c14008cedca60c2483c4ff9d35b35c965"
     },
     {
       "class": "engine-mirror",
@@ -208,7 +208,12 @@
     {
       "class": "engine-mirror",
       "path": ".agents/plugins/nika/scripts/tests/session-context.test.sh",
-      "sha256": "26936655115cb16772e4ec9f34721517d47f3354cbbfee066f3eee5ddc5e95be"
+      "sha256": "67b6dd749344459e699eb2fa9928e8990c02c802e74c92164690082bd47189b0"
+    },
+    {
+      "class": "engine-mirror",
+      "path": ".agents/plugins/nika/scripts/tests/guard-run.test.sh",
+      "sha256": "4ae2d780451880f5c1ec735094c26e7f9e27e5621e275a5e7b1bb80fa52128cf"
     }
   ],
   "engine_scope": ".agents/plugins/nika/"
