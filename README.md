@@ -119,7 +119,16 @@ your client's Add above (binary still required):
 
 ## Your first minute
 
-Once installed, paste one of these into your agent:
+See a workflow work before anything else — offline, zero keys, nothing
+written:
+
+```sh
+nika try 01-hello
+```
+
+![nika try 01-hello renders the live DAG offline under the mock provider and seals the honest run card (a mock is unpriced, never free), then points at nika new to make the file yours · zero keys, nothing written, recorded against the released binary](media/try.gif)
+
+Then paste one of these into your agent:
 
 > Turn this repeatable task into a checked Nika workflow.
 

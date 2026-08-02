@@ -58,22 +58,22 @@
     <text class="mono lead" x="600" y="28" text-anchor="middle">one Add installs the whole suite</text>
 
     <rect x="206" y="44" width="110" height="40" rx="8" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
-    <rect class="h1" x="206" y="44" width="110" height="40" rx="8" fill="none" stroke="var(--accent)" opacity="0"/>
+    <rect class="h1" x="206" y="44" width="110" height="40" rx="8" fill="none" stroke="var(--v-infer)" opacity="0"/>
     <text class="mono cmd" x="224" y="70">4 skills</text>
     <text class="mono dim" x="261" y="108" text-anchor="middle">author→migrate</text>
 
     <rect x="338" y="44" width="138" height="40" rx="8" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
-    <rect class="h2" x="338" y="44" width="138" height="40" rx="8" fill="none" stroke="var(--accent)" opacity="0"/>
+    <rect class="h2" x="338" y="44" width="138" height="40" rx="8" fill="none" stroke="var(--v-exec)" opacity="0"/>
     <text class="mono cmd" x="356" y="70">3 subagents</text>
     <text class="mono dim" x="407" y="108" text-anchor="middle">write · debug · port</text>
 
     <rect x="498" y="44" width="129" height="40" rx="8" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
-    <rect class="h3" x="498" y="44" width="129" height="40" rx="8" fill="none" stroke="var(--accent)" opacity="0"/>
+    <rect class="h3" x="498" y="44" width="129" height="40" rx="8" fill="none" stroke="var(--v-invoke)" opacity="0"/>
     <text class="mono cmd" x="516" y="70">6 commands</text>
     <text class="mono dim" x="562" y="108" text-anchor="middle">/nika:*</text>
 
     <rect x="649" y="44" width="101" height="40" rx="8" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
-    <rect class="h4" x="649" y="44" width="101" height="40" rx="8" fill="none" stroke="var(--accent)" opacity="0"/>
+    <rect class="h4" x="649" y="44" width="101" height="40" rx="8" fill="none" stroke="var(--v-agent)" opacity="0"/>
     <text class="mono cmd" x="667" y="70">3 hooks</text>
     <text class="mono dim" x="699" y="108" text-anchor="middle">the seatbelts</text>
 
