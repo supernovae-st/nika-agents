@@ -127,6 +127,13 @@ Once installed, paste one of these into your agent:
 
 > Diagnose this failed Nika run from its trace.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="media/loop-dark.svg">
+    <img src="media/loop-light.svg" alt="The loop: you describe the job in plain words, the agent writes the .nika.yaml, nika check audits it before a token is spent, nika run stays yours to type, nika trace verify seals the receipt · the file is the repeatable part" width="100%">
+  </picture>
+</p>
+
 The plugin proposes the command; you type it. Spend is capped at the call
 that would cross the cap, the effect boundary is declared in the file and
 reviewable in a diff, and every run leaves a hash-chained trace you can
@@ -194,29 +201,12 @@ prints is copy-paste ready.
 
 ## How the pieces fit (the three layers)
 
-```
-ENGINE  supernovae-st/nika              the source of truth
-  ├─ .agents/plugins/nika/              THE plugin kit (skills · subagents ·
-  │    3 manifests: claude · codex ·     commands · rules · hooks · MCP · logo)
-  │    cursor                            · mirrored HERE, byte-pinned
-  ├─ nika init                          per-REPO scaffold (AGENTS.md ·
-  │                                      .cursor/{rules,mcp.json} · .vscode ·
-  │                                      copilot brief · CLAUDE.md · skill)
-  └─ nika wire <client>                 per-MACHINE wiring (cursor · zed ·
-                                         cline · continue · claude · …)
-
-THIS REPO  supernovae-st/nika-agents    the install surface (light clone —
-                                         marketplaces clone their target)
-   Claude Code · Codex · Cursor ·        the mirrored plugin, one Add each
-   Grok Build · OpenClaude
-   Hermes / skills.sh · opencode ·       kit-native integrations
-   Kimi Code · MCP registries
-
-nika-vscode  supernovae-st/nika-vscode  the IDE product (compiled extension:
-                                         LSP · live DAG canvas · replay
-                                         debugger · runs view · VS Code ·
-                                         Cursor · Windsurf, one build)
-```
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="media/layers-dark.svg">
+    <img src="media/layers-light.svg" alt="Three layers: the engine supernovae-st/nika is the source of truth, mirrored byte-pinned into this repo, one Add per client · nika init equips one repository · nika wire wires one machine · nika-vscode is the IDE product, not a plugin" width="100%">
+  </picture>
+</p>
 
 Three mechanisms, no overlap: the **plugin** teaches any agent the language
 (per-agent) · **`nika init`** equips one repository (per-repo) · **`nika
@@ -265,6 +255,13 @@ The living map: [nika.sh/map](https://nika.sh/map).
 <!-- /city:map -->
 
 ## What's inside
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="media/suite-dark.svg">
+    <img src="media/suite-light.svg" alt="One Add installs the whole suite: 4 skills, 3 subagents, 6 commands, 3 hooks and the read-only oracle" width="100%">
+  </picture>
+</p>
 
 ```
 .agents/plugins/marketplace.json      Codex marketplace manifest

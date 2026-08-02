@@ -48,14 +48,16 @@ def documented_tools() -> set:
 def kit_native_md_tools() -> dict:
     """Per kit-native .md (mirror.json), the wire-form names it advertises."""
     manifest = json.loads((ROOT / "mirror.json").read_text())
+    paths = [e["path"] for e in manifest["entries"]
+             if e["class"] == "kit-native" and e["path"].endswith(".md")]
+    # the animated visuals advertise tool names too (the suite strip)
+    paths += ["media/suite-dark.svg", "media/suite-light.svg"]
     out = {}
-    for e in manifest["entries"]:
-        if e["class"] != "kit-native" or not e["path"].endswith(".md"):
-            continue
+    for path in paths:
         names = {wire_name(n)
-                 for n in NAME_RE.findall((ROOT / e["path"]).read_text())}
+                 for n in NAME_RE.findall((ROOT / path).read_text())}
         if names:
-            out[e["path"]] = names
+            out[path] = names
     return out
 
 

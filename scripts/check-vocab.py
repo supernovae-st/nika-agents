@@ -41,7 +41,10 @@ GATED = [
 
 
 def tracked_md() -> list:
-    out = subprocess.run(["git", "-C", str(ROOT), "ls-files", "*.md"],
+    # media/*.svg joined 2026-08-02: the animated visuals carry prose
+    # (chip labels · law lines) and are teaching surfaces like any .md.
+    out = subprocess.run(["git", "-C", str(ROOT), "ls-files", "*.md",
+                          "media/*.svg"],
                          text=True, capture_output=True, check=True)
     return [p for p in out.stdout.splitlines() if p and p not in SKIP]
 

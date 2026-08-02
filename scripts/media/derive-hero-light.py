@@ -15,6 +15,9 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 PAIRS = [
     (ROOT / "media/hero-dark.svg", ROOT / "media/hero-light.svg"),
     (ROOT / "media/update-rungs-dark.svg", ROOT / "media/update-rungs-light.svg"),
+    (ROOT / "media/loop-dark.svg", ROOT / "media/loop-light.svg"),
+    (ROOT / "media/layers-dark.svg", ROOT / "media/layers-light.svg"),
+    (ROOT / "media/suite-dark.svg", ROOT / "media/suite-light.svg"),
 ]
 
 LIGHT_THEME = """\

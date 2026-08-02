@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="Three layers: the engine supernovae-st/nika is the source of truth, mirrored byte-pinned into this repo, one Add per client · nika init equips one repository · nika wire wires one machine · nika-vscode is the IDE product, not a plugin">
+  <!-- The three layers · same THEME contract as hero-dark.svg (the light
+       twin swaps only the THEME block · scripts/media/derive-hero-light.py). -->
+  <style>
+    /* THEME:START */
+    :root {
+      --bg0: #fbfcfe; --bg1: #eef2f8;
+      --ink: #0b0d12; --tag: #4a5568; --cmd: #1a2233;
+      --legend: #5a6b80; --legend-dim: #5a6b80;
+      --accent: #c2410c;
+      --mark: #04050d; --glow: #5b8cff;
+      --star: #5b8cff; --star-op: 0.5; --tw-lo: 0.1; --tw-hi: 0.55;
+      --pulse-lo: 0.15; --pulse-hi: 0.38; --halo-op: 0.18;
+      --chip-bg: #f0f3f9; --chip-stroke: #d8dfeb;
+      --frame: #0b0d12; --frame-op: 0.1;
+      --v-infer: #3b5bdb; --v-exec: #c2410c; --v-invoke: #0b7285; --v-agent: #862e9c;
+      --wm-op: 0.05;
+    }
+    /* THEME:END */
+    .mono { font-family: 'Martian Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+    .box { font-size: 15px; fill: var(--ink); font-weight: 700; }
+    .cmd { font-size: 14px; fill: var(--cmd); }
+    .sub { font-size: 11px; fill: var(--legend); }
+    .dim { font-size: 11px; fill: var(--legend-dim); }
+    .stars { opacity: var(--star-op); }
+    .s1 { animation: twinkle 3.4s ease-in-out infinite alternate; }
+    .s2 { animation: twinkle 4.8s ease-in-out 1.1s infinite alternate; }
+    .march { stroke-dasharray: 6 6; animation: march 1.4s linear infinite; }
+    @keyframes twinkle { from { opacity: var(--tw-lo); } to { opacity: var(--tw-hi); } }
+    @keyframes march { to { stroke-dashoffset: -12; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="ybg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--bg0)"/>
+      <stop offset="1" stop-color="var(--bg1)"/>
+    </linearGradient>
+    <clipPath id="yframe"><rect width="1200" height="300" rx="12"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#yframe)">
+    <rect width="1200" height="300" fill="url(#ybg)"/>
+    <g class="stars" fill="var(--star)">
+      <circle class="s1" cx="530" cy="30" r="1.2"/><circle class="s2" cx="1060" cy="40" r="1.1"/>
+      <circle class="s1" cx="960" cy="120" r="1"/><circle class="s2" cx="1130" cy="200" r="1.2"/>
+      <circle class="s1" cx="500" cy="270" r="1"/><circle class="s2" cx="1010" cy="278" r="1"/>
+      <circle class="s1" cx="1160" cy="90" r="1"/><circle class="s2" cx="480" cy="150" r="1"/>
+    </g>
+
+    <!-- the source of truth -->
+    <rect x="60" y="24" width="360" height="64" rx="10" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
+    <text class="mono box" x="82" y="51">supernovae-st/nika</text>
+    <text class="mono sub" x="82" y="74">the engine · the kit's source of truth</text>
+
+    <line class="march" x1="240" y1="88" x2="240" y2="117" stroke="var(--legend-dim)" stroke-width="1.4"/>
+    <polygon points="240,121 235,112 245,112" fill="var(--legend-dim)"/>
+    <text class="mono dim" x="258" y="108">mirrored · byte-pinned (mirror.json)</text>
+
+    <!-- this repo -->
+    <rect x="60" y="117" width="420" height="64" rx="10" fill="var(--chip-bg)" stroke="var(--accent)" stroke-opacity="0.55"/>
+    <text class="mono box" x="82" y="144">supernovae-st/nika-agents</text>
+    <text class="mono sub" x="82" y="167">the install surface · a light clone</text>
+    <text class="mono dim" x="464" y="144" text-anchor="end">◀ you are here</text>
+
+    <line class="march" x1="240" y1="181" x2="240" y2="210" stroke="var(--legend-dim)" stroke-width="1.4"/>
+    <polygon points="240,214 235,205 245,205" fill="var(--legend-dim)"/>
+    <text class="mono dim" x="258" y="201">one Add each</text>
+
+    <!-- your client -->
+    <rect x="60" y="210" width="360" height="64" rx="10" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
+    <text class="mono box" x="82" y="237">your client</text>
+    <text class="mono sub" x="82" y="260">Claude Code · Codex · Cursor · 30+ more</text>
+
+    <!-- the per-repo and per-machine doors ship in the binary -->
+    <text class="mono dim" x="600" y="22">ships in the binary</text>
+    <path class="march" d="M 420 50 C 520 44, 540 56, 598 58" fill="none" stroke="var(--legend-dim)" stroke-width="1.2"/>
+    <path class="march" d="M 420 62 C 520 80, 530 140, 598 148" fill="none" stroke="var(--legend-dim)" stroke-width="1.2"/>
+
+    <rect x="600" y="30" width="300" height="56" rx="9" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
+    <text class="mono cmd" x="620" y="54">nika init</text>
+    <text class="mono sub" x="620" y="75">equips one repository</text>
+
+    <rect x="600" y="122" width="300" height="56" rx="9" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
+    <text class="mono cmd" x="620" y="146">nika wire &lt;client&gt;</text>
+    <text class="mono sub" x="620" y="167">wires one machine's clients</text>
+
+    <rect x="600" y="214" width="300" height="56" rx="9" fill="var(--chip-bg)" stroke="var(--chip-stroke)"/>
+    <text class="mono cmd" x="620" y="238">nika-vscode</text>
+    <text class="mono sub" x="620" y="259">the IDE product · not a plugin</text>
+
+    <text class="mono dim" x="1160" y="51" text-anchor="end">per agent · the plugin</text>
+    <text class="mono dim" x="1160" y="143" text-anchor="end">per repo · per machine</text>
+    <text class="mono dim" x="1160" y="235" text-anchor="end">LSP · DAG canvas · replay</text>
+
+    <text class="mono dim" x="600" y="292" text-anchor="middle">three mechanisms, no overlap · truth lives in the engine · everything here is a mirror</text>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="12" fill="none" stroke="var(--frame)" stroke-opacity="var(--frame-op)"/>
+</svg>
