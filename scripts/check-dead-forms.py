@@ -99,6 +99,15 @@ def main() -> int:
         print("\na kit-native surface teaches a form the engine refuses — "
               "fix the teaching, never the engine", file=sys.stderr)
         return 1
+    # An empty sweep prints the same ✓ as a clean one. The kit always has
+    # kit-native surfaces (README · integrations · skills); a harvest near
+    # zero means the file walk moved, and this gate is blind rather than
+    # satisfied.
+    if scanned < 5:
+        print(f"✗ swept only {scanned} kit-native file(s) — the walk moved, "
+              "this gate is blind (expected the README, integrations/ and "
+              "skills/ surfaces)", file=sys.stderr)
+        return 1
     print(f"✓ no dead language forms across {scanned} kit-native teaching files")
     return 0
 
