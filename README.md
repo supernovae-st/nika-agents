@@ -111,10 +111,10 @@ Search "nika" in Settings → Plugins, one Add installs the full bundle (a
 manual drop into `~/.cursor/plugins/local/` loads MCP + skills ONLY).
 
 Until the listing serves you, `nika init` equips the **repo**: the
-`AGENTS.md` family, the authoring skill, the 3 subagents, the 2 rules,
-the hooks and the MCP oracle. The other 3 skills and the 6 `/nika:*`
-commands arrive with the plugin — they load from its manifest, which is
-the client's own plugin system's job, not a file a repo can carry.
+`AGENTS.md` family, the authoring skill, the subagents, the rules, the
+hooks and the MCP oracle. The remaining skills and the `/nika:*` commands
+arrive with the plugin — they load from its manifest, which is the
+client's own plugin system's job, not a file a repo can carry.
 
 ### Everyone else
 
