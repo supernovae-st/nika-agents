@@ -29,11 +29,20 @@ One Add installs the whole suite: 4 skills · 3 subagents · 6 slash commands
 
 ## Pick your door
 
-The binary first, everywhere ([other paths](https://nika.sh)):
+The binary first, everywhere:
 
 ```sh
-brew install supernovae-st/tap/nika
+brew install supernovae-st/tap/nika          # macOS · Linuxbrew
+
+# No brew, no sudo — installs to ~/.nika/bin, verifies the release
+# checksum before extracting:
+curl -LsSf https://nika.sh/install.sh | sh
 ```
+
+Prefer to verify by hand? Every release publishes `SHA256SUMS` beside
+its tarballs: download both from
+[the release page](https://github.com/supernovae-st/nika/releases/latest),
+run `shasum -a 256 -c SHA256SUMS`, then extract. ([every path](https://nika.sh))
 
 Then one Add for your client:
 
@@ -63,7 +72,11 @@ codex plugin marketplace add supernovae-st/nika-agents
 codex plugin add nika@nika
 ```
 
-<sub>The per-version cache refreshes on your next run.</sub>
+<sub>Codex takes the skills, commands, hooks and the oracle. It does
+NOT take the 3 subagents or the 2 rules — its plugin schema has no key
+for either, so they ship in the bundle and sit inert. Codex keeps one
+cached copy per plugin version; it refreshes the next time you start
+codex.</sub>
 
 ### Grok Build
 
@@ -127,6 +140,28 @@ nika try 01-hello
 ```
 
 ![nika try 01-hello renders the live DAG offline under the mock provider and seals the honest run card (a mock is unpriced, never free), then points at nika new to make the file yours · zero keys, nothing written, recorded against the released binary](media/try.gif)
+
+## Your first real answer
+
+`nika try` runs on a **mock** model: it proves the plumbing and echoes
+your prompt back. Real work needs a real seat, and you have three —
+pick one and re-run with `nika run <file>`:
+
+```sh
+# 1 · Local, no key, no daemon — the binary serves the model itself
+nika model pull unsloth/Qwen3-4B-Instruct-2507-GGUF   # size prints before downloading
+nika model serve --model unsloth/Qwen3-4B-Instruct-2507-GGUF
+
+# 2 · Local, via ollama, if you already run it
+ollama serve                                          # then: model: ollama/llama3.2
+
+# 3 · A cloud provider — one key, in your shell
+export OPENAI_API_KEY=…      # or ANTHROPIC_API_KEY · MISTRAL_API_KEY · GEMINI_API_KEY
+```
+
+`nika doctor` tells you which of the three this machine already has.
+Any workflow runs on any of them: the seat is one line (`model:`) in
+the file, or `--model <provider>/<name>` on the run.
 
 Then paste one of these into your agent:
 
@@ -207,6 +242,38 @@ never touches the binary. The gestures, per surface:
 
 Drift is advisory (`nika doctor` warns · exit 0) and every fix line it
 prints is copy-paste ready.
+
+## Taking it back off
+
+Same three mechanisms, in reverse. The plugin comes off with one
+command per client; the machine wiring is **manual today** — `nika
+wire` has no `--remove`, and this table is here so you do not have to
+go looking.
+
+| Surface | Removal gesture |
+|---|---|
+| Claude Code plugin | `claude plugin uninstall nika@nika` **then** `claude plugin marketplace remove nika` |
+| Codex plugin | `codex plugin remove nika@nika` **then** `codex plugin marketplace remove nika` |
+| Cursor plugin | Settings → Plugins → nika → Remove |
+| One repo (`nika init`) | Delete what it wrote: `.cursor/`, `.agents/`, `.vscode/mcp.json`, `.mcp.json`, `AGENTS.md` — all tracked, so `git status` shows you the whole list before you decide |
+| One machine (`nika wire`) | Delete the `nika` entry from the client's config (below), or the file if Nika created it |
+| Binary | `brew uninstall nika`, or `rm -rf ~/.nika/bin` for the script install (models and traces live in `~/.nika/` too — remove the whole dir to take everything) |
+
+`nika wire` only ever adds one `nika` server entry, and it names the
+exact file before it writes: run `nika wire detected --dry-run` to see
+your machine's list. The full set it can touch:
+
+`~/.cursor/mcp.json` · `~/.claude.json` · `~/.codex/config.toml` ·
+`~/.codeium/windsurf/mcp_config.json` ·
+`~/Library/Application Support/Claude/claude_desktop_config.json` ·
+`~/.cline/data/settings/cline_mcp_settings.json` ·
+`~/.continue/mcpServers/nika.json` · `~/.config/zed/settings.json` ·
+`~/.hermes/config.yaml` · `~/.gemini/settings.json` ·
+`~/.gemini/config/mcp_config.json` · `~/.qwen/settings.json` ·
+`~/.lmstudio/mcp.json` · `~/.grok/config.toml` ·
+`~/.kimi-code/mcp.json` · `~/.kiro/settings/mcp.json` ·
+`~/.copilot/mcp-config.json` — plus the project-local
+`./.vscode/mcp.json`, `./opencode.json`, `./.junie/mcp/mcp.json`.
 
 ## How the pieces fit (the three layers)
 
