@@ -617,13 +617,13 @@ entries:
 
   - surface: skills.sh
     class: auto-indexed
-    status: pending-index  # 2026-08-07 measured: /supernovae-st/nika-plugins
-      # 404s, /supernovae-st/nika-agents still 200s. The repo rename did NOT
-      # carry the listing — a GitHub rename redirects git and the API, never a
-      # third party's index. This is the same state the entry sat in on first
-      # publish (indexed ~a day later, 2026-07-10 ~08h), so the move is to
-      # record it, not to point the README back at a name that is now dead.
-      # The badge endpoint (/b/...) already answers 200 under the new name.
+    status: pending-index  # 2026-08-07 measured: the URL below 404s while the
+      # pre-rename one still answers 200. The repo rename did NOT carry the
+      # listing · a GitHub rename redirects git and the API, never a third
+      # party's index. Same state this entry sat in on first publish (indexed
+      # ~a day later, 2026-07-10 ~08h), so the move is to record it, not to
+      # point the README back at a name that no longer exists. The badge
+      # endpoint (/b/...) already answers 200 under the new name.
     url: https://skills.sh/supernovae-st/nika-plugins
     installed_via: npx skills add supernovae-st/nika-plugins
     description_block: skills-registries lead (description-bank §per-surface)
