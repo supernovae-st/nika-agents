@@ -281,6 +281,46 @@ def check_upstream(findings_warn):
               f"bundle files under {scope}")
 
 
+EVERYWHERE = ("https://raw.githubusercontent.com/supernovae-st/nika-docs/"
+              "main/integrations/everywhere.mdx")
+
+
+def check_everywhere(rows, findings_warn):
+    """The docs map claims to be complete · prove it against this matrix.
+
+    integrations/everywhere.mdx opens with "the complete map: every install
+    path, IDE, agent, skill, plugin, CI surface, SDK and registry". Nothing
+    checked that claim. When it was first checked (2026-08-07) it was short
+    five of thirty-one rows, one of them a class-A client.
+
+    `recon` rows are exempt BY THEIR STATUS, not by an allowlist: the enum
+    says recon is "mechanism known from primary sources · nothing shipped or
+    proven", and a map of doors that lists an unproven one turns recon into
+    a claim. A row joins the page when it ships.
+    """
+    try:
+        with urllib.request.urlopen(EVERYWHERE, timeout=30) as resp:
+            page = resp.read().decode("utf-8", "replace").lower()
+    except (urllib.error.URLError, TimeoutError) as err:
+        print(f"  everywhere.mdx check skipped (unreachable: {err})")
+        return
+    owed = [r for r in rows if r.get("status") != "recon"]
+    missing = []
+    for row in owed:
+        tokens = {row["id"], row["id"].replace("-", " "),
+                  row["name"].split("·")[0].strip()}
+        if not any(t and t.lower() in page for t in tokens):
+            missing.append(row["id"])
+    for rid in missing:
+        findings_warn.append(
+            f"clients.yaml row {rid!r} is shipped but everywhere.mdx does not "
+            f"teach it — the page calls itself the complete map")
+    exempt = len(rows) - len(owed)
+    if not missing:
+        print(f"  everywhere.mdx: all {len(owed)} shipped row(s) taught "
+              f"({exempt} recon row(s) exempt by status)")
+
+
 def main() -> int:
     upstream_mode = "--upstream" in sys.argv
     findings: list[str] = []
@@ -289,6 +329,7 @@ def main() -> int:
     if upstream_mode:
         warns: list[str] = []
         check_upstream(warns)
+        check_everywhere(doc.get("clients") or [], warns)
         for w in warns:
             print(f"::warning::{w}")
         if warns and os.environ.get("GATE_EVENT") == "schedule":
