@@ -56,6 +56,10 @@ Then one Add for your client:
   <a href="#everyone-else"><img src="https://img.shields.io/badge/30%2B_more-5a6d8a?style=for-the-badge" alt="30+ more"></a>
 </p>
 
+<p align="center">
+  <sub>or <a href="#every-client-you-have-one-command"><code>npx plugins add supernovae-st/nika-plugins</code></a> — every client on the machine, one command</sub>
+</p>
+
 ### Claude Code
 
 ```sh
@@ -115,6 +119,20 @@ Until the listing serves you, `nika init` equips the **repo**: the
 hooks and the MCP oracle. The remaining skills and the `/nika:*` commands
 arrive with the plugin — they load from its manifest, which is the
 client's own plugin system's job, not a file a repo can carry.
+
+### Every client you have, one command
+
+```sh
+npx plugins add supernovae-st/nika-plugins
+```
+
+<sub>Vercel's installer detects which of Claude Code, Cursor, Codex, Grok
+Build, Kimi Code, GitHub Copilot CLI and VS Code are on your machine and
+installs to each through that client's own plugin system. Add
+<code>-t &lt;client&gt;</code> for one of them, <code>--scope project</code> to keep
+it in the repo. Run <code>npx plugins discover supernovae-st/nika-plugins</code>
+first to see what it found before anything is written — measured
+2026-08-07: <code>4 skills, 6 cmds, 3 agents, 2 rules, mcp</code>.</sub>
 
 ### Everyone else
 
