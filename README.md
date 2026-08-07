@@ -2,16 +2,16 @@
   <a href="https://nika.sh">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="media/hero-dark.svg">
-      <img src="media/hero-light.svg" alt="nika-agents · the Nika plugin marketplace · one Add teaches your agent the language" width="100%">
+      <img src="media/hero-light.svg" alt="nika-plugins · the Nika plugin marketplace · one Add teaches your agent the language" width="100%">
     </picture>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml"><img src="https://github.com/supernovae-st/nika-agents/actions/workflows/gate.yml/badge.svg" alt="gate"></a>
+  <a href="https://github.com/supernovae-st/nika-plugins/actions/workflows/gate.yml"><img src="https://github.com/supernovae-st/nika-plugins/actions/workflows/gate.yml/badge.svg" alt="gate"></a>
   <a href="https://github.com/supernovae-st/nika/releases/latest"><img src="https://img.shields.io/github/v/release/supernovae-st/nika?label=engine&color=ff7a3c" alt="engine release"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/supernovae-st/nika-agents?color=5b8cff&label=license" alt="license"></a>
-  <a href="https://skills.sh/supernovae-st/nika-agents"><img src="https://skills.sh/b/supernovae-st/nika-agents" alt="skills.sh"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/supernovae-st/nika-plugins?color=5b8cff&label=license" alt="license"></a>
+  <a href="https://skills.sh/supernovae-st/nika-plugins"><img src="https://skills.sh/b/supernovae-st/nika-plugins" alt="skills.sh"></a>
 </p>
 
 <h1 align="center">One Add · your agent learns the language</h1>
@@ -59,7 +59,7 @@ Then one Add for your client:
 ### Claude Code
 
 ```sh
-claude plugin marketplace add supernovae-st/nika-agents
+claude plugin marketplace add supernovae-st/nika-plugins
 claude plugin install nika@nika
 ```
 
@@ -68,7 +68,7 @@ Updating is TWO rungs: marketplace first, plugin second, restart after.
 ### Codex
 
 ```sh
-codex plugin marketplace add supernovae-st/nika-agents
+codex plugin marketplace add supernovae-st/nika-plugins
 codex plugin add nika@nika
 ```
 
@@ -81,7 +81,7 @@ codex.</sub>
 ### Grok Build
 
 ```sh
-grok plugin marketplace add supernovae-st/nika-agents
+grok plugin marketplace add supernovae-st/nika-plugins
 grok plugin install nika@nika --trust
 ```
 
@@ -90,7 +90,7 @@ grok plugin install nika@nika --trust
 ### OpenClaude
 
 ```sh
-openclaude plugin marketplace add supernovae-st/nika-agents
+openclaude plugin marketplace add supernovae-st/nika-plugins
 openclaude plugin install nika@nika
 ```
 
@@ -99,11 +99,11 @@ openclaude plugin install nika@nika
 ### Hermes, or any skills.sh client
 
 ```sh
-npx skills add supernovae-st/nika-agents
+npx skills add supernovae-st/nika-plugins
 ```
 
 <sub>The kit-native skill pack, e2e-proven and listed live on
-<a href="https://skills.sh/supernovae-st/nika-agents">skills.sh</a>.</sub>
+<a href="https://skills.sh/supernovae-st/nika-plugins">skills.sh</a>.</sub>
 
 ### Cursor
 
@@ -204,11 +204,11 @@ a deterministic receipt:
 | **Grok Build** | `grok inspect --json` lists every component with origins · `grok mcp doctor --json`: handshake OK, 9 tools ([fiche](integrations/grok-build/)) |
 | **Kimi Code** | a stream-json run emits `tool_calls: mcp__nika__nika_canon` · the oracle loaded AND called ([fiche](integrations/kimi-code/)) |
 | **opencode** | `opencode mcp list` → `✓ nika connected` ([fiche](integrations/opencode/)) |
-| **Hermes / skills.sh** | e2e-proven skill pack, listed live ([skills.sh](https://skills.sh/supernovae-st/nika-agents)) |
+| **Hermes / skills.sh** | e2e-proven skill pack, listed live ([skills.sh](https://skills.sh/supernovae-st/nika-plugins)) |
 | **Any MCP client** | the containerized oracle answers `initialize` + `tools/list` on every CI run ([integrations/mcp](integrations/mcp/)) |
 
 <sub>Listed across the ecosystem:
-<a href="https://skills.sh/supernovae-st/nika-agents">skills.sh</a> ·
+<a href="https://skills.sh/supernovae-st/nika-plugins">skills.sh</a> ·
 <a href="https://claudepluginhub.com">ClaudePluginHub</a> ·
 <a href="https://github.com/davila7/claude-code-templates">aitmpl.com</a> ·
 <a href="https://crates.io/crates/nika">crates.io</a> ·
@@ -314,7 +314,7 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
     │ the release train                  🖥️ nika.sh · 📖 nika-docs
     ▼                                     the showroom · the manual
 📦 homebrew-tap · npm · Docker ── the docks
-🔌 nika-client · 🎨 nika-vscode · 🤖 nika-agents · ⚡ gh-nika ── the doors   ◀── you are here
+🔌 nika-client · 🎨 nika-vscode · 🤖 nika-plugins · ⚡ gh-nika ── the doors   ◀── you are here
 🏭 nika-action · 🧪 nika-actions-starter ── the CI district
 🏪 nika-registry ── the market · 🏛 nika-estate ── the land registry
 ```
@@ -329,7 +329,7 @@ File issues and PRs against [supernovae-st/nika](https://github.com/supernovae-s
 
 **Truth lives** · everything here is a MIRROR · file issues and PRs against the engine.
 
-All the buildings: [nika-spec](https://github.com/supernovae-st/nika-spec) · [nika](https://github.com/supernovae-st/nika) · [nika.sh](https://github.com/supernovae-st/nika.sh) · [nika-docs](https://github.com/supernovae-st/nika-docs) · [nika-client](https://github.com/supernovae-st/nika-client) · [nika-vscode](https://github.com/supernovae-st/nika-vscode) · [nika-agents](https://github.com/supernovae-st/nika-agents) · [gh-nika](https://github.com/supernovae-st/gh-nika) · [homebrew-tap](https://github.com/supernovae-st/homebrew-tap) · [nika-action](https://github.com/supernovae-st/nika-action) · [nika-actions-starter](https://github.com/supernovae-st/nika-actions-starter) · [nika-registry](https://github.com/supernovae-st/nika-registry) · [nika-estate](https://github.com/supernovae-st/nika-estate)
+All the buildings: [nika-spec](https://github.com/supernovae-st/nika-spec) · [nika](https://github.com/supernovae-st/nika) · [nika.sh](https://github.com/supernovae-st/nika.sh) · [nika-docs](https://github.com/supernovae-st/nika-docs) · [nika-client](https://github.com/supernovae-st/nika-client) · [nika-vscode](https://github.com/supernovae-st/nika-vscode) · [nika-plugins](https://github.com/supernovae-st/nika-plugins) · [gh-nika](https://github.com/supernovae-st/gh-nika) · [homebrew-tap](https://github.com/supernovae-st/homebrew-tap) · [nika-action](https://github.com/supernovae-st/nika-action) · [nika-actions-starter](https://github.com/supernovae-st/nika-actions-starter) · [nika-registry](https://github.com/supernovae-st/nika-registry) · [nika-estate](https://github.com/supernovae-st/nika-estate)
 
 Every fact has one home · everything else is a gated projection.
 The living map: [nika.sh/map](https://nika.sh/map).
@@ -389,7 +389,7 @@ You want to support Nika in your client? Copy the matching
 [`integrations/`](integrations/) folder: each one is self-contained,
 version-pinned, and gate-checked against the live binary. Missing a
 workflow for your use case?
-[Ask for one](https://github.com/supernovae-st/nika-agents/issues/new?template=request-a-workflow.yml)
+[Ask for one](https://github.com/supernovae-st/nika-plugins/issues/new?template=request-a-workflow.yml)
 · the answer ships as a checked file, receipts included.
 
 <p align="center">

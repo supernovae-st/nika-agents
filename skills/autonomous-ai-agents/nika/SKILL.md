@@ -390,7 +390,7 @@ learning tools (`nika_check`, `nika_inspect`, `nika_explain`, `nika_schema`,
 `nika_examples`, `nika_template`, `nika_canon`, `nika_catalog`, `nika_tools`).
 If the user wants those wired into their agent client, point them at the
 wiring guide —
-https://github.com/supernovae-st/nika-agents/tree/main/integrations/mcp —
+https://github.com/supernovae-st/nika-plugins/tree/main/integrations/mcp —
 editing the client's own configuration is the user's step, never this
 skill's. Without the oracle, everything above still works over the terminal;
 running workflows stays there regardless, where the budget flags and traces

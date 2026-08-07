@@ -58,7 +58,7 @@
 
     <!-- this repo -->
     <rect x="60" y="117" width="420" height="64" rx="10" fill="var(--chip-bg)" stroke="var(--accent)" stroke-opacity="0.55"/>
-    <text class="mono box" x="82" y="144">supernovae-st/nika-agents</text>
+    <text class="mono box" x="82" y="144">supernovae-st/nika-plugins</text>
     <text class="mono sub" x="82" y="167">the install surface · a light clone</text>
     <text class="mono dim" x="464" y="144" text-anchor="end">◀ you are here</text>
 

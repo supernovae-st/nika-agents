@@ -27,7 +27,7 @@ shaped as an OpenClaude marketplace — no OpenClaude-specific port:
 npm install -g @gitlawb/openclaude       # the client
 brew install supernovae-st/tap/nika      # the binary the plugin invokes
 
-openclaude plugin marketplace add supernovae-st/nika-agents
+openclaude plugin marketplace add supernovae-st/nika-plugins
 openclaude plugin install nika@nika
 openclaude plugin marketplace update nika   # later: pull a new kit version
 ```

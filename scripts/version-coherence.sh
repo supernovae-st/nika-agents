@@ -23,7 +23,7 @@ say "engine latest release · ${latest}"
 # 0.x law was voiced (2026-07-12). GitHub Actions convention pins by major
 # tag (@v1) and retagging breaks external pinners — flagged ⚠, never
 # auto-fixed. New 1.x tags anywhere else stay RED.
-for repo in gh-nika nika-action nika-vscode nika-client nika-agents; do
+for repo in gh-nika nika-action nika-vscode nika-client nika-plugins; do
   tag="$(curl -fsSLI -o /dev/null -w '%{url_effective}' "https://github.com/supernovae-st/${repo}/releases/latest" 2>/dev/null || true)"
   tag="${tag##*/tag/}"
   case "$tag" in

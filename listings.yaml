@@ -316,7 +316,7 @@ entries:
     notes: >-
       07-11 — missing '## Sources' section (CONTRIBUTING evidence rule)
       added in a compliance commit on the PR branch (3 primary sources:
-      docs integration guide · nika-agents skill repo · hermes-agent#61632) ·
+      docs integration guide · nika-plugins skill repo · hermes-agent#61632) ·
       prior: content contribution (usecases/deterministic-workflow-delegation.md
       64 lines · every command binary-verified · offline demo zero keys ·
       skill-guard + Nous#61632 cited as primary sources) · honest tradeoff
@@ -440,7 +440,7 @@ entries:
     submitted: null
     description_block: n/a (indexes the kit plugin manifest as-published)
     notes: VERIFIED indexed 2026-07-10 via their search API (slug
-      supernovae-st-nika-agents-plugins-nika-2 · description = ours verbatim) ·
+      supernovae-st-nika-plugins-plugins-nika-2 · description = ours verbatim) ·
       zero action needed · quarterly verify per cadence class
 
   - surface: awesome-cursorrules (PatrickJS · rules/)
@@ -523,7 +523,7 @@ entries:
     notes: >-
       07-11 revival — root cause found (validator gates on '[Repo]' title
       prefix; CLI title never matched) · single self-serve edit applied
-      (title+body one event · nika-agents paths corrected · Hermes integration
+      (title+body one event · nika-plugins paths corrected · Hermes integration
       story explicit) · validator lane proven live (#506→bot PR in 31min) ·
       prior: suggest-repo issue (their template mirrored — CLI cannot fill forms) ·
       category Skills & Skill Registries · first-party disclosed
@@ -594,12 +594,19 @@ entries:
 
   - surface: skills.sh
     class: auto-indexed
-    status: live  # page resolves 200 (re-verified 2026-07-10 ~08h — indexed
-      # ~a day after the repo went public; was pending-index while it 404'd)
-    url: https://skills.sh/supernovae-st/nika-agents
-    installed_via: npx skills add supernovae-st/nika-agents
+    status: pending-index  # 2026-08-07 measured: /supernovae-st/nika-plugins
+      # 404s, /supernovae-st/nika-agents still 200s. The repo rename did NOT
+      # carry the listing — a GitHub rename redirects git and the API, never a
+      # third party's index. This is the same state the entry sat in on first
+      # publish (indexed ~a day later, 2026-07-10 ~08h), so the move is to
+      # record it, not to point the README back at a name that is now dead.
+      # The badge endpoint (/b/...) already answers 200 under the new name.
+    url: https://skills.sh/supernovae-st/nika-plugins
+    installed_via: npx skills add supernovae-st/nika-plugins
     description_block: skills-registries lead (description-bank §per-surface)
     submitted: null
+    kill_check: 2026-08-14  # if still 404 by then, the auto-index did not
+      # follow a rename and the listing needs a manual re-submission
     notes: badge restored in README · install path taught in docs
       integrations/hermes · e2e-proven (2 skills · 17 clients)
 
@@ -1041,7 +1048,7 @@ entries:
     submitted: 2026-07-11
     description_block: skills lead (author-check-repair loop · house bold format)
     notes: 27.8k stars · external merge same-day (taisly) · coderabbitai
-      neighborhood · nika-agents is the artifact · first-party disclosed
+      neighborhood · nika-plugins is the artifact · first-party disclosed
 
   - surface: awesome-privacy (pluja · AI Coding)
     class: submitted-pr
@@ -1354,7 +1361,7 @@ entries:
       submission issue mirroring their resource-submission form (title
       convention '[Submission]: nika' · all required fields · maturity beta ·
       first-party disclosed) — intake is issue→maintainer batch triage, not PR.
-      LICENSE file added to nika-agents same-move (their form requires one ·
+      LICENSE file added to nika-plugins same-move (their form requires one ·
       the README's declared AGPL-3.0-or-later materialized, no licensing change)
     kill_check: 2026-09-09
     notes: >-
@@ -1452,7 +1459,7 @@ queued_operator:
     blocker: their bar is Korean support (skill in Korean OR Korean README OR
       auto-detection) plus personally-installed-and-used testimony in the PR ·
       we honestly meet neither today — GATED until a README.ko ships on
-      nika-agents (the localization queue gains ko alongside zh/ja/fr) ·
+      nika-plugins (the localization queue gains ko alongside zh/ja/fr) ·
       their weekly skill-scout may also discover us organically once ko docs
       exist
     payload_ready: the 6-column table row is a template fill once ko docs land

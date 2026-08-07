@@ -1,4 +1,4 @@
-# AGENTS.md — nika-agents (the plugin marketplace mirror)
+# AGENTS.md — nika-plugins (the plugin marketplace mirror)
 
 Vendor-neutral agent entry per the AGENTS.md convention (agents.md).
 

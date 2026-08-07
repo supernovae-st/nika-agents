@@ -3,7 +3,7 @@
 ## Reporting
 
 Please report vulnerabilities privately via
-[GitHub security advisories](https://github.com/supernovae-st/nika-agents/security/advisories/new)
+[GitHub security advisories](https://github.com/supernovae-st/nika-plugins/security/advisories/new)
 — not in public issues. You'll get an acknowledgment within 72 hours.
 
 ## What this repo is — and what installing from it runs
