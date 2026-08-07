@@ -43,8 +43,19 @@ BUNDLE = ROOT / ".agents/plugins/nika"
 
 COMPONENT_KEYS = ("manifest", "skills", "subagents", "commands", "hooks",
                   "rules", "mcp", "presentation", "scaffold")
-MECHANISMS = {"native-manifest", "claude-layout", "wire", "init",
-              "mcp-config", "skill-pack", "none"}
+MECHANISMS = {"native-manifest", "agent-plugin", "claude-layout", "wire",
+              "init", "mcp-config", "skill-pack", "none"}
+
+# Agent Plugins 1.0.0 · the portable package, and the ONLY three cells it can
+# fill: v1 standardises exactly two component types (§7 skills + MCP) plus the
+# manifest that declares the package. A row claiming agent-plugin for hooks or
+# commands would be claiming something the format refuses to carry.
+AGENT_PLUGIN_FILES = {
+    "manifest": ".agents/plugins/nika/plugin.json",
+    "skills": ".agents/plugins/nika/skills",
+    "mcp": ".agents/plugins/nika/mcp.json",
+}
+PORTABLE_MANIFEST = ".agents/plugins/nika/plugin.json"
 CLASSES = {"A", "B", "C"}
 STATUSES = {"recon", "wired", "proven"}
 
@@ -144,6 +155,40 @@ def check_manifests(rows, findings):
         for p in paths:
             if not (ROOT / p).is_file():
                 findings.append(f"{row['id']}: adapter manifest missing on disk: {p}")
+
+
+def check_agent_plugin(rows, findings):
+    """The portable-package law, in BOTH directions.
+
+    Forward · a cell claiming `agent-plugin` must have the file that makes the
+    claim true, and must be one of the three cells the format can fill.
+    Reverse · if the portable manifest is on disk, at least one row has to
+    claim it. A package nobody claims is a surface we ship and never account
+    for, which is the same blindness as a cell with no reason.
+    """
+    claimed = False
+    for row in rows:
+        for key, mech in (row.get("components") or {}).items():
+            if mech != "agent-plugin":
+                continue
+            claimed = True
+            if key not in AGENT_PLUGIN_FILES:
+                findings.append(
+                    f"{row['id']}.{key}: agent-plugin cannot fill this cell — "
+                    f"Agent Plugins v1 standardises only "
+                    f"{'/'.join(sorted(AGENT_PLUGIN_FILES))} (§7)")
+                continue
+            path = ROOT / AGENT_PLUGIN_FILES[key]
+            if not path.exists():
+                findings.append(
+                    f"{row['id']}.{key}: claims agent-plugin but "
+                    f"{AGENT_PLUGIN_FILES[key]} is not on disk")
+    if (ROOT / PORTABLE_MANIFEST).is_file() and not claimed:
+        findings.append(
+            f"{PORTABLE_MANIFEST} ships and NO row claims agent-plugin — the "
+            f"portable package reaches clients nobody accounts for "
+            f"(bidirectional law)")
+    return claimed
 
 
 def check_counts(findings):
@@ -254,8 +299,12 @@ def main() -> int:
     rows = check_schema(doc, findings)
     if rows:
         check_manifests(rows, findings)
+        portable = check_agent_plugin(rows, findings)
         derived = check_counts(findings)
         check_wire(rows, findings)
+        print(f"  agent-plugin: portable manifest "
+              f"{'present' if (ROOT / PORTABLE_MANIFEST).is_file() else 'ABSENT'} ⇄ "
+              f"{'claimed' if portable else 'UNCLAIMED'}")
         statuses = {}
         for row in rows:
             statuses[row["status"]] = statuses.get(row["status"], 0) + 1

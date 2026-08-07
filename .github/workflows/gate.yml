@@ -87,6 +87,12 @@ jobs:
       # binary. No untrusted input reaches this step.
       - name: The client matrix holds (clients.yaml ⇄ bundle ⇄ manifests)
         run: python3 scripts/check-clients-matrix.py
+      # The gate above is only worth its green if it can go red. This breaks
+      # the portable-package claim seven ways on a scratch copy and asserts
+      # each one is caught, in both directions. Static run line · no event
+      # input reaches this step.
+      - name: The matrix gate can still fail (mutation proof)
+        run: python3 scripts/tests/clients-matrix.test.py
       - name: The listings registry parses
         run: |
           python3 - << 'EOF'
